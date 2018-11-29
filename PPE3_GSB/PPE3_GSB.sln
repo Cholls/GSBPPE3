@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPE3_GSB_Lib", "PPE3_GSB_Lib\PPE3_GSB_Lib.csproj", "{499A561E-5725-4A9A-8B77-5188BE95D032}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPE3_GSB_WF", "PPE3_GSB_WF\PPE3_GSB_WF.csproj", "{3F7E1361-5116-4C45-8149-D3042CA8328B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{499A561E-5725-4A9A-8B77-5188BE95D032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{499A561E-5725-4A9A-8B77-5188BE95D032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{499A561E-5725-4A9A-8B77-5188BE95D032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{499A561E-5725-4A9A-8B77-5188BE95D032}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F7E1361-5116-4C45-8149-D3042CA8328B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F7E1361-5116-4C45-8149-D3042CA8328B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F7E1361-5116-4C45-8149-D3042CA8328B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F7E1361-5116-4C45-8149-D3042CA8328B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6BCF8F29-66CA-421D-8632-EF5BAB460249}
+	EndGlobalSection
+EndGlobal

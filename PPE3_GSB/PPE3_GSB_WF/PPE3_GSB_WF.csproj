@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F7E1361-5116-4C45-8149-D3042CA8328B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PPE3_GSB_WF</RootNamespace>
+    <AssemblyName>PPE3_GSB_WF</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form_Accueil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Accueil.Designer.cs">
+      <DependentUpon>Form_Accueil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Connexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Connexion.Designer.cs">
+      <DependentUpon>Form_Connexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Medecins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Medecins.Designer.cs">
+      <DependentUpon>Form_Medecins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Medicaments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Medicaments.Designer.cs">
+      <DependentUpon>Form_Medicaments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Rapports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Rapports.Designer.cs">
+      <DependentUpon>Form_Rapports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Visiteurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Visiteurs.Designer.cs">
+      <DependentUpon>Form_Visiteurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Visiteurs_Ajouter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Visiteurs_Ajouter.Designer.cs">
+      <DependentUpon>Form_Visiteurs_Ajouter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Visiteurs_Modifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Visiteurs_Modifier.Designer.cs">
+      <DependentUpon>Form_Visiteurs_Modifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GSB_PPE3DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GSB_PPE3DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_Accueil.resx">
+      <DependentUpon>Form_Accueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Connexion.resx">
+      <DependentUpon>Form_Connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Medecins.resx">
+      <DependentUpon>Form_Medecins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Medicaments.resx">
+      <DependentUpon>Form_Medicaments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Rapports.resx">
+      <DependentUpon>Form_Rapports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Visiteurs.resx">
+      <DependentUpon>Form_Visiteurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Visiteurs_Ajouter.resx">
+      <DependentUpon>Form_Visiteurs_Ajouter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Visiteurs_Modifier.resx">
+      <DependentUpon>Form_Visiteurs_Modifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="GSB_PPE3DataSet.xsc">
+      <DependentUpon>GSB_PPE3DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_PPE3DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GSB_PPE3DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GSB_PPE3DataSet.xss">
+      <DependentUpon>GSB_PPE3DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logogsb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gsb.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
