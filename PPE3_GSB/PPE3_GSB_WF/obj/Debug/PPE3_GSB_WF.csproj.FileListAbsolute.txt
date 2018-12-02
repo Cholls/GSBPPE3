@@ -66,3 +66,27 @@ C:\Users\achollet\Desktop\PPE 3\PPE3_GSB\PPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE
 C:\Users\achollet\Desktop\PPE 3\PPE3_GSB\PPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.csproj.CopyComplete
 C:\Users\achollet\Desktop\PPE 3\PPE3_GSB\PPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.exe
 C:\Users\achollet\Desktop\PPE 3\PPE3_GSB\PPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.pdb
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\PPE3_GSB_WF.exe.config
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\PPE3_GSB_WF.exe
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\PPE3_GSB_WF.pdb
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\EntityFramework.dll
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\Google.Protobuf.dll
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\MySql.Data.dll
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\MySql.Data.Entity.dll
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\EntityFramework.xml
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\Google.Protobuf.xml
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\MySql.Data.xml
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.csprojResolveAssemblyReference.cache
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Accueil.resources
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Connexion.resources
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medecins.resources
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medicaments.resources
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Rapports.resources
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Visiteurs.resources
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Visiteurs_Ajouter.resources
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Visiteurs_Modifier.resources
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Properties.Resources.resources
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.csproj.GenerateResource.Cache
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.csproj.CoreCompileInputs.cache
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.exe
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.pdb

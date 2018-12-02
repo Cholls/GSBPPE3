@@ -12,7 +12,7 @@ namespace PPE3_GSB_WF.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.6.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -30,6 +30,28 @@ namespace PPE3_GSB_WF.Properties {
         public string GSB_PPE3ConnectionString {
             get {
                 return ((string)(this["GSB_PPE3ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=EZEKIEL-PC\\ROCKNROLLSQL;Initial Catalog=ECOLECONDUITE;Integrated Secu" +
+            "rity=True")]
+        public string ECOLECONDUITEConnectionString {
+            get {
+                return ((string)(this["ECOLECONDUITEConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=EZEKIEL-PC\\ROCKNROLLSQL;Initial Catalog=GSB_PPE3;Integrated Security=" +
+            "True")]
+        public string GSB_PPE3ConnectionString1 {
+            get {
+                return ((string)(this["GSB_PPE3ConnectionString1"]));
             }
         }
     }

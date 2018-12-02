@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ECOLECONDUITEDataSet" targetNamespace="http://tempuri.org/ECOLECONDUITEDataSet.xsd" xmlns:mstns="http://tempuri.org/ECOLECONDUITEDataSet.xsd" xmlns="http://tempuri.org/ECOLECONDUITEDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ECOLECONDUITEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ECOLECONDUITEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.PPE3_GSB_WF.Properties.Settings.GlobalReference.Default.ECOLECONDUITEConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ELEVETableAdapter" GeneratorDataComponentClassName="ELEVETableAdapter" Name="ELEVE" UserDataComponentName="ELEVETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ECOLECONDUITEConnectionString (Settings)" DbObjectName="ECOLECONDUITE.dbo.ELEVE" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT nom FROM dbo.ELEVE</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nom" DataSetColumn="nom" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ECOLECONDUITEDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ECOLECONDUITEDataSet" msprop:Generator_UserDSName="ECOLECONDUITEDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ELEVE" msprop:Generator_TableClassName="ELEVEDataTable" msprop:Generator_TableVarName="tableELEVE" msprop:Generator_TablePropName="ELEVE" msprop:Generator_RowDeletingName="ELEVERowDeleting" msprop:Generator_RowChangingName="ELEVERowChanging" msprop:Generator_RowEvHandlerName="ELEVERowChangeEventHandler" msprop:Generator_RowDeletedName="ELEVERowDeleted" msprop:Generator_UserTableName="ELEVE" msprop:Generator_RowChangedName="ELEVERowChanged" msprop:Generator_RowEvArgName="ELEVERowChangeEvent" msprop:Generator_RowClassName="ELEVERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nom" msprop:Generator_ColumnVarNameInTable="columnnom" msprop:Generator_ColumnPropNameInRow="nom" msprop:Generator_ColumnPropNameInTable="nomColumn" msprop:Generator_UserColumnName="nom">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

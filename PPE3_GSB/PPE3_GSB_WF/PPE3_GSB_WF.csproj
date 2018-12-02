@@ -32,16 +32,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\MySql.Data.dll</HintPath>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.13\lib\net452\MySql.Data.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="MySql.Data.Entity, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\MySql.Data.Entity.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ECOLECONDUITEDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ECOLECONDUITEDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form_Accueil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +126,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GSB_PPE3DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GSB_PPE3DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GSB_PPE3DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GSB_PPE3DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GSB_PPE3DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_Accueil.resx">
@@ -142,6 +172,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ECOLECONDUITEDataSet.xsc">
+      <DependentUpon>ECOLECONDUITEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ECOLECONDUITEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ECOLECONDUITEDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ECOLECONDUITEDataSet.xss">
+      <DependentUpon>ECOLECONDUITEDataSet.xsd</DependentUpon>
+    </None>
     <None Include="GSB_PPE3DataSet.xsc">
       <DependentUpon>GSB_PPE3DataSet.xsd</DependentUpon>
     </None>
@@ -153,6 +194,29 @@
     <None Include="GSB_PPE3DataSet.xss">
       <DependentUpon>GSB_PPE3DataSet.xsd</DependentUpon>
     </None>
+    <None Include="GSB_PPE3DataSet1.xsc">
+      <DependentUpon>GSB_PPE3DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_PPE3DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GSB_PPE3DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GSB_PPE3DataSet1.xss">
+      <DependentUpon>GSB_PPE3DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_PPE3DataSet2.xsc">
+      <DependentUpon>GSB_PPE3DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_PPE3DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GSB_PPE3DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GSB_PPE3DataSet2.xss">
+      <DependentUpon>GSB_PPE3DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
