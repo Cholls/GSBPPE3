@@ -90,3 +90,4 @@ C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.c
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.csproj.CoreCompileInputs.cache
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.exe
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.pdb
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medecins_Ajouter.resources

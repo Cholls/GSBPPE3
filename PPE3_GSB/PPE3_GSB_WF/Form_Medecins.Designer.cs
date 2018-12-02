@@ -33,10 +33,17 @@
             this.lbl_choixMedecins = new System.Windows.Forms.Label();
             this.lbl_lstMedecins = new System.Windows.Forms.Label();
             this.cb_Medecins = new System.Windows.Forms.ComboBox();
+            this.praticienBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gSB_PPE3DataSet2 = new PPE3_GSB_WF.GSB_PPE3DataSet2();
             this.btn_Supprimer = new System.Windows.Forms.Button();
             this.btn_Modifier = new System.Windows.Forms.Button();
             this.btn_Ajouter = new System.Windows.Forms.Button();
             this.grid_Medecins = new System.Windows.Forms.DataGridView();
+            this.pRANOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRAPRENOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRACPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRAVILLEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRAADRESSEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.praticienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gSB_PPE3DataSet1 = new PPE3_GSB_WF.GSB_PPE3DataSet1();
             this.btn_Quitter = new System.Windows.Forms.Button();
@@ -44,21 +51,14 @@
             this.eLEVEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eLEVETableAdapter = new PPE3_GSB_WF.ECOLECONDUITEDataSetTableAdapters.ELEVETableAdapter();
             this.praticienTableAdapter = new PPE3_GSB_WF.GSB_PPE3DataSet1TableAdapters.praticienTableAdapter();
-            this.gSB_PPE3DataSet2 = new PPE3_GSB_WF.GSB_PPE3DataSet2();
-            this.praticienBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.praticienTableAdapter1 = new PPE3_GSB_WF.GSB_PPE3DataSet2TableAdapters.praticienTableAdapter();
-            this.pRANOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRAPRENOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRACPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRAVILLEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRAADRESSEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Medecins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eCOLECONDUITEDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eLEVEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -105,6 +105,16 @@
             this.cb_Medecins.TabIndex = 23;
             this.cb_Medecins.ValueMember = "PRA_NOM";
             // 
+            // praticienBindingSource1
+            // 
+            this.praticienBindingSource1.DataMember = "praticien";
+            this.praticienBindingSource1.DataSource = this.gSB_PPE3DataSet2;
+            // 
+            // gSB_PPE3DataSet2
+            // 
+            this.gSB_PPE3DataSet2.DataSetName = "GSB_PPE3DataSet2";
+            this.gSB_PPE3DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btn_Supprimer
             // 
             this.btn_Supprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,6 +136,7 @@
             this.btn_Modifier.TabIndex = 21;
             this.btn_Modifier.Text = "Modifier";
             this.btn_Modifier.UseVisualStyleBackColor = true;
+            this.btn_Modifier.Click += new System.EventHandler(this.Btn_Modifier_Click);
             // 
             // btn_Ajouter
             // 
@@ -137,6 +148,7 @@
             this.btn_Ajouter.TabIndex = 20;
             this.btn_Ajouter.Text = "Ajouter";
             this.btn_Ajouter.UseVisualStyleBackColor = true;
+            this.btn_Ajouter.Click += new System.EventHandler(this.Btn_Ajouter_Click);
             // 
             // grid_Medecins
             // 
@@ -156,6 +168,36 @@
             this.grid_Medecins.Name = "grid_Medecins";
             this.grid_Medecins.Size = new System.Drawing.Size(595, 415);
             this.grid_Medecins.TabIndex = 19;
+            // 
+            // pRANOMDataGridViewTextBoxColumn
+            // 
+            this.pRANOMDataGridViewTextBoxColumn.DataPropertyName = "PRA_NOM";
+            this.pRANOMDataGridViewTextBoxColumn.HeaderText = "PRA_NOM";
+            this.pRANOMDataGridViewTextBoxColumn.Name = "pRANOMDataGridViewTextBoxColumn";
+            // 
+            // pRAPRENOMDataGridViewTextBoxColumn
+            // 
+            this.pRAPRENOMDataGridViewTextBoxColumn.DataPropertyName = "PRA_PRENOM";
+            this.pRAPRENOMDataGridViewTextBoxColumn.HeaderText = "PRA_PRENOM";
+            this.pRAPRENOMDataGridViewTextBoxColumn.Name = "pRAPRENOMDataGridViewTextBoxColumn";
+            // 
+            // pRACPDataGridViewTextBoxColumn
+            // 
+            this.pRACPDataGridViewTextBoxColumn.DataPropertyName = "PRA_CP";
+            this.pRACPDataGridViewTextBoxColumn.HeaderText = "PRA_CP";
+            this.pRACPDataGridViewTextBoxColumn.Name = "pRACPDataGridViewTextBoxColumn";
+            // 
+            // pRAVILLEDataGridViewTextBoxColumn
+            // 
+            this.pRAVILLEDataGridViewTextBoxColumn.DataPropertyName = "PRA_VILLE";
+            this.pRAVILLEDataGridViewTextBoxColumn.HeaderText = "PRA_VILLE";
+            this.pRAVILLEDataGridViewTextBoxColumn.Name = "pRAVILLEDataGridViewTextBoxColumn";
+            // 
+            // pRAADRESSEDataGridViewTextBoxColumn
+            // 
+            this.pRAADRESSEDataGridViewTextBoxColumn.DataPropertyName = "PRA_ADRESSE";
+            this.pRAADRESSEDataGridViewTextBoxColumn.HeaderText = "PRA_ADRESSE";
+            this.pRAADRESSEDataGridViewTextBoxColumn.Name = "pRAADRESSEDataGridViewTextBoxColumn";
             // 
             // praticienBindingSource
             // 
@@ -197,49 +239,9 @@
             // 
             this.praticienTableAdapter.ClearBeforeFill = true;
             // 
-            // gSB_PPE3DataSet2
-            // 
-            this.gSB_PPE3DataSet2.DataSetName = "GSB_PPE3DataSet2";
-            this.gSB_PPE3DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // praticienBindingSource1
-            // 
-            this.praticienBindingSource1.DataMember = "praticien";
-            this.praticienBindingSource1.DataSource = this.gSB_PPE3DataSet2;
-            // 
             // praticienTableAdapter1
             // 
             this.praticienTableAdapter1.ClearBeforeFill = true;
-            // 
-            // pRANOMDataGridViewTextBoxColumn
-            // 
-            this.pRANOMDataGridViewTextBoxColumn.DataPropertyName = "PRA_NOM";
-            this.pRANOMDataGridViewTextBoxColumn.HeaderText = "PRA_NOM";
-            this.pRANOMDataGridViewTextBoxColumn.Name = "pRANOMDataGridViewTextBoxColumn";
-            // 
-            // pRAPRENOMDataGridViewTextBoxColumn
-            // 
-            this.pRAPRENOMDataGridViewTextBoxColumn.DataPropertyName = "PRA_PRENOM";
-            this.pRAPRENOMDataGridViewTextBoxColumn.HeaderText = "PRA_PRENOM";
-            this.pRAPRENOMDataGridViewTextBoxColumn.Name = "pRAPRENOMDataGridViewTextBoxColumn";
-            // 
-            // pRACPDataGridViewTextBoxColumn
-            // 
-            this.pRACPDataGridViewTextBoxColumn.DataPropertyName = "PRA_CP";
-            this.pRACPDataGridViewTextBoxColumn.HeaderText = "PRA_CP";
-            this.pRACPDataGridViewTextBoxColumn.Name = "pRACPDataGridViewTextBoxColumn";
-            // 
-            // pRAVILLEDataGridViewTextBoxColumn
-            // 
-            this.pRAVILLEDataGridViewTextBoxColumn.DataPropertyName = "PRA_VILLE";
-            this.pRAVILLEDataGridViewTextBoxColumn.HeaderText = "PRA_VILLE";
-            this.pRAVILLEDataGridViewTextBoxColumn.Name = "pRAVILLEDataGridViewTextBoxColumn";
-            // 
-            // pRAADRESSEDataGridViewTextBoxColumn
-            // 
-            this.pRAADRESSEDataGridViewTextBoxColumn.DataPropertyName = "PRA_ADRESSE";
-            this.pRAADRESSEDataGridViewTextBoxColumn.HeaderText = "PRA_ADRESSE";
-            this.pRAADRESSEDataGridViewTextBoxColumn.Name = "pRAADRESSEDataGridViewTextBoxColumn";
             // 
             // Form_Medecins
             // 
@@ -261,13 +263,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Medecins";
             this.Load += new System.EventHandler(this.Form_Medecins_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Medecins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eCOLECONDUITEDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eLEVEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

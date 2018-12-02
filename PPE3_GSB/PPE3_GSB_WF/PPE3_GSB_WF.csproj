@@ -91,6 +91,12 @@
     <Compile Include="Form_Medecins.Designer.cs">
       <DependentUpon>Form_Medecins.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Medecins_Ajouter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Medecins_Ajouter.Designer.cs">
+      <DependentUpon>Form_Medecins_Ajouter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Medicaments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Medecins.resx">
       <DependentUpon>Form_Medecins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Medecins_Ajouter.resx">
+      <DependentUpon>Form_Medecins_Ajouter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Medicaments.resx">
       <DependentUpon>Form_Medicaments.cs</DependentUpon>

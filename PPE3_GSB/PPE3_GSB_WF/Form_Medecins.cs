@@ -32,5 +32,26 @@ namespace PPE3_GSB_WF
             this.eLEVETableAdapter.Fill(this.eCOLECONDUITEDataSet.ELEVE);
 
         }
+
+        /// <summary>
+        /// Fait afficher les données d'un médécin en autorisant la modification
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_Modifier_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        /// <summary>
+        /// Permet d'ajouter un médecin dans la base de données
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_Ajouter_Click(object sender, EventArgs e)
+        {
+            Form_Medecins_Ajouter fva = new Form_Medecins_Ajouter();
+            fva.Show();
+        }
     }
 }
