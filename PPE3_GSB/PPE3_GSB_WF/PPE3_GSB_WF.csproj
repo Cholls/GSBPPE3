@@ -142,6 +142,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GSB_PPE3DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GSB_PPE3DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GSB_PPE3DataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_Accueil.resx">
@@ -224,6 +229,17 @@
     </None>
     <None Include="GSB_PPE3DataSet2.xss">
       <DependentUpon>GSB_PPE3DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_PPE3DataSet3.xsc">
+      <DependentUpon>GSB_PPE3DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_PPE3DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GSB_PPE3DataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GSB_PPE3DataSet3.xss">
+      <DependentUpon>GSB_PPE3DataSet3.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

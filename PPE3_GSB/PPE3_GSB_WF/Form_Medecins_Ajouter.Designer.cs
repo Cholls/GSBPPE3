@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_AjoutVisiteur = new System.Windows.Forms.Label();
             this.btn_Annuler = new System.Windows.Forms.Button();
             this.btn_Valider = new System.Windows.Forms.Button();
@@ -44,7 +45,12 @@
             this.lbl_Prenom = new System.Windows.Forms.Label();
             this.lbl_Nom = new System.Windows.Forms.Label();
             this.lbl_Matricule = new System.Windows.Forms.Label();
-            this.tb_DateEmbauche = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.gSB_PPE3DataSet3 = new PPE3_GSB_WF.GSB_PPE3DataSet3();
+            this.specialiteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.specialiteTableAdapter = new PPE3_GSB_WF.GSB_PPE3DataSet3TableAdapters.specialiteTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specialiteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_AjoutVisiteur
@@ -68,6 +74,7 @@
             this.btn_Annuler.TabIndex = 79;
             this.btn_Annuler.Text = "Annuler";
             this.btn_Annuler.UseVisualStyleBackColor = true;
+            this.btn_Annuler.Click += new System.EventHandler(this.btn_Annuler_Click);
             // 
             // btn_Valider
             // 
@@ -79,6 +86,7 @@
             this.btn_Valider.TabIndex = 78;
             this.btn_Valider.Text = "Valider";
             this.btn_Valider.UseVisualStyleBackColor = true;
+            this.btn_Valider.Click += new System.EventHandler(this.Btn_Valider_Click);
             // 
             // tb_Nom
             // 
@@ -135,9 +143,9 @@
             this.lbl_DateEmbauche.Location = new System.Drawing.Point(54, 286);
             this.lbl_DateEmbauche.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DateEmbauche.Name = "lbl_DateEmbauche";
-            this.lbl_DateEmbauche.Size = new System.Drawing.Size(165, 25);
+            this.lbl_DateEmbauche.Size = new System.Drawing.Size(97, 25);
             this.lbl_DateEmbauche.TabIndex = 67;
-            this.lbl_DateEmbauche.Text = "Date d\'embauche";
+            this.lbl_DateEmbauche.Text = "Spécialité";
             // 
             // lbl_Ville
             // 
@@ -157,9 +165,9 @@
             this.lbl_CP.Location = new System.Drawing.Point(54, 212);
             this.lbl_CP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_CP.Name = "lbl_CP";
-            this.lbl_CP.Size = new System.Drawing.Size(40, 25);
+            this.lbl_CP.Size = new System.Drawing.Size(117, 25);
             this.lbl_CP.TabIndex = 65;
-            this.lbl_CP.Text = "CP";
+            this.lbl_CP.Text = "Code postal";
             // 
             // lbl_Adresse
             // 
@@ -205,19 +213,37 @@
             this.lbl_Matricule.TabIndex = 61;
             this.lbl_Matricule.Text = "Numéro medecin";
             // 
-            // tb_DateEmbauche
+            // comboBox1
             // 
-            this.tb_DateEmbauche.Location = new System.Drawing.Point(247, 288);
-            this.tb_DateEmbauche.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_DateEmbauche.Name = "tb_DateEmbauche";
-            this.tb_DateEmbauche.Size = new System.Drawing.Size(199, 22);
-            this.tb_DateEmbauche.TabIndex = 60;
+            this.comboBox1.DataSource = this.specialiteBindingSource;
+            this.comboBox1.DisplayMember = "SPE_LIBELLE";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(247, 285);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(269, 24);
+            this.comboBox1.TabIndex = 80;
+            this.comboBox1.ValueMember = "SPE_LIBELLE";
+            // 
+            // gSB_PPE3DataSet3
+            // 
+            this.gSB_PPE3DataSet3.DataSetName = "GSB_PPE3DataSet3";
+            this.gSB_PPE3DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // specialiteBindingSource
+            // 
+            this.specialiteBindingSource.DataMember = "specialite";
+            this.specialiteBindingSource.DataSource = this.gSB_PPE3DataSet3;
+            // 
+            // specialiteTableAdapter
+            // 
+            this.specialiteTableAdapter.ClearBeforeFill = true;
             // 
             // Form_Medecins_Ajouter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(528, 494);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btn_Annuler);
             this.Controls.Add(this.btn_Valider);
             this.Controls.Add(this.tb_Nom);
@@ -233,12 +259,14 @@
             this.Controls.Add(this.lbl_Prenom);
             this.Controls.Add(this.lbl_Nom);
             this.Controls.Add(this.lbl_Matricule);
-            this.Controls.Add(this.tb_DateEmbauche);
             this.Controls.Add(this.lbl_AjoutVisiteur);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Medecins_Ajouter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Medecins_Ajouter";
+            this.Load += new System.EventHandler(this.Form_Medecins_Ajouter_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specialiteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,6 +290,9 @@
         private System.Windows.Forms.Label lbl_Prenom;
         private System.Windows.Forms.Label lbl_Nom;
         private System.Windows.Forms.Label lbl_Matricule;
-        private System.Windows.Forms.TextBox tb_DateEmbauche;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private GSB_PPE3DataSet3 gSB_PPE3DataSet3;
+        private System.Windows.Forms.BindingSource specialiteBindingSource;
+        private GSB_PPE3DataSet3TableAdapters.specialiteTableAdapter specialiteTableAdapter;
     }
 }

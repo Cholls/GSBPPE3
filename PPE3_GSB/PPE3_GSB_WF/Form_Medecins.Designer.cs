@@ -29,21 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_choixMedecins = new System.Windows.Forms.Label();
             this.lbl_lstMedecins = new System.Windows.Forms.Label();
-            this.cb_Medecins = new System.Windows.Forms.ComboBox();
             this.praticienBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gSB_PPE3DataSet2 = new PPE3_GSB_WF.GSB_PPE3DataSet2();
-            this.btn_Supprimer = new System.Windows.Forms.Button();
-            this.btn_Modifier = new System.Windows.Forms.Button();
             this.btn_Ajouter = new System.Windows.Forms.Button();
             this.grid_Medecins = new System.Windows.Forms.DataGridView();
-            this.pRANOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRAPRENOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRACPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRAVILLEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRAADRESSEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.praticienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gSB_PPE3DataSet1 = new PPE3_GSB_WF.GSB_PPE3DataSet1();
             this.btn_Quitter = new System.Windows.Forms.Button();
@@ -52,6 +42,11 @@
             this.eLEVETableAdapter = new PPE3_GSB_WF.ECOLECONDUITEDataSetTableAdapters.ELEVETableAdapter();
             this.praticienTableAdapter = new PPE3_GSB_WF.GSB_PPE3DataSet1TableAdapters.praticienTableAdapter();
             this.praticienTableAdapter1 = new PPE3_GSB_WF.GSB_PPE3DataSet2TableAdapters.praticienTableAdapter();
+            this.pRANOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRAPRENOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRACPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRAVILLEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRAADRESSEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Medecins)).BeginInit();
@@ -60,26 +55,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.eCOLECONDUITEDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eLEVEBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel1.Location = new System.Drawing.Point(629, -4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(11, 534);
-            this.panel1.TabIndex = 26;
-            // 
-            // lbl_choixMedecins
-            // 
-            this.lbl_choixMedecins.AutoSize = true;
-            this.lbl_choixMedecins.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_choixMedecins.Location = new System.Drawing.Point(767, 167);
-            this.lbl_choixMedecins.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_choixMedecins.Name = "lbl_choixMedecins";
-            this.lbl_choixMedecins.Size = new System.Drawing.Size(196, 20);
-            this.lbl_choixMedecins.TabIndex = 25;
-            this.lbl_choixMedecins.Text = "Séléctionnez un médecin";
             // 
             // lbl_lstMedecins
             // 
@@ -92,19 +67,6 @@
             this.lbl_lstMedecins.TabIndex = 24;
             this.lbl_lstMedecins.Text = "Liste des médecins";
             // 
-            // cb_Medecins
-            // 
-            this.cb_Medecins.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.praticienBindingSource1, "PRA_NOM", true));
-            this.cb_Medecins.DataSource = this.praticienBindingSource1;
-            this.cb_Medecins.DisplayMember = "PRA_NOM";
-            this.cb_Medecins.FormattingEnabled = true;
-            this.cb_Medecins.Location = new System.Drawing.Point(731, 200);
-            this.cb_Medecins.Margin = new System.Windows.Forms.Padding(4);
-            this.cb_Medecins.Name = "cb_Medecins";
-            this.cb_Medecins.Size = new System.Drawing.Size(252, 24);
-            this.cb_Medecins.TabIndex = 23;
-            this.cb_Medecins.ValueMember = "PRA_NOM";
-            // 
             // praticienBindingSource1
             // 
             this.praticienBindingSource1.DataMember = "praticien";
@@ -114,29 +76,6 @@
             // 
             this.gSB_PPE3DataSet2.DataSetName = "GSB_PPE3DataSet2";
             this.gSB_PPE3DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btn_Supprimer
-            // 
-            this.btn_Supprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Supprimer.Location = new System.Drawing.Point(874, 254);
-            this.btn_Supprimer.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Supprimer.Name = "btn_Supprimer";
-            this.btn_Supprimer.Size = new System.Drawing.Size(109, 28);
-            this.btn_Supprimer.TabIndex = 22;
-            this.btn_Supprimer.Text = "Supprimer";
-            this.btn_Supprimer.UseVisualStyleBackColor = true;
-            // 
-            // btn_Modifier
-            // 
-            this.btn_Modifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Modifier.Location = new System.Drawing.Point(731, 254);
-            this.btn_Modifier.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Modifier.Name = "btn_Modifier";
-            this.btn_Modifier.Size = new System.Drawing.Size(109, 28);
-            this.btn_Modifier.TabIndex = 21;
-            this.btn_Modifier.Text = "Modifier";
-            this.btn_Modifier.UseVisualStyleBackColor = true;
-            this.btn_Modifier.Click += new System.EventHandler(this.Btn_Modifier_Click);
             // 
             // btn_Ajouter
             // 
@@ -166,38 +105,8 @@
             this.grid_Medecins.Location = new System.Drawing.Point(13, 61);
             this.grid_Medecins.Margin = new System.Windows.Forms.Padding(4);
             this.grid_Medecins.Name = "grid_Medecins";
-            this.grid_Medecins.Size = new System.Drawing.Size(595, 415);
+            this.grid_Medecins.Size = new System.Drawing.Size(762, 415);
             this.grid_Medecins.TabIndex = 19;
-            // 
-            // pRANOMDataGridViewTextBoxColumn
-            // 
-            this.pRANOMDataGridViewTextBoxColumn.DataPropertyName = "PRA_NOM";
-            this.pRANOMDataGridViewTextBoxColumn.HeaderText = "PRA_NOM";
-            this.pRANOMDataGridViewTextBoxColumn.Name = "pRANOMDataGridViewTextBoxColumn";
-            // 
-            // pRAPRENOMDataGridViewTextBoxColumn
-            // 
-            this.pRAPRENOMDataGridViewTextBoxColumn.DataPropertyName = "PRA_PRENOM";
-            this.pRAPRENOMDataGridViewTextBoxColumn.HeaderText = "PRA_PRENOM";
-            this.pRAPRENOMDataGridViewTextBoxColumn.Name = "pRAPRENOMDataGridViewTextBoxColumn";
-            // 
-            // pRACPDataGridViewTextBoxColumn
-            // 
-            this.pRACPDataGridViewTextBoxColumn.DataPropertyName = "PRA_CP";
-            this.pRACPDataGridViewTextBoxColumn.HeaderText = "PRA_CP";
-            this.pRACPDataGridViewTextBoxColumn.Name = "pRACPDataGridViewTextBoxColumn";
-            // 
-            // pRAVILLEDataGridViewTextBoxColumn
-            // 
-            this.pRAVILLEDataGridViewTextBoxColumn.DataPropertyName = "PRA_VILLE";
-            this.pRAVILLEDataGridViewTextBoxColumn.HeaderText = "PRA_VILLE";
-            this.pRAVILLEDataGridViewTextBoxColumn.Name = "pRAVILLEDataGridViewTextBoxColumn";
-            // 
-            // pRAADRESSEDataGridViewTextBoxColumn
-            // 
-            this.pRAADRESSEDataGridViewTextBoxColumn.DataPropertyName = "PRA_ADRESSE";
-            this.pRAADRESSEDataGridViewTextBoxColumn.HeaderText = "PRA_ADRESSE";
-            this.pRAADRESSEDataGridViewTextBoxColumn.Name = "pRAADRESSEDataGridViewTextBoxColumn";
             // 
             // praticienBindingSource
             // 
@@ -243,17 +152,42 @@
             // 
             this.praticienTableAdapter1.ClearBeforeFill = true;
             // 
+            // pRANOMDataGridViewTextBoxColumn
+            // 
+            this.pRANOMDataGridViewTextBoxColumn.DataPropertyName = "PRA_NOM";
+            this.pRANOMDataGridViewTextBoxColumn.HeaderText = "Nom";
+            this.pRANOMDataGridViewTextBoxColumn.Name = "pRANOMDataGridViewTextBoxColumn";
+            // 
+            // pRAPRENOMDataGridViewTextBoxColumn
+            // 
+            this.pRAPRENOMDataGridViewTextBoxColumn.DataPropertyName = "PRA_PRENOM";
+            this.pRAPRENOMDataGridViewTextBoxColumn.HeaderText = "Prénom";
+            this.pRAPRENOMDataGridViewTextBoxColumn.Name = "pRAPRENOMDataGridViewTextBoxColumn";
+            // 
+            // pRACPDataGridViewTextBoxColumn
+            // 
+            this.pRACPDataGridViewTextBoxColumn.DataPropertyName = "PRA_CP";
+            this.pRACPDataGridViewTextBoxColumn.HeaderText = "Code postal";
+            this.pRACPDataGridViewTextBoxColumn.Name = "pRACPDataGridViewTextBoxColumn";
+            // 
+            // pRAVILLEDataGridViewTextBoxColumn
+            // 
+            this.pRAVILLEDataGridViewTextBoxColumn.DataPropertyName = "PRA_VILLE";
+            this.pRAVILLEDataGridViewTextBoxColumn.HeaderText = "Ville";
+            this.pRAVILLEDataGridViewTextBoxColumn.Name = "pRAVILLEDataGridViewTextBoxColumn";
+            // 
+            // pRAADRESSEDataGridViewTextBoxColumn
+            // 
+            this.pRAADRESSEDataGridViewTextBoxColumn.DataPropertyName = "PRA_ADRESSE";
+            this.pRAADRESSEDataGridViewTextBoxColumn.HeaderText = "Adresse";
+            this.pRAADRESSEDataGridViewTextBoxColumn.Name = "pRAADRESSEDataGridViewTextBoxColumn";
+            // 
             // Form_Medecins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 523);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lbl_choixMedecins);
             this.Controls.Add(this.lbl_lstMedecins);
-            this.Controls.Add(this.cb_Medecins);
-            this.Controls.Add(this.btn_Supprimer);
-            this.Controls.Add(this.btn_Modifier);
             this.Controls.Add(this.btn_Ajouter);
             this.Controls.Add(this.grid_Medecins);
             this.Controls.Add(this.btn_Quitter);
@@ -276,13 +210,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbl_choixMedecins;
         private System.Windows.Forms.Label lbl_lstMedecins;
-        private System.Windows.Forms.ComboBox cb_Medecins;
-        private System.Windows.Forms.Button btn_Supprimer;
-        private System.Windows.Forms.Button btn_Modifier;
         private System.Windows.Forms.Button btn_Ajouter;
         private System.Windows.Forms.DataGridView grid_Medecins;
         private System.Windows.Forms.Button btn_Quitter;

@@ -43,11 +43,7 @@ namespace PPE3_GSB_WF
            
         }
 
-        /// <summary>
-        /// Permet d'ajouter un médecin dans la base de données
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+   
         private void Btn_Ajouter_Click(object sender, EventArgs e)
         {
             Form_Medecins_Ajouter fva = new Form_Medecins_Ajouter();
