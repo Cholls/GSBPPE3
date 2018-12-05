@@ -22,5 +22,11 @@ namespace PPE3_GSB_WF
             this.Close();
         }
 
+        private void Form_Medicaments_Load(object sender, EventArgs e)
+        {
+            // TODO: cette ligne de code charge les données dans la table 'gSB_PPE3DataSet5.medicament'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.medicamentTableAdapter.Fill(this.gSB_PPE3DataSet5.medicament);
+
+        }
     }
 }

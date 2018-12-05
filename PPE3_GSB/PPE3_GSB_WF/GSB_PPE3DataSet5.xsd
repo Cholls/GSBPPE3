@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GSB_PPE3DataSet5" targetNamespace="http://tempuri.org/GSB_PPE3DataSet5.xsd" xmlns:mstns="http://tempuri.org/GSB_PPE3DataSet5.xsd" xmlns="http://tempuri.org/GSB_PPE3DataSet5.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GSB_PPE3ConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GSB_PPE3ConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.PPE3_GSB_WF.Properties.Settings.GlobalReference.Default.GSB_PPE3ConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="medicamentTableAdapter" GeneratorDataComponentClassName="medicamentTableAdapter" Name="medicament" UserDataComponentName="medicamentTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GSB_PPE3ConnectionString1 (Settings)" DbObjectName="GSB_PPE3.dbo.medicament" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MED_NOMCOMMERCIAL, MED_COMPOSITION, MED_EFFETS FROM dbo.medicament</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MED_NOMCOMMERCIAL" DataSetColumn="MED_NOMCOMMERCIAL" />
+              <Mapping SourceColumn="MED_COMPOSITION" DataSetColumn="MED_COMPOSITION" />
+              <Mapping SourceColumn="MED_EFFETS" DataSetColumn="MED_EFFETS" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="GSB_PPE3DataSet5" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="GSB_PPE3DataSet5" msprop:Generator_UserDSName="GSB_PPE3DataSet5">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="medicament" msprop:Generator_TableClassName="medicamentDataTable" msprop:Generator_TableVarName="tablemedicament" msprop:Generator_TablePropName="medicament" msprop:Generator_RowDeletingName="medicamentRowDeleting" msprop:Generator_RowChangingName="medicamentRowChanging" msprop:Generator_RowEvHandlerName="medicamentRowChangeEventHandler" msprop:Generator_RowDeletedName="medicamentRowDeleted" msprop:Generator_UserTableName="medicament" msprop:Generator_RowChangedName="medicamentRowChanged" msprop:Generator_RowEvArgName="medicamentRowChangeEvent" msprop:Generator_RowClassName="medicamentRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MED_NOMCOMMERCIAL" msprop:Generator_ColumnVarNameInTable="columnMED_NOMCOMMERCIAL" msprop:Generator_ColumnPropNameInRow="MED_NOMCOMMERCIAL" msprop:Generator_ColumnPropNameInTable="MED_NOMCOMMERCIALColumn" msprop:Generator_UserColumnName="MED_NOMCOMMERCIAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MED_COMPOSITION" msprop:Generator_ColumnVarNameInTable="columnMED_COMPOSITION" msprop:Generator_ColumnPropNameInRow="MED_COMPOSITION" msprop:Generator_ColumnPropNameInTable="MED_COMPOSITIONColumn" msprop:Generator_UserColumnName="MED_COMPOSITION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MED_EFFETS" msprop:Generator_ColumnVarNameInTable="columnMED_EFFETS" msprop:Generator_ColumnPropNameInRow="MED_EFFETS" msprop:Generator_ColumnPropNameInTable="MED_EFFETSColumn" msprop:Generator_UserColumnName="MED_EFFETS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

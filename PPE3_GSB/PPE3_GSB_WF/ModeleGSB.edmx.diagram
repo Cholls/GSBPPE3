@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5689c16ed9364adab9a3e20fca7d0bbb" Name="Diagram1">
+        <EntityTypeShape EntityType="GSB_PPE3Model.activite_compl" Width="1.5" PointX="6" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.composant" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.constituer" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.dosage" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.famille" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.inviter" Width="1.5" PointX="11.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.medicament" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.motif" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.offrir" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.posseder" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.praticien" Width="1.5" PointX="6" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.prescrire" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.presentation" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.rapport_visite" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.realiser" Width="1.5" PointX="8.25" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.region" Width="1.5" PointX="8.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.responsable" Width="1.5" PointX="8.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.secteur" Width="1.5" PointX="6" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.specialite" Width="1.5" PointX="6" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.travailler" Width="1.5" PointX="10.5" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.type_individu" Width="1.5" PointX="3" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.type_praticien" Width="1.5" PointX="3.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="GSB_PPE3Model.visiteur" Width="1.5" PointX="6" PointY="17.5" IsExpanded="true" />
+        <AssociationConnector Association="GSB_PPE3Model.inviter_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.realiser_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.constituer_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.constituer_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.prescrire_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.medicament_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.inviter_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.offrir_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.prescrire_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.rapport_visite_ibfk_4" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.offrir_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.posseder_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.posseder_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.praticien_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.rapport_visite_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.rapport_visite_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.prescrire_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.rapport_visite_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.realiser_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.region_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.travailler_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.responsable_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.responsable_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.travailler_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.delegue_regional" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.formuler" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.interagir" ManuallyRouted="false" />
+        <AssociationConnector Association="GSB_PPE3Model.presenter" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

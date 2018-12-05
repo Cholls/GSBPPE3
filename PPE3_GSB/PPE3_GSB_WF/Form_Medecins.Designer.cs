@@ -34,6 +34,11 @@
             this.gSB_PPE3DataSet2 = new PPE3_GSB_WF.GSB_PPE3DataSet2();
             this.btn_Ajouter = new System.Windows.Forms.Button();
             this.grid_Medecins = new System.Windows.Forms.DataGridView();
+            this.pRANOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRAPRENOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRACPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRAVILLEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRAADRESSEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.praticienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gSB_PPE3DataSet1 = new PPE3_GSB_WF.GSB_PPE3DataSet1();
             this.btn_Quitter = new System.Windows.Forms.Button();
@@ -42,11 +47,6 @@
             this.eLEVETableAdapter = new PPE3_GSB_WF.ECOLECONDUITEDataSetTableAdapters.ELEVETableAdapter();
             this.praticienTableAdapter = new PPE3_GSB_WF.GSB_PPE3DataSet1TableAdapters.praticienTableAdapter();
             this.praticienTableAdapter1 = new PPE3_GSB_WF.GSB_PPE3DataSet2TableAdapters.praticienTableAdapter();
-            this.pRANOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRAPRENOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRACPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRAVILLEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRAADRESSEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Medecins)).BeginInit();
@@ -105,8 +105,38 @@
             this.grid_Medecins.Location = new System.Drawing.Point(13, 61);
             this.grid_Medecins.Margin = new System.Windows.Forms.Padding(4);
             this.grid_Medecins.Name = "grid_Medecins";
-            this.grid_Medecins.Size = new System.Drawing.Size(762, 415);
+            this.grid_Medecins.Size = new System.Drawing.Size(755, 415);
             this.grid_Medecins.TabIndex = 19;
+            // 
+            // pRANOMDataGridViewTextBoxColumn
+            // 
+            this.pRANOMDataGridViewTextBoxColumn.DataPropertyName = "PRA_NOM";
+            this.pRANOMDataGridViewTextBoxColumn.HeaderText = "Nom";
+            this.pRANOMDataGridViewTextBoxColumn.Name = "pRANOMDataGridViewTextBoxColumn";
+            // 
+            // pRAPRENOMDataGridViewTextBoxColumn
+            // 
+            this.pRAPRENOMDataGridViewTextBoxColumn.DataPropertyName = "PRA_PRENOM";
+            this.pRAPRENOMDataGridViewTextBoxColumn.HeaderText = "Prénom";
+            this.pRAPRENOMDataGridViewTextBoxColumn.Name = "pRAPRENOMDataGridViewTextBoxColumn";
+            // 
+            // pRACPDataGridViewTextBoxColumn
+            // 
+            this.pRACPDataGridViewTextBoxColumn.DataPropertyName = "PRA_CP";
+            this.pRACPDataGridViewTextBoxColumn.HeaderText = "Code postal";
+            this.pRACPDataGridViewTextBoxColumn.Name = "pRACPDataGridViewTextBoxColumn";
+            // 
+            // pRAVILLEDataGridViewTextBoxColumn
+            // 
+            this.pRAVILLEDataGridViewTextBoxColumn.DataPropertyName = "PRA_VILLE";
+            this.pRAVILLEDataGridViewTextBoxColumn.HeaderText = "Ville";
+            this.pRAVILLEDataGridViewTextBoxColumn.Name = "pRAVILLEDataGridViewTextBoxColumn";
+            // 
+            // pRAADRESSEDataGridViewTextBoxColumn
+            // 
+            this.pRAADRESSEDataGridViewTextBoxColumn.DataPropertyName = "PRA_ADRESSE";
+            this.pRAADRESSEDataGridViewTextBoxColumn.HeaderText = "Adresse";
+            this.pRAADRESSEDataGridViewTextBoxColumn.Name = "pRAADRESSEDataGridViewTextBoxColumn";
             // 
             // praticienBindingSource
             // 
@@ -151,36 +181,6 @@
             // praticienTableAdapter1
             // 
             this.praticienTableAdapter1.ClearBeforeFill = true;
-            // 
-            // pRANOMDataGridViewTextBoxColumn
-            // 
-            this.pRANOMDataGridViewTextBoxColumn.DataPropertyName = "PRA_NOM";
-            this.pRANOMDataGridViewTextBoxColumn.HeaderText = "Nom";
-            this.pRANOMDataGridViewTextBoxColumn.Name = "pRANOMDataGridViewTextBoxColumn";
-            // 
-            // pRAPRENOMDataGridViewTextBoxColumn
-            // 
-            this.pRAPRENOMDataGridViewTextBoxColumn.DataPropertyName = "PRA_PRENOM";
-            this.pRAPRENOMDataGridViewTextBoxColumn.HeaderText = "Prénom";
-            this.pRAPRENOMDataGridViewTextBoxColumn.Name = "pRAPRENOMDataGridViewTextBoxColumn";
-            // 
-            // pRACPDataGridViewTextBoxColumn
-            // 
-            this.pRACPDataGridViewTextBoxColumn.DataPropertyName = "PRA_CP";
-            this.pRACPDataGridViewTextBoxColumn.HeaderText = "Code postal";
-            this.pRACPDataGridViewTextBoxColumn.Name = "pRACPDataGridViewTextBoxColumn";
-            // 
-            // pRAVILLEDataGridViewTextBoxColumn
-            // 
-            this.pRAVILLEDataGridViewTextBoxColumn.DataPropertyName = "PRA_VILLE";
-            this.pRAVILLEDataGridViewTextBoxColumn.HeaderText = "Ville";
-            this.pRAVILLEDataGridViewTextBoxColumn.Name = "pRAVILLEDataGridViewTextBoxColumn";
-            // 
-            // pRAADRESSEDataGridViewTextBoxColumn
-            // 
-            this.pRAADRESSEDataGridViewTextBoxColumn.DataPropertyName = "PRA_ADRESSE";
-            this.pRAADRESSEDataGridViewTextBoxColumn.HeaderText = "Adresse";
-            this.pRAADRESSEDataGridViewTextBoxColumn.Name = "pRAADRESSEDataGridViewTextBoxColumn";
             // 
             // Form_Medecins
             // 
