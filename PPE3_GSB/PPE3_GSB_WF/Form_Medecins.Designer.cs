@@ -60,10 +60,9 @@
             // 
             this.lbl_lstMedecins.AutoSize = true;
             this.lbl_lstMedecins.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lstMedecins.Location = new System.Drawing.Point(127, 21);
-            this.lbl_lstMedecins.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_lstMedecins.Location = new System.Drawing.Point(95, 17);
             this.lbl_lstMedecins.Name = "lbl_lstMedecins";
-            this.lbl_lstMedecins.Size = new System.Drawing.Size(264, 31);
+            this.lbl_lstMedecins.Size = new System.Drawing.Size(215, 25);
             this.lbl_lstMedecins.TabIndex = 24;
             this.lbl_lstMedecins.Text = "Liste des médecins";
             // 
@@ -79,11 +78,10 @@
             // 
             // btn_Ajouter
             // 
-            this.btn_Ajouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Ajouter.Location = new System.Drawing.Point(207, 484);
-            this.btn_Ajouter.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Ajouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Ajouter.Location = new System.Drawing.Point(648, 139);
             this.btn_Ajouter.Name = "btn_Ajouter";
-            this.btn_Ajouter.Size = new System.Drawing.Size(100, 28);
+            this.btn_Ajouter.Size = new System.Drawing.Size(104, 38);
             this.btn_Ajouter.TabIndex = 20;
             this.btn_Ajouter.Text = "Ajouter";
             this.btn_Ajouter.UseVisualStyleBackColor = true;
@@ -102,10 +100,9 @@
             this.pRAADRESSEDataGridViewTextBoxColumn});
             this.grid_Medecins.DataSource = this.praticienBindingSource;
             this.grid_Medecins.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.grid_Medecins.Location = new System.Drawing.Point(13, 61);
-            this.grid_Medecins.Margin = new System.Windows.Forms.Padding(4);
+            this.grid_Medecins.Location = new System.Drawing.Point(12, 50);
             this.grid_Medecins.Name = "grid_Medecins";
-            this.grid_Medecins.Size = new System.Drawing.Size(755, 415);
+            this.grid_Medecins.Size = new System.Drawing.Size(630, 363);
             this.grid_Medecins.TabIndex = 19;
             // 
             // pRANOMDataGridViewTextBoxColumn
@@ -151,10 +148,9 @@
             // btn_Quitter
             // 
             this.btn_Quitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Quitter.Location = new System.Drawing.Point(864, 462);
-            this.btn_Quitter.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Quitter.Location = new System.Drawing.Point(648, 334);
             this.btn_Quitter.Name = "btn_Quitter";
-            this.btn_Quitter.Size = new System.Drawing.Size(139, 48);
+            this.btn_Quitter.Size = new System.Drawing.Size(104, 39);
             this.btn_Quitter.TabIndex = 18;
             this.btn_Quitter.Text = "Quitter";
             this.btn_Quitter.UseVisualStyleBackColor = true;
@@ -184,15 +180,14 @@
             // 
             // Form_Medecins
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 523);
+            this.ClientSize = new System.Drawing.Size(770, 425);
             this.Controls.Add(this.lbl_lstMedecins);
             this.Controls.Add(this.btn_Ajouter);
             this.Controls.Add(this.grid_Medecins);
             this.Controls.Add(this.btn_Quitter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Medecins";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Medecins";
