@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27428.2043
+VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPE3_GSB_Lib", "PPE3_GSB_Lib\PPE3_GSB_Lib.csproj", "{499A561E-5725-4A9A-8B77-5188BE95D032}"
 EndProject

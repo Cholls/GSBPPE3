@@ -12,14 +12,20 @@ namespace PPE3_GSB_WF
 {
     public partial class Form_Medecins : Form
     {
+        private GSB_PPE3Entities1 monModele;
         public Form_Medecins()
         {
             InitializeComponent();
+            monModele = new GSB_PPE3Entities1();
         }
 
         private void btn_Quitter_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Voulez vous fermer la fenêtre ?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                 == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void Form_Medecins_Load(object sender, EventArgs e)
@@ -48,6 +54,18 @@ namespace PPE3_GSB_WF
         {
             Form_Medecins_Ajouter fva = new Form_Medecins_Ajouter();
             fva.Show();
+        }
+
+        /// <summary>
+        /// Permet de sélectionner un praticien parmi la liste du combobox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var req = from v in monModele.praticiens
+                      select v;
+                // Tout afficher dans les TextBox
         }
     }
 }

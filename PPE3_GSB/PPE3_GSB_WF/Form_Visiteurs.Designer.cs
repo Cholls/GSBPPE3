@@ -49,6 +49,7 @@
             this.visiteursBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.visiteursBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.visiteursTableAdapter1 = new PPE3_GSB_WF.GSB_PPE3DataSet4TableAdapters.visiteursTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Visiteurs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visiteursBindingSource3)).BeginInit();
@@ -63,9 +64,10 @@
             // btn_Quitter
             // 
             this.btn_Quitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Quitter.Location = new System.Drawing.Point(658, 328);
+            this.btn_Quitter.Location = new System.Drawing.Point(877, 404);
+            this.btn_Quitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Quitter.Name = "btn_Quitter";
-            this.btn_Quitter.Size = new System.Drawing.Size(104, 39);
+            this.btn_Quitter.Size = new System.Drawing.Size(139, 48);
             this.btn_Quitter.TabIndex = 0;
             this.btn_Quitter.Text = "Quitter";
             this.btn_Quitter.UseVisualStyleBackColor = true;
@@ -76,17 +78,19 @@
             this.grid_Visiteurs.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.grid_Visiteurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_Visiteurs.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.grid_Visiteurs.Location = new System.Drawing.Point(49, 47);
+            this.grid_Visiteurs.Location = new System.Drawing.Point(65, 58);
+            this.grid_Visiteurs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grid_Visiteurs.Name = "grid_Visiteurs";
-            this.grid_Visiteurs.Size = new System.Drawing.Size(553, 337);
+            this.grid_Visiteurs.Size = new System.Drawing.Size(737, 415);
             this.grid_Visiteurs.TabIndex = 1;
             // 
             // btn_Ajouter
             // 
             this.btn_Ajouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Ajouter.Location = new System.Drawing.Point(660, 130);
+            this.btn_Ajouter.Location = new System.Drawing.Point(875, 163);
+            this.btn_Ajouter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Ajouter.Name = "btn_Ajouter";
-            this.btn_Ajouter.Size = new System.Drawing.Size(102, 39);
+            this.btn_Ajouter.Size = new System.Drawing.Size(136, 48);
             this.btn_Ajouter.TabIndex = 2;
             this.btn_Ajouter.Text = "Ajouter";
             this.btn_Ajouter.UseVisualStyleBackColor = true;
@@ -96,9 +100,10 @@
             // 
             this.lbl_lstVisiteurs.AutoSize = true;
             this.lbl_lstVisiteurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lstVisiteurs.Location = new System.Drawing.Point(104, 9);
+            this.lbl_lstVisiteurs.Location = new System.Drawing.Point(139, 11);
+            this.lbl_lstVisiteurs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_lstVisiteurs.Name = "lbl_lstVisiteurs";
-            this.lbl_lstVisiteurs.Size = new System.Drawing.Size(204, 25);
+            this.lbl_lstVisiteurs.Size = new System.Drawing.Size(250, 31);
             this.lbl_lstVisiteurs.TabIndex = 6;
             this.lbl_lstVisiteurs.Text = "Liste des visiteurs";
             // 
@@ -115,9 +120,10 @@
             this.vISVILLEDataGridViewTextBoxColumn,
             this.vISDATEEMBAUCHEDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.visiteursBindingSource3;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 47);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 58);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(638, 366);
+            this.dataGridView1.Size = new System.Drawing.Size(851, 450);
             this.dataGridView1.TabIndex = 9;
             // 
             // vISNOMDataGridViewTextBoxColumn
@@ -199,17 +205,31 @@
             // 
             this.visiteursTableAdapter1.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(875, 58);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 48);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Charger";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form_Visiteurs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 425);
+            this.ClientSize = new System.Drawing.Size(1027, 523);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbl_lstVisiteurs);
             this.Controls.Add(this.btn_Ajouter);
             this.Controls.Add(this.grid_Visiteurs);
             this.Controls.Add(this.btn_Quitter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_Visiteurs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visiteurs";
@@ -250,5 +270,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn vISCPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vISVILLEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vISDATEEMBAUCHEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button1;
     }
 }

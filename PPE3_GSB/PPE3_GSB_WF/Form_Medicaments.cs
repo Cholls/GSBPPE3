@@ -19,7 +19,11 @@ namespace PPE3_GSB_WF
 
         private void btn_Quitter_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Voulez vous fermer la fenêtre ?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void Form_Medicaments_Load(object sender, EventArgs e)

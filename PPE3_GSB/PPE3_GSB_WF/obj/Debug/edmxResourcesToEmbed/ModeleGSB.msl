@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="GSB_PPE3ModelStoreContainer" CdmEntityContainer="GSB_PPE3Entities">
+  <EntityContainerMapping StorageEntityContainer="GSB_PPE3ModelStoreContainer" CdmEntityContainer="GSB_PPE3Entities1">
     <EntitySetMapping Name="activite_compl">
       <EntityTypeMapping TypeName="GSB_PPE3Model.activite_compl">
         <MappingFragment StoreEntitySet="activite_compl">

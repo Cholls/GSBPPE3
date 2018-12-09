@@ -577,7 +577,7 @@
     <End Role="medicament" Type="Self.medicament" Multiplicity="*" />
     <End Role="rapport_visite" Type="Self.rapport_visite" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="GSB_PPE3Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="GSB_PPE3Entities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="activite_compl" EntityType="Self.activite_compl" />
     <EntitySet Name="composants" EntityType="Self.composant" />
     <EntitySet Name="constituers" EntityType="Self.constituer" />

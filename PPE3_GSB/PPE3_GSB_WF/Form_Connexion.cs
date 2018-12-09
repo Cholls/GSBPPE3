@@ -19,7 +19,12 @@ namespace PPE3_GSB_WF
 
         private void btn_Fermer_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Voulez vous fermer l'application ?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            
         }
 
         private void btn_Connexion_Click(object sender, EventArgs e)

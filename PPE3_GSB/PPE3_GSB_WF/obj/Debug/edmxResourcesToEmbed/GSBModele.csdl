@@ -1,0 +1,717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GSB_PPE3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="activite_compl">
+    <Key>
+      <PropertyRef Name="AC_NUM" />
+    </Key>
+    <Property Name="AC_NUM" Type="Int32" Nullable="false" />
+    <Property Name="AC_DATE" Type="DateTime" Precision="0" />
+    <Property Name="AC_LIEU" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="AC_THEME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AC_MOTIF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="inviters" Relationship="Self.inviter_ibfk_1" FromRole="activite_compl" ToRole="inviter" />
+    <NavigationProperty Name="realisers" Relationship="Self.realiser_ibfk_1" FromRole="activite_compl" ToRole="realiser" />
+  </EntityType>
+  <EntityType Name="composant">
+    <Key>
+      <PropertyRef Name="CMP_CODE" />
+    </Key>
+    <Property Name="CMP_CODE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CMP_LIBELLE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="constituers" Relationship="Self.constituer_ibfk_1" FromRole="composant" ToRole="constituer" />
+  </EntityType>
+  <EntityType Name="constituer">
+    <Key>
+      <PropertyRef Name="MED_DEPOTLEGAL" />
+      <PropertyRef Name="CMP_CODE" />
+    </Key>
+    <Property Name="MED_DEPOTLEGAL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CMP_CODE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CST_QTE" Type="Double" />
+    <NavigationProperty Name="composant" Relationship="Self.constituer_ibfk_1" FromRole="constituer" ToRole="composant" />
+    <NavigationProperty Name="medicament" Relationship="Self.constituer_ibfk_2" FromRole="constituer" ToRole="medicament" />
+  </EntityType>
+  <EntityType Name="dosage">
+    <Key>
+      <PropertyRef Name="DOS_CODE" />
+    </Key>
+    <Property Name="DOS_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DOS_QUANTITE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DOS_UNITE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="prescrires" Relationship="Self.prescrire_ibfk_3" FromRole="dosage" ToRole="prescrire" />
+  </EntityType>
+  <EntityType Name="famille">
+    <Key>
+      <PropertyRef Name="FAM_CODE" />
+    </Key>
+    <Property Name="FAM_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FAM_LIBELLE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="medicaments" Relationship="Self.medicament_ibfk_1" FromRole="famille" ToRole="medicament" />
+  </EntityType>
+  <EntityType Name="inviter">
+    <Key>
+      <PropertyRef Name="AC_NUM" />
+      <PropertyRef Name="PRA_NUM" />
+    </Key>
+    <Property Name="AC_NUM" Type="Int32" Nullable="false" />
+    <Property Name="PRA_NUM" Type="Int32" Nullable="false" />
+    <Property Name="SPECIALISTEON" Type="Int32" />
+    <NavigationProperty Name="activite_compl" Relationship="Self.inviter_ibfk_1" FromRole="inviter" ToRole="activite_compl" />
+    <NavigationProperty Name="praticien" Relationship="Self.inviter_ibfk_2" FromRole="inviter" ToRole="praticien" />
+  </EntityType>
+  <EntityType Name="medicament">
+    <Key>
+      <PropertyRef Name="MED_DEPOTLEGAL" />
+    </Key>
+    <Property Name="MED_DEPOTLEGAL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MED_NOMCOMMERCIAL" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FAM_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MED_COMPOSITION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MED_EFFETS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MED_CONTREINDIC" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="constituers" Relationship="Self.constituer_ibfk_2" FromRole="medicament" ToRole="constituer" />
+    <NavigationProperty Name="famille" Relationship="Self.medicament_ibfk_1" FromRole="medicament" ToRole="famille" />
+    <NavigationProperty Name="offrirs" Relationship="Self.offrir_ibfk_1" FromRole="medicament" ToRole="offrir" />
+    <NavigationProperty Name="prescrires" Relationship="Self.prescrire_ibfk_1" FromRole="medicament" ToRole="prescrire" />
+    <NavigationProperty Name="presentations" Relationship="Self.formuler" FromRole="medicament" ToRole="presentation" />
+    <NavigationProperty Name="medicament1" Relationship="Self.interagir" FromRole="medicament" ToRole="medicament1" />
+    <NavigationProperty Name="medicaments" Relationship="Self.interagir" FromRole="medicament1" ToRole="medicament" />
+    <NavigationProperty Name="rapport_visite" Relationship="Self.presenter" FromRole="medicament" ToRole="rapport_visite" />
+  </EntityType>
+  <EntityType Name="motif">
+    <Key>
+      <PropertyRef Name="MOT_CODE" />
+    </Key>
+    <Property Name="MOT_CODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MOT_LIBELLE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="rapport_visite" Relationship="Self.rapport_visite_ibfk_4" FromRole="motif" ToRole="rapport_visite" />
+  </EntityType>
+  <EntityType Name="offrir">
+    <Key>
+      <PropertyRef Name="VIS_MATRICULE" />
+      <PropertyRef Name="RAP_NUM" />
+      <PropertyRef Name="MED_DEPOTLEGAL" />
+    </Key>
+    <Property Name="VIS_MATRICULE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RAP_NUM" Type="Int32" Nullable="false" />
+    <Property Name="MED_DEPOTLEGAL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OFF_QTE" Type="Int32" />
+    <NavigationProperty Name="medicament" Relationship="Self.offrir_ibfk_1" FromRole="offrir" ToRole="medicament" />
+    <NavigationProperty Name="rapport_visite" Relationship="Self.offrir_ibfk_2" FromRole="offrir" ToRole="rapport_visite" />
+  </EntityType>
+  <EntityType Name="posseder">
+    <Key>
+      <PropertyRef Name="PRA_NUM" />
+      <PropertyRef Name="SPE_CODE" />
+    </Key>
+    <Property Name="PRA_NUM" Type="Int32" Nullable="false" />
+    <Property Name="SPE_CODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="POS_DIPLOME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="POS_COEFPRESCRIPTION" Type="Double" />
+    <NavigationProperty Name="specialite" Relationship="Self.posseder_ibfk_1" FromRole="posseder" ToRole="specialite" />
+    <NavigationProperty Name="praticien" Relationship="Self.posseder_ibfk_2" FromRole="posseder" ToRole="praticien" />
+  </EntityType>
+  <EntityType Name="praticien">
+    <Key>
+      <PropertyRef Name="PRA_NUM" />
+    </Key>
+    <Property Name="PRA_NUM" Type="Int32" Nullable="false" />
+    <Property Name="PRA_NOM" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PRA_PRENOM" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PRA_ADRESSE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRA_CP" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="PRA_VILLE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PRA_COEFNOTORIETE" Type="Double" />
+    <Property Name="PRA_COEFCONFIANCE" Type="Double" />
+    <Property Name="TYP_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="inviters" Relationship="Self.inviter_ibfk_2" FromRole="praticien" ToRole="inviter" />
+    <NavigationProperty Name="posseders" Relationship="Self.posseder_ibfk_2" FromRole="praticien" ToRole="posseder" />
+    <NavigationProperty Name="type_praticien" Relationship="Self.praticien_ibfk_1" FromRole="praticien" ToRole="type_praticien" />
+    <NavigationProperty Name="rapport_visite" Relationship="Self.rapport_visite_ibfk_1" FromRole="praticien" ToRole="rapport_visite" />
+    <NavigationProperty Name="rapport_visite1" Relationship="Self.rapport_visite_ibfk_2" FromRole="praticien" ToRole="rapport_visite" />
+  </EntityType>
+  <EntityType Name="prescrire">
+    <Key>
+      <PropertyRef Name="MED_DEPOTLEGAL" />
+      <PropertyRef Name="TIN_CODE" />
+      <PropertyRef Name="DOS_CODE" />
+    </Key>
+    <Property Name="MED_DEPOTLEGAL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TIN_CODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DOS_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRE_POSOLOGIE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="dosage" Relationship="Self.prescrire_ibfk_3" FromRole="prescrire" ToRole="dosage" />
+    <NavigationProperty Name="medicament" Relationship="Self.prescrire_ibfk_1" FromRole="prescrire" ToRole="medicament" />
+    <NavigationProperty Name="type_individu" Relationship="Self.prescrire_ibfk_2" FromRole="prescrire" ToRole="type_individu" />
+  </EntityType>
+  <EntityType Name="presentation">
+    <Key>
+      <PropertyRef Name="PRE_CODE" />
+    </Key>
+    <Property Name="PRE_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRE_LIBELLE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="medicaments" Relationship="Self.formuler" FromRole="presentation" ToRole="medicament" />
+  </EntityType>
+  <EntityType Name="rapport_visite">
+    <Key>
+      <PropertyRef Name="VIS_MATRICULE" />
+      <PropertyRef Name="RAP_NUM" />
+    </Key>
+    <Property Name="VIS_MATRICULE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RAP_NUM" Type="Int32" Nullable="false" />
+    <Property Name="PRA_NUM" Type="Int32" Nullable="false" />
+    <Property Name="PRA_NUM_REMPLACANT" Type="Int32" />
+    <Property Name="RAP_DATE_VISITE" Type="DateTime" Precision="0" />
+    <Property Name="RAP_DATE_SAISIE" Type="DateTime" Precision="0" />
+    <Property Name="RAP_BILAN" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RAP_MOTIF_AUTRE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MOT_CODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RAP_DOCUMENTATION" Type="Int32" Nullable="false" />
+    <Property Name="RAP_SAISIEDEFINITIVE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="motif" Relationship="Self.rapport_visite_ibfk_4" FromRole="rapport_visite" ToRole="motif" />
+    <NavigationProperty Name="offrirs" Relationship="Self.offrir_ibfk_2" FromRole="rapport_visite" ToRole="offrir" />
+    <NavigationProperty Name="praticien" Relationship="Self.rapport_visite_ibfk_1" FromRole="rapport_visite" ToRole="praticien" />
+    <NavigationProperty Name="praticien1" Relationship="Self.rapport_visite_ibfk_2" FromRole="rapport_visite" ToRole="praticien" />
+    <NavigationProperty Name="visiteur" Relationship="Self.rapport_visite_ibfk_3" FromRole="rapport_visite" ToRole="visiteurs" />
+    <NavigationProperty Name="medicaments" Relationship="Self.presenter" FromRole="rapport_visite" ToRole="medicament" />
+  </EntityType>
+  <EntityType Name="realiser">
+    <Key>
+      <PropertyRef Name="AC_NUM" />
+      <PropertyRef Name="VIS_MATRICULE" />
+    </Key>
+    <Property Name="AC_NUM" Type="Int32" Nullable="false" />
+    <Property Name="VIS_MATRICULE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="REA_MTTFRAIS" Type="Double" />
+    <NavigationProperty Name="activite_compl" Relationship="Self.realiser_ibfk_1" FromRole="realiser" ToRole="activite_compl" />
+    <NavigationProperty Name="visiteur" Relationship="Self.realiser_ibfk_2" FromRole="realiser" ToRole="visiteurs" />
+  </EntityType>
+  <EntityType Name="region">
+    <Key>
+      <PropertyRef Name="REG_CODE" />
+    </Key>
+    <Property Name="REG_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SEC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="REG_NOM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="secteur" Relationship="Self.region_ibfk_1" FromRole="region" ToRole="secteur" />
+    <NavigationProperty Name="travaillers" Relationship="Self.travailler_ibfk_1" FromRole="region" ToRole="travailler" />
+    <NavigationProperty Name="visiteurs" Relationship="Self.delegue_regional" FromRole="region" ToRole="visiteurs" />
+  </EntityType>
+  <EntityType Name="responsable">
+    <Key>
+      <PropertyRef Name="RES_MATRICULE" />
+    </Key>
+    <Property Name="RES_MATRICULE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SEC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="visiteur" Relationship="Self.responsable_ibfk_1" FromRole="responsable" ToRole="visiteurs" />
+    <NavigationProperty Name="secteur" Relationship="Self.responsable_ibfk_2" FromRole="responsable" ToRole="secteur" />
+  </EntityType>
+  <EntityType Name="secteur">
+    <Key>
+      <PropertyRef Name="SEC_CODE" />
+    </Key>
+    <Property Name="SEC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SEC_LIBELLE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="regions" Relationship="Self.region_ibfk_1" FromRole="secteur" ToRole="region" />
+    <NavigationProperty Name="responsables" Relationship="Self.responsable_ibfk_2" FromRole="secteur" ToRole="responsable" />
+  </EntityType>
+  <EntityType Name="specialite">
+    <Key>
+      <PropertyRef Name="SPE_CODE" />
+    </Key>
+    <Property Name="SPE_CODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SPE_LIBELLE" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="posseders" Relationship="Self.posseder_ibfk_1" FromRole="specialite" ToRole="posseder" />
+  </EntityType>
+  <EntityType Name="travailler">
+    <Key>
+      <PropertyRef Name="VIS_MATRICULE" />
+      <PropertyRef Name="JJMMAA" />
+      <PropertyRef Name="REG_CODE" />
+    </Key>
+    <Property Name="VIS_MATRICULE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="JJMMAA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="REG_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="region" Relationship="Self.travailler_ibfk_1" FromRole="travailler" ToRole="region" />
+    <NavigationProperty Name="visiteur" Relationship="Self.travailler_ibfk_2" FromRole="travailler" ToRole="visiteurs" />
+  </EntityType>
+  <EntityType Name="type_individu">
+    <Key>
+      <PropertyRef Name="TIN_CODE" />
+    </Key>
+    <Property Name="TIN_CODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TIN_LIBELLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="prescrires" Relationship="Self.prescrire_ibfk_2" FromRole="type_individu" ToRole="prescrire" />
+  </EntityType>
+  <EntityType Name="type_praticien">
+    <Key>
+      <PropertyRef Name="TYP_CODE" />
+    </Key>
+    <Property Name="TYP_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TYP_LIBELLE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="TYP_LIEU" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="praticiens" Relationship="Self.praticien_ibfk_1" FromRole="type_praticien" ToRole="praticien" />
+  </EntityType>
+  <EntityType Name="visiteur">
+    <Key>
+      <PropertyRef Name="VIS_MATRICULE" />
+    </Key>
+    <Property Name="VIS_MATRICULE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VIS_NOM" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="VIS_PRENOM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VIS_ADRESSE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VIS_CP" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="VIS_VILLE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="VIS_DATEEMBAUCHE" Type="DateTime" Precision="0" />
+    <Property Name="VIS_LOGIN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VIS_MDP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="rapport_visite" Relationship="Self.rapport_visite_ibfk_3" FromRole="visiteurs" ToRole="rapport_visite" />
+    <NavigationProperty Name="realisers" Relationship="Self.realiser_ibfk_2" FromRole="visiteurs" ToRole="realiser" />
+    <NavigationProperty Name="responsable" Relationship="Self.responsable_ibfk_1" FromRole="visiteurs" ToRole="responsable" />
+    <NavigationProperty Name="travaillers" Relationship="Self.travailler_ibfk_2" FromRole="visiteurs" ToRole="travailler" />
+    <NavigationProperty Name="region" Relationship="Self.delegue_regional" FromRole="visiteurs" ToRole="region" />
+  </EntityType>
+  <Association Name="inviter_ibfk_1">
+    <End Role="activite_compl" Type="Self.activite_compl" Multiplicity="1" />
+    <End Role="inviter" Type="Self.inviter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="activite_compl">
+        <PropertyRef Name="AC_NUM" />
+      </Principal>
+      <Dependent Role="inviter">
+        <PropertyRef Name="AC_NUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="realiser_ibfk_1">
+    <End Role="activite_compl" Type="Self.activite_compl" Multiplicity="1" />
+    <End Role="realiser" Type="Self.realiser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="activite_compl">
+        <PropertyRef Name="AC_NUM" />
+      </Principal>
+      <Dependent Role="realiser">
+        <PropertyRef Name="AC_NUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="constituer_ibfk_1">
+    <End Role="composant" Type="Self.composant" Multiplicity="1" />
+    <End Role="constituer" Type="Self.constituer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="composant">
+        <PropertyRef Name="CMP_CODE" />
+      </Principal>
+      <Dependent Role="constituer">
+        <PropertyRef Name="CMP_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="constituer_ibfk_2">
+    <End Role="medicament" Type="Self.medicament" Multiplicity="1" />
+    <End Role="constituer" Type="Self.constituer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="medicament">
+        <PropertyRef Name="MED_DEPOTLEGAL" />
+      </Principal>
+      <Dependent Role="constituer">
+        <PropertyRef Name="MED_DEPOTLEGAL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="prescrire_ibfk_3">
+    <End Role="dosage" Type="Self.dosage" Multiplicity="1" />
+    <End Role="prescrire" Type="Self.prescrire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dosage">
+        <PropertyRef Name="DOS_CODE" />
+      </Principal>
+      <Dependent Role="prescrire">
+        <PropertyRef Name="DOS_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="medicament_ibfk_1">
+    <End Role="famille" Type="Self.famille" Multiplicity="1" />
+    <End Role="medicament" Type="Self.medicament" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="famille">
+        <PropertyRef Name="FAM_CODE" />
+      </Principal>
+      <Dependent Role="medicament">
+        <PropertyRef Name="FAM_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="inviter_ibfk_2">
+    <End Role="praticien" Type="Self.praticien" Multiplicity="1" />
+    <End Role="inviter" Type="Self.inviter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="praticien">
+        <PropertyRef Name="PRA_NUM" />
+      </Principal>
+      <Dependent Role="inviter">
+        <PropertyRef Name="PRA_NUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="offrir_ibfk_1">
+    <End Role="medicament" Type="Self.medicament" Multiplicity="1" />
+    <End Role="offrir" Type="Self.offrir" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="medicament">
+        <PropertyRef Name="MED_DEPOTLEGAL" />
+      </Principal>
+      <Dependent Role="offrir">
+        <PropertyRef Name="MED_DEPOTLEGAL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="prescrire_ibfk_1">
+    <End Role="medicament" Type="Self.medicament" Multiplicity="1" />
+    <End Role="prescrire" Type="Self.prescrire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="medicament">
+        <PropertyRef Name="MED_DEPOTLEGAL" />
+      </Principal>
+      <Dependent Role="prescrire">
+        <PropertyRef Name="MED_DEPOTLEGAL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="rapport_visite_ibfk_4">
+    <End Role="motif" Type="Self.motif" Multiplicity="1" />
+    <End Role="rapport_visite" Type="Self.rapport_visite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="motif">
+        <PropertyRef Name="MOT_CODE" />
+      </Principal>
+      <Dependent Role="rapport_visite">
+        <PropertyRef Name="MOT_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="offrir_ibfk_2">
+    <End Role="rapport_visite" Type="Self.rapport_visite" Multiplicity="1" />
+    <End Role="offrir" Type="Self.offrir" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rapport_visite">
+        <PropertyRef Name="VIS_MATRICULE" />
+        <PropertyRef Name="RAP_NUM" />
+      </Principal>
+      <Dependent Role="offrir">
+        <PropertyRef Name="VIS_MATRICULE" />
+        <PropertyRef Name="RAP_NUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="posseder_ibfk_1">
+    <End Role="specialite" Type="Self.specialite" Multiplicity="1" />
+    <End Role="posseder" Type="Self.posseder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="specialite">
+        <PropertyRef Name="SPE_CODE" />
+      </Principal>
+      <Dependent Role="posseder">
+        <PropertyRef Name="SPE_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="posseder_ibfk_2">
+    <End Role="praticien" Type="Self.praticien" Multiplicity="1" />
+    <End Role="posseder" Type="Self.posseder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="praticien">
+        <PropertyRef Name="PRA_NUM" />
+      </Principal>
+      <Dependent Role="posseder">
+        <PropertyRef Name="PRA_NUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="praticien_ibfk_1">
+    <End Role="type_praticien" Type="Self.type_praticien" Multiplicity="1" />
+    <End Role="praticien" Type="Self.praticien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_praticien">
+        <PropertyRef Name="TYP_CODE" />
+      </Principal>
+      <Dependent Role="praticien">
+        <PropertyRef Name="TYP_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="rapport_visite_ibfk_1">
+    <End Role="praticien" Type="Self.praticien" Multiplicity="1" />
+    <End Role="rapport_visite" Type="Self.rapport_visite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="praticien">
+        <PropertyRef Name="PRA_NUM" />
+      </Principal>
+      <Dependent Role="rapport_visite">
+        <PropertyRef Name="PRA_NUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="rapport_visite_ibfk_2">
+    <End Role="praticien" Type="Self.praticien" Multiplicity="0..1" />
+    <End Role="rapport_visite" Type="Self.rapport_visite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="praticien">
+        <PropertyRef Name="PRA_NUM" />
+      </Principal>
+      <Dependent Role="rapport_visite">
+        <PropertyRef Name="PRA_NUM_REMPLACANT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="prescrire_ibfk_2">
+    <End Role="type_individu" Type="Self.type_individu" Multiplicity="1" />
+    <End Role="prescrire" Type="Self.prescrire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_individu">
+        <PropertyRef Name="TIN_CODE" />
+      </Principal>
+      <Dependent Role="prescrire">
+        <PropertyRef Name="TIN_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="rapport_visite_ibfk_3">
+    <End Role="visiteurs" Type="Self.visiteur" Multiplicity="1" />
+    <End Role="rapport_visite" Type="Self.rapport_visite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="visiteurs">
+        <PropertyRef Name="VIS_MATRICULE" />
+      </Principal>
+      <Dependent Role="rapport_visite">
+        <PropertyRef Name="VIS_MATRICULE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="realiser_ibfk_2">
+    <End Role="visiteurs" Type="Self.visiteur" Multiplicity="1" />
+    <End Role="realiser" Type="Self.realiser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="visiteurs">
+        <PropertyRef Name="VIS_MATRICULE" />
+      </Principal>
+      <Dependent Role="realiser">
+        <PropertyRef Name="VIS_MATRICULE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="region_ibfk_1">
+    <End Role="secteur" Type="Self.secteur" Multiplicity="1" />
+    <End Role="region" Type="Self.region" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="secteur">
+        <PropertyRef Name="SEC_CODE" />
+      </Principal>
+      <Dependent Role="region">
+        <PropertyRef Name="SEC_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="travailler_ibfk_1">
+    <End Role="region" Type="Self.region" Multiplicity="1" />
+    <End Role="travailler" Type="Self.travailler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="region">
+        <PropertyRef Name="REG_CODE" />
+      </Principal>
+      <Dependent Role="travailler">
+        <PropertyRef Name="REG_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="responsable_ibfk_1">
+    <End Role="visiteurs" Type="Self.visiteur" Multiplicity="1" />
+    <End Role="responsable" Type="Self.responsable" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="visiteurs">
+        <PropertyRef Name="VIS_MATRICULE" />
+      </Principal>
+      <Dependent Role="responsable">
+        <PropertyRef Name="RES_MATRICULE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="responsable_ibfk_2">
+    <End Role="secteur" Type="Self.secteur" Multiplicity="0..1" />
+    <End Role="responsable" Type="Self.responsable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="secteur">
+        <PropertyRef Name="SEC_CODE" />
+      </Principal>
+      <Dependent Role="responsable">
+        <PropertyRef Name="SEC_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="travailler_ibfk_2">
+    <End Role="visiteurs" Type="Self.visiteur" Multiplicity="1" />
+    <End Role="travailler" Type="Self.travailler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="visiteurs">
+        <PropertyRef Name="VIS_MATRICULE" />
+      </Principal>
+      <Dependent Role="travailler">
+        <PropertyRef Name="VIS_MATRICULE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="delegue_regional">
+    <End Role="visiteurs" Type="Self.visiteur" Multiplicity="*" />
+    <End Role="region" Type="Self.region" Multiplicity="0..1" />
+  </Association>
+  <Association Name="formuler">
+    <End Role="presentation" Type="Self.presentation" Multiplicity="*" />
+    <End Role="medicament" Type="Self.medicament" Multiplicity="*" />
+  </Association>
+  <Association Name="interagir">
+    <End Role="medicament" Type="Self.medicament" Multiplicity="*" />
+    <End Role="medicament1" Type="Self.medicament" Multiplicity="*" />
+  </Association>
+  <Association Name="presenter">
+    <End Role="medicament" Type="Self.medicament" Multiplicity="*" />
+    <End Role="rapport_visite" Type="Self.rapport_visite" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="GSBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="activite_compl" EntityType="Self.activite_compl" />
+    <EntitySet Name="composants" EntityType="Self.composant" />
+    <EntitySet Name="constituers" EntityType="Self.constituer" />
+    <EntitySet Name="dosages" EntityType="Self.dosage" />
+    <EntitySet Name="familles" EntityType="Self.famille" />
+    <EntitySet Name="inviters" EntityType="Self.inviter" />
+    <EntitySet Name="medicaments" EntityType="Self.medicament" />
+    <EntitySet Name="motifs" EntityType="Self.motif" />
+    <EntitySet Name="offrirs" EntityType="Self.offrir" />
+    <EntitySet Name="posseders" EntityType="Self.posseder" />
+    <EntitySet Name="praticiens" EntityType="Self.praticien" />
+    <EntitySet Name="prescrires" EntityType="Self.prescrire" />
+    <EntitySet Name="presentations" EntityType="Self.presentation" />
+    <EntitySet Name="rapport_visite" EntityType="Self.rapport_visite" />
+    <EntitySet Name="realisers" EntityType="Self.realiser" />
+    <EntitySet Name="regions" EntityType="Self.region" />
+    <EntitySet Name="responsables" EntityType="Self.responsable" />
+    <EntitySet Name="secteurs" EntityType="Self.secteur" />
+    <EntitySet Name="specialites" EntityType="Self.specialite" />
+    <EntitySet Name="travaillers" EntityType="Self.travailler" />
+    <EntitySet Name="type_individu" EntityType="Self.type_individu" />
+    <EntitySet Name="type_praticien" EntityType="Self.type_praticien" />
+    <EntitySet Name="visiteurs" EntityType="Self.visiteur" />
+    <AssociationSet Name="inviter_ibfk_1" Association="Self.inviter_ibfk_1">
+      <End Role="activite_compl" EntitySet="activite_compl" />
+      <End Role="inviter" EntitySet="inviters" />
+    </AssociationSet>
+    <AssociationSet Name="realiser_ibfk_1" Association="Self.realiser_ibfk_1">
+      <End Role="activite_compl" EntitySet="activite_compl" />
+      <End Role="realiser" EntitySet="realisers" />
+    </AssociationSet>
+    <AssociationSet Name="constituer_ibfk_1" Association="Self.constituer_ibfk_1">
+      <End Role="composant" EntitySet="composants" />
+      <End Role="constituer" EntitySet="constituers" />
+    </AssociationSet>
+    <AssociationSet Name="constituer_ibfk_2" Association="Self.constituer_ibfk_2">
+      <End Role="medicament" EntitySet="medicaments" />
+      <End Role="constituer" EntitySet="constituers" />
+    </AssociationSet>
+    <AssociationSet Name="prescrire_ibfk_3" Association="Self.prescrire_ibfk_3">
+      <End Role="dosage" EntitySet="dosages" />
+      <End Role="prescrire" EntitySet="prescrires" />
+    </AssociationSet>
+    <AssociationSet Name="medicament_ibfk_1" Association="Self.medicament_ibfk_1">
+      <End Role="famille" EntitySet="familles" />
+      <End Role="medicament" EntitySet="medicaments" />
+    </AssociationSet>
+    <AssociationSet Name="inviter_ibfk_2" Association="Self.inviter_ibfk_2">
+      <End Role="praticien" EntitySet="praticiens" />
+      <End Role="inviter" EntitySet="inviters" />
+    </AssociationSet>
+    <AssociationSet Name="offrir_ibfk_1" Association="Self.offrir_ibfk_1">
+      <End Role="medicament" EntitySet="medicaments" />
+      <End Role="offrir" EntitySet="offrirs" />
+    </AssociationSet>
+    <AssociationSet Name="prescrire_ibfk_1" Association="Self.prescrire_ibfk_1">
+      <End Role="medicament" EntitySet="medicaments" />
+      <End Role="prescrire" EntitySet="prescrires" />
+    </AssociationSet>
+    <AssociationSet Name="rapport_visite_ibfk_4" Association="Self.rapport_visite_ibfk_4">
+      <End Role="motif" EntitySet="motifs" />
+      <End Role="rapport_visite" EntitySet="rapport_visite" />
+    </AssociationSet>
+    <AssociationSet Name="offrir_ibfk_2" Association="Self.offrir_ibfk_2">
+      <End Role="rapport_visite" EntitySet="rapport_visite" />
+      <End Role="offrir" EntitySet="offrirs" />
+    </AssociationSet>
+    <AssociationSet Name="posseder_ibfk_1" Association="Self.posseder_ibfk_1">
+      <End Role="specialite" EntitySet="specialites" />
+      <End Role="posseder" EntitySet="posseders" />
+    </AssociationSet>
+    <AssociationSet Name="posseder_ibfk_2" Association="Self.posseder_ibfk_2">
+      <End Role="praticien" EntitySet="praticiens" />
+      <End Role="posseder" EntitySet="posseders" />
+    </AssociationSet>
+    <AssociationSet Name="praticien_ibfk_1" Association="Self.praticien_ibfk_1">
+      <End Role="type_praticien" EntitySet="type_praticien" />
+      <End Role="praticien" EntitySet="praticiens" />
+    </AssociationSet>
+    <AssociationSet Name="rapport_visite_ibfk_1" Association="Self.rapport_visite_ibfk_1">
+      <End Role="praticien" EntitySet="praticiens" />
+      <End Role="rapport_visite" EntitySet="rapport_visite" />
+    </AssociationSet>
+    <AssociationSet Name="rapport_visite_ibfk_2" Association="Self.rapport_visite_ibfk_2">
+      <End Role="praticien" EntitySet="praticiens" />
+      <End Role="rapport_visite" EntitySet="rapport_visite" />
+    </AssociationSet>
+    <AssociationSet Name="prescrire_ibfk_2" Association="Self.prescrire_ibfk_2">
+      <End Role="type_individu" EntitySet="type_individu" />
+      <End Role="prescrire" EntitySet="prescrires" />
+    </AssociationSet>
+    <AssociationSet Name="rapport_visite_ibfk_3" Association="Self.rapport_visite_ibfk_3">
+      <End Role="visiteurs" EntitySet="visiteurs" />
+      <End Role="rapport_visite" EntitySet="rapport_visite" />
+    </AssociationSet>
+    <AssociationSet Name="realiser_ibfk_2" Association="Self.realiser_ibfk_2">
+      <End Role="visiteurs" EntitySet="visiteurs" />
+      <End Role="realiser" EntitySet="realisers" />
+    </AssociationSet>
+    <AssociationSet Name="region_ibfk_1" Association="Self.region_ibfk_1">
+      <End Role="secteur" EntitySet="secteurs" />
+      <End Role="region" EntitySet="regions" />
+    </AssociationSet>
+    <AssociationSet Name="travailler_ibfk_1" Association="Self.travailler_ibfk_1">
+      <End Role="region" EntitySet="regions" />
+      <End Role="travailler" EntitySet="travaillers" />
+    </AssociationSet>
+    <AssociationSet Name="responsable_ibfk_1" Association="Self.responsable_ibfk_1">
+      <End Role="visiteurs" EntitySet="visiteurs" />
+      <End Role="responsable" EntitySet="responsables" />
+    </AssociationSet>
+    <AssociationSet Name="responsable_ibfk_2" Association="Self.responsable_ibfk_2">
+      <End Role="secteur" EntitySet="secteurs" />
+      <End Role="responsable" EntitySet="responsables" />
+    </AssociationSet>
+    <AssociationSet Name="travailler_ibfk_2" Association="Self.travailler_ibfk_2">
+      <End Role="visiteurs" EntitySet="visiteurs" />
+      <End Role="travailler" EntitySet="travaillers" />
+    </AssociationSet>
+    <AssociationSet Name="delegue_regional" Association="Self.delegue_regional">
+      <End Role="visiteurs" EntitySet="visiteurs" />
+      <End Role="region" EntitySet="regions" />
+    </AssociationSet>
+    <AssociationSet Name="formuler" Association="Self.formuler">
+      <End Role="presentation" EntitySet="presentations" />
+      <End Role="medicament" EntitySet="medicaments" />
+    </AssociationSet>
+    <AssociationSet Name="interagir" Association="Self.interagir">
+      <End Role="medicament" EntitySet="medicaments" />
+      <End Role="medicament1" EntitySet="medicaments" />
+    </AssociationSet>
+    <AssociationSet Name="presenter" Association="Self.presenter">
+      <End Role="medicament" EntitySet="medicaments" />
+      <End Role="rapport_visite" EntitySet="rapport_visite" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5689c16ed9364adab9a3e20fca7d0bbb" Name="Diagram1">
+      <Diagram DiagramId="df63b863dcec464ab6c4e73f61d6eff3" Name="Diagram1">
         <EntityTypeShape EntityType="GSB_PPE3Model.activite_compl" Width="1.5" PointX="6" PointY="25.25" IsExpanded="true" />
         <EntityTypeShape EntityType="GSB_PPE3Model.composant" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="GSB_PPE3Model.constituer" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />

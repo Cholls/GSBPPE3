@@ -12,9 +12,11 @@ namespace PPE3_GSB_WF
 {
     public partial class Form_Visiteurs : Form
     {
+        private GSB_PPE3Entities1 monModele;
         public Form_Visiteurs()
         {
             InitializeComponent();
+            monModele = new GSB_PPE3Entities1();
         }
 
         private void Form_Visiteurs_Load(object sender, EventArgs e)
@@ -28,7 +30,11 @@ namespace PPE3_GSB_WF
 
         private void btn_Quitter_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Voulez vous fermer la fenêtre ?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void btn_Ajouter_Click(object sender, EventArgs e)
@@ -46,6 +52,19 @@ namespace PPE3_GSB_WF
         {
             Form_Visiteurs_Modifier fvm = new Form_Visiteurs_Modifier();
             fvm.Show();
+        }
+
+        /// <summary>
+        /// TEST CHARGER DONNEES
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var req = from v in monModele.visiteurs
+                      select v;
+            visiteursBindingSource3.DataSource = req.ToList();
+            dataGridView1.DataSource = visiteursBindingSource3;
         }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GSB_PPE3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="GSB_PPE3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="activite_compl">
           <Key>
             <PropertyRef Name="AC_NUM" />
@@ -1380,7 +1380,7 @@
           <End Role="medicament" Type="Self.medicament" Multiplicity="*" />
           <End Role="rapport_visite" Type="Self.rapport_visite" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="GSB_PPE3Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="GSB_PPE3Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="activite_compl" EntityType="Self.activite_compl" />
           <EntitySet Name="composants" EntityType="Self.composant" />
           <EntitySet Name="constituers" EntityType="Self.constituer" />
@@ -1522,7 +1522,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="GSB_PPE3ModelStoreContainer" CdmEntityContainer="GSB_PPE3Entities">
+        <EntityContainerMapping StorageEntityContainer="GSB_PPE3ModelStoreContainer" CdmEntityContainer="GSB_PPE3Entities1">
           <EntitySetMapping Name="activite_compl">
             <EntityTypeMapping TypeName="GSB_PPE3Model.activite_compl">
               <MappingFragment StoreEntitySet="activite_compl">
@@ -1799,7 +1799,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
       </DesignerInfoPropertySet>
     </Options>
