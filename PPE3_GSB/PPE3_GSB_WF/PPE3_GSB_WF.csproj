@@ -176,6 +176,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GSB_PPE3DataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GSB_PPE3DataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GSB_PPE3DataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="inviter.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
@@ -365,6 +370,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModeleGSB.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="GSB_PPE3DataSet6.xsc">
+      <DependentUpon>GSB_PPE3DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="GSB_PPE3DataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GSB_PPE3DataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GSB_PPE3DataSet6.xss">
+      <DependentUpon>GSB_PPE3DataSet6.xsd</DependentUpon>
+    </None>
     <None Include="ModeleGSB.edmx.diagram">
       <DependentUpon>ModeleGSB.edmx</DependentUpon>
     </None>

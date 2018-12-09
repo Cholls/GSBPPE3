@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GSB_PPE3DataSet6" targetNamespace="http://tempuri.org/GSB_PPE3DataSet6.xsd" xmlns:mstns="http://tempuri.org/GSB_PPE3DataSet6.xsd" xmlns="http://tempuri.org/GSB_PPE3DataSet6.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GSB_PPE3ConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GSB_PPE3ConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.PPE3_GSB_WF.Properties.Settings.GlobalReference.Default.GSB_PPE3ConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="praticienTableAdapter" GeneratorDataComponentClassName="praticienTableAdapter" Name="praticien" UserDataComponentName="praticienTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GSB_PPE3ConnectionString1 (Settings)" DbObjectName="GSB_PPE3.dbo.praticien" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TYP_CODE FROM dbo.praticien</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TYP_CODE" DataSetColumn="TYP_CODE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="GSB_PPE3DataSet6" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="GSB_PPE3DataSet6" msprop:Generator_UserDSName="GSB_PPE3DataSet6">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="praticien" msprop:Generator_TableClassName="praticienDataTable" msprop:Generator_TableVarName="tablepraticien" msprop:Generator_TablePropName="praticien" msprop:Generator_RowDeletingName="praticienRowDeleting" msprop:Generator_RowChangingName="praticienRowChanging" msprop:Generator_RowEvHandlerName="praticienRowChangeEventHandler" msprop:Generator_RowDeletedName="praticienRowDeleted" msprop:Generator_UserTableName="praticien" msprop:Generator_RowChangedName="praticienRowChanged" msprop:Generator_RowEvArgName="praticienRowChangeEvent" msprop:Generator_RowClassName="praticienRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TYP_CODE" msprop:Generator_ColumnVarNameInTable="columnTYP_CODE" msprop:Generator_ColumnPropNameInRow="TYP_CODE" msprop:Generator_ColumnPropNameInTable="TYP_CODEColumn" msprop:Generator_UserColumnName="TYP_CODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

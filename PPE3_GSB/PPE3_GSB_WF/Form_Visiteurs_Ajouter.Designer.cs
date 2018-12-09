@@ -77,10 +77,10 @@
             // 
             this.tb_Adresse.Location = new System.Drawing.Point(179, 200);
             this.tb_Adresse.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_Adresse.MaxLength = 25;
+            this.tb_Adresse.MaxLength = 40;
             this.tb_Adresse.Multiline = true;
             this.tb_Adresse.Name = "tb_Adresse";
-            this.tb_Adresse.Size = new System.Drawing.Size(292, 22);
+            this.tb_Adresse.Size = new System.Drawing.Size(331, 22);
             this.tb_Adresse.TabIndex = 4;
             // 
             // tb_CP

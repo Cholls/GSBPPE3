@@ -23,32 +23,53 @@ namespace PPE3_GSB_WF
             seConnecte.ShowDialog();
         }
 
-        private void visiteursToolStripMenuItem_Click(object sender, EventArgs e)
+ 
+        private void ajouterUnVisiteurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Visiteurs_Ajouter fva = new Form_Visiteurs_Ajouter();
+            fva.Show();
+        }
+
+        private void visualiserLesVisiteursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_Visiteurs fv = new Form_Visiteurs();
             fv.MdiParent = this;
             fv.Show();
         }
 
-        private void rapportsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ajouterUnRapportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Rapports fr = new Form_Rapports();
-            fr.MdiParent = this;
-            fr.Show();
+            // Ici on ajoutera le code pour ouvrir la fenêtre permettant de créer un rapport
         }
 
-        private void medicamentsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void visualiserLesRapportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Medicaments fm = new Form_Medicaments();
-            fm.MdiParent = this;
-            fm.Show();
+            // Ici on ajoutera le code pour ouvrir la fenêtre permettant de visualiser un rapport
         }
 
-        private void medecinsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ajouterUnMédicamentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Medecins fd = new Form_Medecins();
-            fd.MdiParent = this;
-            fd.Show();
+            // Ici on ajoutera le code pour ouvrir la fenêtre permettant d'ajouter un médicament
+        }
+
+        private void visualiserLesMédicamentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Medicaments fv = new Form_Medicaments();
+            fv.MdiParent = this;
+            fv.Show();
+        }
+
+        private void ajouterUnMédecinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Medecins_Ajouter fva = new Form_Medecins_Ajouter();
+            fva.Show();
+        }
+
+        private void visualiserLesMedecintoolTip_Click(object sender, EventArgs e)
+        {
+            Form_Medecins fva = new Form_Medecins();
+            fva.MdiParent = this;
+            fva.Show();
         }
     }
 }

@@ -12,10 +12,11 @@ namespace PPE3_GSB_WF
 {
     public partial class Form_Medecins_Ajouter : Form
     {
+        private GSB_PPE3Entities1 monModele;
         public Form_Medecins_Ajouter()
         {
             InitializeComponent();
-
+            monModele = new GSB_PPE3Entities1();
         }
 
         /// <summary>
@@ -27,36 +28,62 @@ namespace PPE3_GSB_WF
         {
             using (var context = new GSB_PPE3Entities1())
             {
+                // Vérification si les champs sont vides. S'ils sont vides, message d'erreur.
                 if (tb_Matricule.Text == "" && tb_Nom.Text == "" && tb_Prenom.Text == "" &&
                     tb_Adresse.Text == "" && tb_CP.Text == "" && tb_Ville.Text == ""
                      && tb_coefNot.Text == "" && tb_coefConf.Text == "")
                 {
                     MessageBox.Show("Tous les champs ne sont pas renseignés ! ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
+                else // Si les champs ne sont pas vides alors, il faut les contrôler
                 {
-                    var unPraticien = new praticien()
+                    // Vérification si les données rentrées existent déjà
+                    var req = from p in monModele.praticiens
+                              select p;
+
+                    //string num = req.First();
+                    bool identique = false;
+                    // Il faut parcourir la liste pour savoir si le num tapé correspond à un num dans la liste
+                    foreach (var resultat in req)
                     {
-                        PRA_NUM = Convert.ToInt32(tb_Matricule.Text),
-                        PRA_NOM = tb_Nom.Text,
-                        PRA_PRENOM = tb_Prenom.Text,
-                        PRA_ADRESSE = tb_Adresse.Text,
-                        PRA_CP = tb_CP.Text,
-                        PRA_VILLE = tb_Ville.Text,
-                        PRA_COEFNOTORIETE = Convert.ToInt32(tb_coefNot.Text),
-                        PRA_COEFCONFIANCE = Convert.ToInt32(tb_coefConf.Text),
-                        TYP_CODE = cb_spe.Text
-                    };
-                    // Ajout du visiteur dans la liste gérees par le programme
-                    context.praticiens.Add(unPraticien);
-                    // Sauvegarde de l'ajout dans la BDD
-                    context.SaveChanges();
+                        if (tb_Matricule.Text == Convert.ToString(resultat.PRA_NUM))
+                        {
+                            identique = true;
+                        }
+                    }
+                    // Si dans la liste, on a trouvé un numéro similaire à celui saisi dans le textbox du matricules
+                    if (identique == true)
+                    {
+                        MessageBox.Show("Le numéro de visiteur existe déjà. En choisir un autre. ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        var unPraticien = new praticien()
+                        {
+                            PRA_NUM = Convert.ToInt32(tb_Matricule.Text),
+                            PRA_NOM = tb_Nom.Text,
+                            PRA_PRENOM = tb_Prenom.Text,
+                            PRA_ADRESSE = tb_Adresse.Text,
+                            PRA_CP = tb_CP.Text,
+                            PRA_VILLE = tb_Ville.Text,
+                            PRA_COEFNOTORIETE = Convert.ToInt32(tb_coefNot.Text),
+                            PRA_COEFCONFIANCE = Convert.ToInt32(tb_coefConf.Text),
+                            TYP_CODE = cb_spe.SelectedValue.ToString()
+                        };
+                        // Ajout du visiteur dans la liste gérees par le programme
+                        context.praticiens.Add(unPraticien);
+                        // Sauvegarde de l'ajout dans la BDD
+                        context.SaveChanges();
+                    }
+                    
                 }
             }
         }
 
         private void Form_Medecins_Ajouter_Load(object sender, EventArgs e)
         {
+            // TODO: cette ligne de code charge les données dans la table 'gSB_PPE3DataSet6.praticien'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.praticienTableAdapter.Fill(this.gSB_PPE3DataSet6.praticien);
             // TODO: cette ligne de code charge les données dans la table 'gSB_PPE3DataSet3.specialite'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.specialiteTableAdapter.Fill(this.gSB_PPE3DataSet3.specialite);
 

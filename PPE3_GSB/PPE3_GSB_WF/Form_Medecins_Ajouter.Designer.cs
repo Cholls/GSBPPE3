@@ -53,8 +53,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tb_coefNot = new System.Windows.Forms.TextBox();
             this.tb_coefConf = new System.Windows.Forms.TextBox();
+            this.gSB_PPE3DataSet6 = new PPE3_GSB_WF.GSB_PPE3DataSet6();
+            this.praticienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.praticienTableAdapter = new PPE3_GSB_WF.GSB_PPE3DataSet6TableAdapters.praticienTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.specialiteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_AjoutVisiteur
@@ -75,7 +80,7 @@
             this.btn_Annuler.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Annuler.Name = "btn_Annuler";
             this.btn_Annuler.Size = new System.Drawing.Size(128, 47);
-            this.btn_Annuler.TabIndex = 8;
+            this.btn_Annuler.TabIndex = 10;
             this.btn_Annuler.Text = "Annuler";
             this.btn_Annuler.UseVisualStyleBackColor = true;
             this.btn_Annuler.Click += new System.EventHandler(this.btn_Annuler_Click);
@@ -87,7 +92,7 @@
             this.btn_Valider.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Valider.Name = "btn_Valider";
             this.btn_Valider.Size = new System.Drawing.Size(128, 47);
-            this.btn_Valider.TabIndex = 9;
+            this.btn_Valider.TabIndex = 11;
             this.btn_Valider.Text = "Valider";
             this.btn_Valider.UseVisualStyleBackColor = true;
             this.btn_Valider.Click += new System.EventHandler(this.Btn_Valider_Click);
@@ -116,7 +121,7 @@
             // 
             this.tb_Adresse.Location = new System.Drawing.Point(160, 174);
             this.tb_Adresse.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_Adresse.MaxLength = 15;
+            this.tb_Adresse.MaxLength = 40;
             this.tb_Adresse.Name = "tb_Adresse";
             this.tb_Adresse.Size = new System.Drawing.Size(357, 22);
             this.tb_Adresse.TabIndex = 4;
@@ -229,14 +234,14 @@
             // 
             // cb_spe
             // 
-            this.cb_spe.DataSource = this.specialiteBindingSource;
-            this.cb_spe.DisplayMember = "SPE_LIBELLE";
+            this.cb_spe.DataSource = this.praticienBindingSource;
+            this.cb_spe.DisplayMember = "TYP_CODE";
             this.cb_spe.FormattingEnabled = true;
             this.cb_spe.Location = new System.Drawing.Point(160, 369);
             this.cb_spe.Name = "cb_spe";
-            this.cb_spe.Size = new System.Drawing.Size(358, 24);
-            this.cb_spe.TabIndex = 7;
-            this.cb_spe.ValueMember = "SPE_LIBELLE";
+            this.cb_spe.Size = new System.Drawing.Size(57, 24);
+            this.cb_spe.TabIndex = 9;
+            this.cb_spe.ValueMember = "TYP_CODE";
             // 
             // specialiteBindingSource
             // 
@@ -281,7 +286,7 @@
             this.tb_coefNot.MaxLength = 5;
             this.tb_coefNot.Name = "tb_coefNot";
             this.tb_coefNot.Size = new System.Drawing.Size(91, 22);
-            this.tb_coefNot.TabIndex = 70;
+            this.tb_coefNot.TabIndex = 7;
             // 
             // tb_coefConf
             // 
@@ -290,7 +295,21 @@
             this.tb_coefConf.MaxLength = 5;
             this.tb_coefConf.Name = "tb_coefConf";
             this.tb_coefConf.Size = new System.Drawing.Size(91, 22);
-            this.tb_coefConf.TabIndex = 71;
+            this.tb_coefConf.TabIndex = 8;
+            // 
+            // gSB_PPE3DataSet6
+            // 
+            this.gSB_PPE3DataSet6.DataSetName = "GSB_PPE3DataSet6";
+            this.gSB_PPE3DataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // praticienBindingSource
+            // 
+            this.praticienBindingSource.DataMember = "praticien";
+            this.praticienBindingSource.DataSource = this.gSB_PPE3DataSet6;
+            // 
+            // praticienTableAdapter
+            // 
+            this.praticienTableAdapter.ClearBeforeFill = true;
             // 
             // Form_Medecins_Ajouter
             // 
@@ -325,6 +344,8 @@
             this.Load += new System.EventHandler(this.Form_Medecins_Ajouter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.specialiteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,5 +377,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_coefNot;
         private System.Windows.Forms.TextBox tb_coefConf;
+        private GSB_PPE3DataSet6 gSB_PPE3DataSet6;
+        private System.Windows.Forms.BindingSource praticienBindingSource;
+        private GSB_PPE3DataSet6TableAdapters.praticienTableAdapter praticienTableAdapter;
     }
 }

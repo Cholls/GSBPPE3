@@ -12,16 +12,12 @@ namespace PPE3_GSB_WF
 {
     public partial class Form_Visiteurs_Ajouter : Form
     {
+        private GSB_PPE3Entities1 monModele;
         public Form_Visiteurs_Ajouter()
         {
             InitializeComponent();
-            /*if(tb_Matricule.Text != "" && tb_Nom.Text != "" && tb_Prenom.Text != "" &&
-                tb_Adresse.Text != "" && tb_CP.Text != "" && tb_Ville.Text != ""
-                && tb_DateEmbauche.Text != "" && tb_Login.Text != "" && tb_MotDePasse.Text != "")
-            {
-                btn_Valider.Enabled = true;
-            }*/
-           
+            monModele = new GSB_PPE3Entities1();
+
         }
 
         private void Form_Visiteurs_Ajouter_Load(object sender, EventArgs e)
@@ -46,7 +42,7 @@ namespace PPE3_GSB_WF
         /// <param name="e"></param>
         private void Btn_Valider_Click(object sender, EventArgs e)
         {
-            using (var context = new GSB_PPE3Entities1()) 
+            using (var context = new GSB_PPE3Entities1())
             {
                 if (tb_Matricule.Text == "" && tb_Nom.Text == "" && tb_Prenom.Text == "" &&
                 tb_Adresse.Text == "" && tb_CP.Text == "" && tb_Ville.Text == ""
@@ -54,27 +50,48 @@ namespace PPE3_GSB_WF
                 {
                     MessageBox.Show("Tous les champs ne sont pas renseignés ! ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
+                else // Si les champs ne sont pas vides alors, il faut les contrôler
                 {
-                    // Déclaration d'un nouveau visiteur
-                    var unVisiteur = new visiteur()
+                    // Vérification si les données rentrées existent déjà
+                    var req = from v in monModele.visiteurs
+                              select v;
+
+                    //string num = req.First();
+                    bool identique = false;
+                    // Il faut parcourir la liste pour savoir si le num tapé correspond à un num dans la liste
+                    foreach (var resultat in req)
                     {
-                        VIS_MATRICULE = tb_Matricule.Text,
-                        VIS_NOM = tb_Nom.Text,
-                        VIS_PRENOM = tb_Prenom.Text,
-                        VIS_ADRESSE = tb_Adresse.Text,
-                        VIS_CP = tb_CP.Text,
-                        VIS_VILLE = tb_Ville.Text,
-                        VIS_DATEEMBAUCHE = Convert.ToDateTime(tb_DateEmbauche.Text),
-                        VIS_LOGIN = tb_Login.Text,
-                        VIS_MDP = tb_MotDePasse.Text
-                    };
-                    // Ajout du visiteur dans la liste gérees par le programme
-                    context.visiteurs.Add(unVisiteur);
-                    // Sauvegarde de l'ajout dans la BDD
-                    context.SaveChanges();
+                        if (tb_Matricule.Text == resultat.VIS_MATRICULE) {
+                            identique = true;
+                        }
+                    }
+                    // Si dans la liste, on a trouvé un numéro similaire à celui saisi dans le textbox du matricule
+                    if (identique == true)
+                    {
+                        MessageBox.Show("Le numéro de visiteur existe déjà. En choisir un autre. ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        // Déclaration d'un nouveau visiteur
+                        var unVisiteur = new visiteur()
+                        {
+                            VIS_MATRICULE = tb_Matricule.Text,
+                            VIS_NOM = tb_Nom.Text,
+                            VIS_PRENOM = tb_Prenom.Text,
+                            VIS_ADRESSE = tb_Adresse.Text,
+                            VIS_CP = tb_CP.Text,
+                            VIS_VILLE = tb_Ville.Text,
+                            VIS_DATEEMBAUCHE = Convert.ToDateTime(tb_DateEmbauche.Text),
+                            VIS_LOGIN = tb_Login.Text,
+                            VIS_MDP = tb_MotDePasse.Text
+                        };
+                        // Ajout du visiteur dans la liste gérees par le programme
+                        context.visiteurs.Add(unVisiteur);
+                        // Sauvegarde de l'ajout dans la BDD
+                        context.SaveChanges();
+                    }
                 }
-            } 
+            }
         }
 
         // TOUS LES TESTS DE SAISIES SE TROUVENT ICI
