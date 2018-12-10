@@ -41,27 +41,22 @@
             this.visiteursBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.visiteursBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.visiteursTableAdapter1 = new PPE3_GSB_WF.GSB_PPE3DataSet4TableAdapters.visiteursTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_valid = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cb_Select = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.cb_select = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tb_spe = new System.Windows.Forms.TextBox();
-            this.tb_coefConf = new System.Windows.Forms.TextBox();
-            this.tb_coefNot = new System.Windows.Forms.TextBox();
+            this.tb_dateEmbauche = new System.Windows.Forms.TextBox();
             this.tb_ville = new System.Windows.Forms.TextBox();
             this.tb_cp = new System.Windows.Forms.TextBox();
             this.tb_adresse = new System.Windows.Forms.TextBox();
             this.tb_prenom = new System.Windows.Forms.TextBox();
             this.tb_nom = new System.Windows.Forms.TextBox();
             this.tb_num = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.visiteursBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSBPPE3DataSet4BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet4)).BeginInit();
@@ -102,9 +97,9 @@
             this.lbl_lstVisiteurs.Location = new System.Drawing.Point(33, 9);
             this.lbl_lstVisiteurs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_lstVisiteurs.Name = "lbl_lstVisiteurs";
-            this.lbl_lstVisiteurs.Size = new System.Drawing.Size(398, 31);
+            this.lbl_lstVisiteurs.Size = new System.Drawing.Size(407, 31);
             this.lbl_lstVisiteurs.TabIndex = 6;
-            this.lbl_lstVisiteurs.Text = "Consultation liste de visiteurs";
+            this.lbl_lstVisiteurs.Text = "Consultation fiche de visiteurs";
             // 
             // visiteursBindingSource3
             // 
@@ -149,16 +144,17 @@
             // 
             this.visiteursTableAdapter1.ClearBeforeFill = true;
             // 
-            // button1
+            // bt_valid
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(101, 177);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 47);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "Valider";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bt_valid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_valid.Location = new System.Drawing.Point(101, 177);
+            this.bt_valid.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_valid.Name = "bt_valid";
+            this.bt_valid.Size = new System.Drawing.Size(139, 47);
+            this.bt_valid.TabIndex = 41;
+            this.bt_valid.Text = "Valider";
+            this.bt_valid.UseVisualStyleBackColor = true;
+            this.bt_valid.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label1
             // 
@@ -170,45 +166,26 @@
             this.label1.TabIndex = 40;
             this.label1.Text = "Choisir un visiteur parmi la liste";
             // 
-            // cb_Select
+            // cb_select
             // 
-            this.cb_Select.DisplayMember = "PRA_NOM";
-            this.cb_Select.FormattingEnabled = true;
-            this.cb_Select.Location = new System.Drawing.Point(55, 135);
-            this.cb_Select.Name = "cb_Select";
-            this.cb_Select.Size = new System.Drawing.Size(237, 24);
-            this.cb_Select.TabIndex = 39;
-            this.cb_Select.ValueMember = "PRA_NOM";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(607, 388);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 23);
-            this.label9.TabIndex = 62;
-            this.label9.Text = "Type";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(677, 300);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(192, 23);
-            this.label8.TabIndex = 61;
-            this.label8.Text = "Coefficient de confiance";
+            this.cb_select.DataSource = this.visiteursBindingSource2;
+            this.cb_select.DisplayMember = "VIS_NOM";
+            this.cb_select.FormattingEnabled = true;
+            this.cb_select.Location = new System.Drawing.Point(55, 135);
+            this.cb_select.Name = "cb_select";
+            this.cb_select.Size = new System.Drawing.Size(237, 24);
+            this.cb_select.TabIndex = 39;
+            this.cb_select.ValueMember = "VIS_NOM";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(357, 299);
+            this.label7.Location = new System.Drawing.Point(503, 300);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(189, 23);
+            this.label7.Size = new System.Drawing.Size(144, 23);
             this.label7.TabIndex = 60;
-            this.label7.Text = "Coefficient de notoriété";
+            this.label7.Text = "Date d\'embauche";
             // 
             // label6
             // 
@@ -246,9 +223,9 @@
             this.label3.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(764, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 23);
+            this.label3.Size = new System.Drawing.Size(156, 23);
             this.label3.TabIndex = 56;
-            this.label3.Text = "Prénom du médecin";
+            this.label3.Text = "Prénom du visiteur";
             // 
             // label2
             // 
@@ -256,37 +233,21 @@
             this.label2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(580, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 23);
+            this.label2.Size = new System.Drawing.Size(132, 23);
             this.label2.TabIndex = 55;
-            this.label2.Text = "Nom du médecin";
+            this.label2.Text = "Nom du visiteur";
             // 
-            // tb_spe
+            // tb_dateEmbauche
             // 
-            this.tb_spe.Location = new System.Drawing.Point(659, 389);
-            this.tb_spe.Name = "tb_spe";
-            this.tb_spe.ReadOnly = true;
-            this.tb_spe.Size = new System.Drawing.Size(50, 22);
-            this.tb_spe.TabIndex = 54;
-            // 
-            // tb_coefConf
-            // 
-            this.tb_coefConf.Location = new System.Drawing.Point(893, 299);
-            this.tb_coefConf.Name = "tb_coefConf";
-            this.tb_coefConf.ReadOnly = true;
-            this.tb_coefConf.Size = new System.Drawing.Size(57, 22);
-            this.tb_coefConf.TabIndex = 53;
-            // 
-            // tb_coefNot
-            // 
-            this.tb_coefNot.Location = new System.Drawing.Point(584, 301);
-            this.tb_coefNot.Name = "tb_coefNot";
-            this.tb_coefNot.ReadOnly = true;
-            this.tb_coefNot.Size = new System.Drawing.Size(72, 22);
-            this.tb_coefNot.TabIndex = 52;
+            this.tb_dateEmbauche.Location = new System.Drawing.Point(705, 300);
+            this.tb_dateEmbauche.Name = "tb_dateEmbauche";
+            this.tb_dateEmbauche.ReadOnly = true;
+            this.tb_dateEmbauche.Size = new System.Drawing.Size(86, 22);
+            this.tb_dateEmbauche.TabIndex = 52;
             // 
             // tb_ville
             // 
-            this.tb_ville.Location = new System.Drawing.Point(786, 214);
+            this.tb_ville.Location = new System.Drawing.Point(804, 214);
             this.tb_ville.Name = "tb_ville";
             this.tb_ville.ReadOnly = true;
             this.tb_ville.Size = new System.Drawing.Size(184, 22);
@@ -297,15 +258,15 @@
             this.tb_cp.Location = new System.Drawing.Point(701, 214);
             this.tb_cp.Name = "tb_cp";
             this.tb_cp.ReadOnly = true;
-            this.tb_cp.Size = new System.Drawing.Size(58, 22);
+            this.tb_cp.Size = new System.Drawing.Size(76, 22);
             this.tb_cp.TabIndex = 50;
             // 
             // tb_adresse
             // 
-            this.tb_adresse.Location = new System.Drawing.Point(406, 214);
+            this.tb_adresse.Location = new System.Drawing.Point(360, 214);
             this.tb_adresse.Name = "tb_adresse";
             this.tb_adresse.ReadOnly = true;
-            this.tb_adresse.Size = new System.Drawing.Size(267, 22);
+            this.tb_adresse.Size = new System.Drawing.Size(313, 22);
             this.tb_adresse.TabIndex = 49;
             // 
             // tb_prenom
@@ -313,15 +274,15 @@
             this.tb_prenom.Location = new System.Drawing.Point(768, 127);
             this.tb_prenom.Name = "tb_prenom";
             this.tb_prenom.ReadOnly = true;
-            this.tb_prenom.Size = new System.Drawing.Size(125, 22);
+            this.tb_prenom.Size = new System.Drawing.Size(137, 22);
             this.tb_prenom.TabIndex = 48;
             // 
             // tb_nom
             // 
-            this.tb_nom.Location = new System.Drawing.Point(584, 127);
+            this.tb_nom.Location = new System.Drawing.Point(567, 127);
             this.tb_nom.Name = "tb_nom";
             this.tb_nom.ReadOnly = true;
-            this.tb_nom.Size = new System.Drawing.Size(125, 22);
+            this.tb_nom.Size = new System.Drawing.Size(145, 22);
             this.tb_nom.TabIndex = 47;
             // 
             // tb_num
@@ -332,43 +293,27 @@
             this.tb_num.Size = new System.Drawing.Size(36, 22);
             this.tb_num.TabIndex = 63;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(392, 43);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(607, 35);
-            this.label10.TabIndex = 64;
-            this.label10.Text = "A MODIFIER PAS TERMINE : CHANGER LES CHAMPS";
-            // 
             // Form_Visiteurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 523);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.tb_num);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.tb_spe);
-            this.Controls.Add(this.tb_coefConf);
-            this.Controls.Add(this.tb_coefNot);
+            this.Controls.Add(this.tb_dateEmbauche);
             this.Controls.Add(this.tb_ville);
             this.Controls.Add(this.tb_cp);
             this.Controls.Add(this.tb_adresse);
             this.Controls.Add(this.tb_prenom);
             this.Controls.Add(this.tb_nom);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bt_valid);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cb_Select);
+            this.Controls.Add(this.cb_select);
             this.Controls.Add(this.lbl_lstVisiteurs);
             this.Controls.Add(this.btn_Ajouter);
             this.Controls.Add(this.btn_Quitter);
@@ -404,26 +349,21 @@
         private GSB_PPE3DataSet4TableAdapters.visiteursTableAdapter visiteursTableAdapter1;
         private System.Windows.Forms.BindingSource gSBPPE3DataSet4BindingSource;
         private System.Windows.Forms.BindingSource visiteursBindingSource3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_valid;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cb_Select;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cb_select;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tb_spe;
-        private System.Windows.Forms.TextBox tb_coefConf;
-        private System.Windows.Forms.TextBox tb_coefNot;
+        private System.Windows.Forms.TextBox tb_dateEmbauche;
         private System.Windows.Forms.TextBox tb_ville;
         private System.Windows.Forms.TextBox tb_cp;
         private System.Windows.Forms.TextBox tb_adresse;
         private System.Windows.Forms.TextBox tb_prenom;
         private System.Windows.Forms.TextBox tb_nom;
         private System.Windows.Forms.TextBox tb_num;
-        private System.Windows.Forms.Label label10;
     }
 }

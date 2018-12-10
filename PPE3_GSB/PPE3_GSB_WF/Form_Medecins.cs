@@ -80,7 +80,6 @@ namespace PPE3_GSB_WF
                 tb_coefNot.Text = Convert.ToString(resultat.PRA_COEFNOTORIETE);
                 tb_coefConf.Text = Convert.ToString(resultat.PRA_COEFCONFIANCE);
                 tb_spe.Text = resultat.TYP_CODE;
-
             }
         }
     }

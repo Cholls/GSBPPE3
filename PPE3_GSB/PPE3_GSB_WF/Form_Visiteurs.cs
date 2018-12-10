@@ -54,17 +54,30 @@ namespace PPE3_GSB_WF
             fvm.Show();
         }
 
+
         /// <summary>
-        /// TEST CHARGER DONNEES
+        /// Pour afficher les informations d'un visiteur sélectionner
+        /// dans un comboBox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            var req = from v in monModele.visiteurs
-                      select v;
-            visiteursBindingSource3.DataSource = req.ToList();
-            dataGridView1.DataSource = visiteursBindingSource3;
+            string selection = cb_select.SelectedValue.ToString();
+            var req = from p in monModele.visiteurs
+                      where p.VIS_NOM == selection
+                      select p;
+            // Tout afficher dans les TextBox
+            foreach (var resultat in req)
+            {
+                tb_num.Text = Convert.ToString(resultat.VIS_MATRICULE);
+                tb_nom.Text = resultat.VIS_NOM;
+                tb_prenom.Text = resultat.VIS_PRENOM;
+                tb_adresse.Text = resultat.VIS_ADRESSE;
+                tb_cp.Text = resultat.VIS_CP;
+                tb_ville.Text = resultat.VIS_VILLE;
+                tb_dateEmbauche.Text = Convert.ToString(resultat.VIS_DATEEMBAUCHE);
+            }
         }
     }
 }
