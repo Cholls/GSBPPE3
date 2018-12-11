@@ -82,5 +82,36 @@ namespace PPE3_GSB_WF
                 tb_spe.Text = resultat.TYP_CODE;
             }
         }
+
+        /// <summary>
+        /// Permet de modifier dans la base de données
+        /// les informations du médecin choisi
+        /// (Avec dans la requête where médecin choisi)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Pourrait activer le bouton modif quand le texte d'un champ change
+            string selection = cb_Select.SelectedValue.ToString();
+            var med = from p in monModele.praticiens
+                      where p.PRA_NOM == selection
+                      select p;
+
+            foreach (var resultat in med)
+            {
+                resultat.PRA_NOM = tb_nom.Text;
+                resultat.PRA_NOM = tb_nom.Text;
+                resultat.PRA_PRENOM = tb_prenom.Text;
+                resultat.PRA_ADRESSE = tb_adresse.Text;
+                resultat.PRA_CP = tb_cp.Text;
+                resultat.PRA_VILLE = tb_ville.Text;
+            }
+
+            MessageBox.Show("Les données ont bien été modifiées !");
+
+            // Reperer comment faire le SavesChanges
+            monModele.SaveChanges();
+        }
     }
 }

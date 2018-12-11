@@ -62,6 +62,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource)).BeginInit();
@@ -178,7 +180,6 @@
             // 
             this.tb_nom.Location = new System.Drawing.Point(579, 128);
             this.tb_nom.Name = "tb_nom";
-            this.tb_nom.ReadOnly = true;
             this.tb_nom.Size = new System.Drawing.Size(125, 22);
             this.tb_nom.TabIndex = 27;
             // 
@@ -186,7 +187,6 @@
             // 
             this.tb_prenom.Location = new System.Drawing.Point(763, 128);
             this.tb_prenom.Name = "tb_prenom";
-            this.tb_prenom.ReadOnly = true;
             this.tb_prenom.Size = new System.Drawing.Size(125, 22);
             this.tb_prenom.TabIndex = 28;
             // 
@@ -194,7 +194,6 @@
             // 
             this.tb_adresse.Location = new System.Drawing.Point(401, 215);
             this.tb_adresse.Name = "tb_adresse";
-            this.tb_adresse.ReadOnly = true;
             this.tb_adresse.Size = new System.Drawing.Size(267, 22);
             this.tb_adresse.TabIndex = 29;
             // 
@@ -202,7 +201,6 @@
             // 
             this.tb_cp.Location = new System.Drawing.Point(696, 215);
             this.tb_cp.Name = "tb_cp";
-            this.tb_cp.ReadOnly = true;
             this.tb_cp.Size = new System.Drawing.Size(58, 22);
             this.tb_cp.TabIndex = 30;
             // 
@@ -210,7 +208,6 @@
             // 
             this.tb_ville.Location = new System.Drawing.Point(781, 215);
             this.tb_ville.Name = "tb_ville";
-            this.tb_ville.ReadOnly = true;
             this.tb_ville.Size = new System.Drawing.Size(184, 22);
             this.tb_ville.TabIndex = 31;
             // 
@@ -218,13 +215,12 @@
             // 
             this.tb_coefNot.Location = new System.Drawing.Point(579, 302);
             this.tb_coefNot.Name = "tb_coefNot";
-            this.tb_coefNot.ReadOnly = true;
             this.tb_coefNot.Size = new System.Drawing.Size(72, 22);
             this.tb_coefNot.TabIndex = 32;
             // 
             // tb_num
             // 
-            this.tb_num.Location = new System.Drawing.Point(543, 30);
+            this.tb_num.Location = new System.Drawing.Point(505, 128);
             this.tb_num.Name = "tb_num";
             this.tb_num.ReadOnly = true;
             this.tb_num.Size = new System.Drawing.Size(36, 22);
@@ -234,13 +230,12 @@
             // 
             this.tb_coefConf.Location = new System.Drawing.Point(888, 300);
             this.tb_coefConf.Name = "tb_coefConf";
-            this.tb_coefConf.ReadOnly = true;
             this.tb_coefConf.Size = new System.Drawing.Size(57, 22);
             this.tb_coefConf.TabIndex = 34;
             // 
             // tb_spe
             // 
-            this.tb_spe.Location = new System.Drawing.Point(654, 390);
+            this.tb_spe.Location = new System.Drawing.Point(442, 365);
             this.tb_spe.Name = "tb_spe";
             this.tb_spe.ReadOnly = true;
             this.tb_spe.Size = new System.Drawing.Size(50, 22);
@@ -332,17 +327,41 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(602, 389);
+            this.label9.Location = new System.Drawing.Point(376, 365);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 23);
             this.label9.TabIndex = 46;
             this.label9.Text = "Type";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(633, 414);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(255, 47);
+            this.button2.TabIndex = 47;
+            this.button2.Text = "Valider les modifications";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(465, 32);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(532, 20);
+            this.label10.TabIndex = 48;
+            this.label10.Text = "Vous pouvez apporter des modifications aux informations renseignées";
             // 
             // Form_Medecins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 523);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -418,5 +437,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label10;
     }
 }
