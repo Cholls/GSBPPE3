@@ -178,49 +178,62 @@
             // 
             // tb_nom
             // 
-            this.tb_nom.Location = new System.Drawing.Point(579, 128);
+            this.tb_nom.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_nom.Location = new System.Drawing.Point(543, 128);
+            this.tb_nom.MaxLength = 35;
+            this.tb_nom.Multiline = true;
             this.tb_nom.Name = "tb_nom";
-            this.tb_nom.Size = new System.Drawing.Size(125, 22);
-            this.tb_nom.TabIndex = 27;
+            this.tb_nom.ReadOnly = true;
+            this.tb_nom.Size = new System.Drawing.Size(172, 34);
+            this.tb_nom.TabIndex = 1;
+            this.tb_nom.WordWrap = false;
             // 
             // tb_prenom
             // 
+            this.tb_prenom.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_prenom.Location = new System.Drawing.Point(763, 128);
+            this.tb_prenom.MaxLength = 35;
+            this.tb_prenom.Multiline = true;
             this.tb_prenom.Name = "tb_prenom";
-            this.tb_prenom.Size = new System.Drawing.Size(125, 22);
-            this.tb_prenom.TabIndex = 28;
+            this.tb_prenom.ReadOnly = true;
+            this.tb_prenom.Size = new System.Drawing.Size(192, 34);
+            this.tb_prenom.TabIndex = 2;
             // 
             // tb_adresse
             // 
             this.tb_adresse.Location = new System.Drawing.Point(401, 215);
             this.tb_adresse.Name = "tb_adresse";
+            this.tb_adresse.ReadOnly = true;
             this.tb_adresse.Size = new System.Drawing.Size(267, 22);
-            this.tb_adresse.TabIndex = 29;
+            this.tb_adresse.TabIndex = 3;
             // 
             // tb_cp
             // 
             this.tb_cp.Location = new System.Drawing.Point(696, 215);
             this.tb_cp.Name = "tb_cp";
-            this.tb_cp.Size = new System.Drawing.Size(58, 22);
-            this.tb_cp.TabIndex = 30;
+            this.tb_cp.ReadOnly = true;
+            this.tb_cp.Size = new System.Drawing.Size(76, 22);
+            this.tb_cp.TabIndex = 4;
             // 
             // tb_ville
             // 
-            this.tb_ville.Location = new System.Drawing.Point(781, 215);
+            this.tb_ville.Location = new System.Drawing.Point(809, 215);
             this.tb_ville.Name = "tb_ville";
+            this.tb_ville.ReadOnly = true;
             this.tb_ville.Size = new System.Drawing.Size(184, 22);
-            this.tb_ville.TabIndex = 31;
+            this.tb_ville.TabIndex = 5;
             // 
             // tb_coefNot
             // 
-            this.tb_coefNot.Location = new System.Drawing.Point(579, 302);
+            this.tb_coefNot.Location = new System.Drawing.Point(558, 300);
             this.tb_coefNot.Name = "tb_coefNot";
+            this.tb_coefNot.ReadOnly = true;
             this.tb_coefNot.Size = new System.Drawing.Size(72, 22);
-            this.tb_coefNot.TabIndex = 32;
+            this.tb_coefNot.TabIndex = 6;
             // 
             // tb_num
             // 
-            this.tb_num.Location = new System.Drawing.Point(505, 128);
+            this.tb_num.Location = new System.Drawing.Point(442, 12);
             this.tb_num.Name = "tb_num";
             this.tb_num.ReadOnly = true;
             this.tb_num.Size = new System.Drawing.Size(36, 22);
@@ -230,8 +243,9 @@
             // 
             this.tb_coefConf.Location = new System.Drawing.Point(888, 300);
             this.tb_coefConf.Name = "tb_coefConf";
+            this.tb_coefConf.ReadOnly = true;
             this.tb_coefConf.Size = new System.Drawing.Size(57, 22);
-            this.tb_coefConf.TabIndex = 34;
+            this.tb_coefConf.TabIndex = 7;
             // 
             // tb_spe
             // 
@@ -239,7 +253,7 @@
             this.tb_spe.Name = "tb_spe";
             this.tb_spe.ReadOnly = true;
             this.tb_spe.Size = new System.Drawing.Size(50, 22);
-            this.tb_spe.TabIndex = 35;
+            this.tb_spe.TabIndex = 8;
             // 
             // button1
             // 
@@ -277,7 +291,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(397, 180);
+            this.label4.Location = new System.Drawing.Point(397, 189);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 23);
             this.label4.TabIndex = 41;
@@ -287,7 +301,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(672, 180);
+            this.label5.Location = new System.Drawing.Point(692, 189);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 23);
             this.label5.TabIndex = 42;
@@ -297,7 +311,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(812, 180);
+            this.label6.Location = new System.Drawing.Point(805, 189);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 23);
             this.label6.TabIndex = 43;
@@ -317,7 +331,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(672, 301);
+            this.label8.Location = new System.Drawing.Point(690, 300);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(192, 23);
             this.label8.TabIndex = 45;
@@ -340,7 +354,7 @@
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(255, 47);
-            this.button2.TabIndex = 47;
+            this.button2.TabIndex = 9;
             this.button2.Text = "Valider les modifications";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -349,7 +363,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(465, 32);
+            this.label10.Location = new System.Drawing.Point(423, 65);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(532, 20);
             this.label10.TabIndex = 48;

@@ -40,23 +40,29 @@
             // 
             // tb_MotDePasse
             // 
-            this.tb_MotDePasse.Location = new System.Drawing.Point(297, 161);
+            this.tb_MotDePasse.Location = new System.Drawing.Point(396, 198);
+            this.tb_MotDePasse.Margin = new System.Windows.Forms.Padding(4);
             this.tb_MotDePasse.Name = "tb_MotDePasse";
-            this.tb_MotDePasse.Size = new System.Drawing.Size(100, 20);
-            this.tb_MotDePasse.TabIndex = 7;
+            this.tb_MotDePasse.Size = new System.Drawing.Size(132, 22);
+            this.tb_MotDePasse.TabIndex = 2;
+            this.tb_MotDePasse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_MotDePasse_KeyPress);
             // 
             // tb_Identifiant
             // 
-            this.tb_Identifiant.Location = new System.Drawing.Point(80, 161);
+            this.tb_Identifiant.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Identifiant.Location = new System.Drawing.Point(107, 198);
+            this.tb_Identifiant.Margin = new System.Windows.Forms.Padding(4);
             this.tb_Identifiant.Name = "tb_Identifiant";
-            this.tb_Identifiant.Size = new System.Drawing.Size(100, 20);
-            this.tb_Identifiant.TabIndex = 6;
+            this.tb_Identifiant.Size = new System.Drawing.Size(132, 23);
+            this.tb_Identifiant.TabIndex = 1;
+            this.tb_Identifiant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Identifiant_KeyPress);
             // 
             // btn_Fermer
             // 
-            this.btn_Fermer.Location = new System.Drawing.Point(126, 212);
+            this.btn_Fermer.Location = new System.Drawing.Point(168, 261);
+            this.btn_Fermer.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Fermer.Name = "btn_Fermer";
-            this.btn_Fermer.Size = new System.Drawing.Size(75, 23);
+            this.btn_Fermer.Size = new System.Drawing.Size(100, 28);
             this.btn_Fermer.TabIndex = 5;
             this.btn_Fermer.Text = "Fermer";
             this.btn_Fermer.UseVisualStyleBackColor = true;
@@ -64,9 +70,10 @@
             // 
             // btn_Connexion
             // 
-            this.btn_Connexion.Location = new System.Drawing.Point(249, 212);
+            this.btn_Connexion.Location = new System.Drawing.Point(332, 261);
+            this.btn_Connexion.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Connexion.Name = "btn_Connexion";
-            this.btn_Connexion.Size = new System.Drawing.Size(75, 23);
+            this.btn_Connexion.Size = new System.Drawing.Size(100, 28);
             this.btn_Connexion.TabIndex = 4;
             this.btn_Connexion.Text = "Connexion";
             this.btn_Connexion.UseVisualStyleBackColor = true;
@@ -75,36 +82,39 @@
             // lbl_Identifiant
             // 
             this.lbl_Identifiant.AutoSize = true;
-            this.lbl_Identifiant.Location = new System.Drawing.Point(21, 164);
+            this.lbl_Identifiant.Location = new System.Drawing.Point(28, 202);
+            this.lbl_Identifiant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Identifiant.Name = "lbl_Identifiant";
-            this.lbl_Identifiant.Size = new System.Drawing.Size(53, 13);
+            this.lbl_Identifiant.Size = new System.Drawing.Size(69, 17);
             this.lbl_Identifiant.TabIndex = 8;
             this.lbl_Identifiant.Text = "Identifiant";
             // 
             // lbl_MotDePasse
             // 
             this.lbl_MotDePasse.AutoSize = true;
-            this.lbl_MotDePasse.Location = new System.Drawing.Point(220, 164);
+            this.lbl_MotDePasse.Location = new System.Drawing.Point(293, 202);
+            this.lbl_MotDePasse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_MotDePasse.Name = "lbl_MotDePasse";
-            this.lbl_MotDePasse.Size = new System.Drawing.Size(71, 13);
+            this.lbl_MotDePasse.Size = new System.Drawing.Size(93, 17);
             this.lbl_MotDePasse.TabIndex = 9;
             this.lbl_MotDePasse.Text = "Mot de passe";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PPE3_GSB_WF.Properties.Resources.logogsb;
-            this.pictureBox1.Location = new System.Drawing.Point(115, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(153, 14);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 125);
+            this.pictureBox1.Size = new System.Drawing.Size(288, 154);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
             // Form_Connexion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 261);
+            this.ClientSize = new System.Drawing.Size(573, 321);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_MotDePasse);
             this.Controls.Add(this.lbl_Identifiant);
@@ -113,6 +123,7 @@
             this.Controls.Add(this.btn_Fermer);
             this.Controls.Add(this.btn_Connexion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Connexion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connexion";

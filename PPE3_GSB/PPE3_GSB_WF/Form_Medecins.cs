@@ -38,16 +38,6 @@ namespace PPE3_GSB_WF
 
         }
 
-        /// <summary>
-        /// Fait afficher les données d'un médécin en autorisant la modification
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Btn_Modifier_Click(object sender, EventArgs e)
-        {
-           
-        }
-
    
         private void Btn_Ajouter_Click(object sender, EventArgs e)
         {
@@ -64,6 +54,17 @@ namespace PPE3_GSB_WF
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+            // Bouton cliqué, donc on peut activer les champs 
+            // correspondant aux différents attributs
+            tb_nom.ReadOnly = false;
+            tb_prenom.ReadOnly = false;
+            tb_cp.ReadOnly = false;
+            tb_ville.ReadOnly = false;
+            tb_adresse.ReadOnly = false;
+            tb_coefConf.ReadOnly = false;
+            tb_coefNot.ReadOnly = false;
+            tb_coefNot.ReadOnly = false;
+            
             string selection = cb_Select.SelectedValue.ToString();
             var req = from p in monModele.praticiens
                       where p.PRA_NOM == selection
@@ -92,7 +93,7 @@ namespace PPE3_GSB_WF
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            // Pourrait activer le bouton modif quand le texte d'un champ change
+            
             string selection = cb_Select.SelectedValue.ToString();
             var med = from p in monModele.praticiens
                       where p.PRA_NOM == selection
@@ -101,17 +102,27 @@ namespace PPE3_GSB_WF
             foreach (var resultat in med)
             {
                 resultat.PRA_NOM = tb_nom.Text;
-                resultat.PRA_NOM = tb_nom.Text;
                 resultat.PRA_PRENOM = tb_prenom.Text;
                 resultat.PRA_ADRESSE = tb_adresse.Text;
                 resultat.PRA_CP = tb_cp.Text;
                 resultat.PRA_VILLE = tb_ville.Text;
             }
 
+            // Faire une vérif si une modification a lieu 
             MessageBox.Show("Les données ont bien été modifiées !");
 
             // Reperer comment faire le SavesChanges
             monModele.SaveChanges();
+
+            // Si le nom a été changé, l'ancien va quand même apparaître dans le comboBox
+            // Il faut recharger les données dans le comboBox dans ce cas
+            // PEUT-ETRE LIGNE A CHANGER SI ERREUR SURVENUE
+            // Regarder plus tard pour cette fonctionnalité
+            //praticienBindingSource2.DataSource = med.ToList();
+            //cb_Select.DataSource = praticienBindingSource2;
+           // cb_Select.Refresh();
         }
+
+        
     }
 }

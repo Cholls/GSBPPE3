@@ -63,10 +63,21 @@ namespace PPE3_GSB_WF
         /// <param name="e"></param>
         private void button1_Click_1(object sender, EventArgs e)
         {
+
+            // Bouton cliqué, donc on peut activer les champs 
+            // correspondant aux différents attributs
+            tb_nom.ReadOnly = false;
+            tb_prenom.ReadOnly = false;
+            tb_cp.ReadOnly = false;
+            tb_ville.ReadOnly = false;
+            tb_adresse.ReadOnly = false;
+            tb_dateEmbauche.ReadOnly = false;
+
             string selection = cb_select.SelectedValue.ToString();
             var req = from p in monModele.visiteurs
                       where p.VIS_NOM == selection
                       select p;
+
             // Tout afficher dans les TextBox
             foreach (var resultat in req)
             {
@@ -78,6 +89,45 @@ namespace PPE3_GSB_WF
                 tb_ville.Text = resultat.VIS_VILLE;
                 tb_dateEmbauche.Text = Convert.ToString(resultat.VIS_DATEEMBAUCHE);
             }
+        }
+
+        /// <summary>
+        /// Permet de prendre en compte les modifications faites
+        /// aux différents champs du visiteur sélectionné par 
+        /// la comboBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string selection = cb_select.SelectedValue.ToString();
+            var vis = from p in monModele.visiteurs
+                      where p.VIS_NOM == selection
+                      select p;
+
+            foreach (var resultat in vis)
+            {
+                resultat.VIS_NOM = tb_nom.Text;
+                resultat.VIS_NOM = tb_nom.Text;
+                resultat.VIS_PRENOM = tb_prenom.Text;
+                resultat.VIS_ADRESSE = tb_adresse.Text;
+                resultat.VIS_CP = tb_cp.Text;
+                resultat.VIS_VILLE = tb_ville.Text;
+                //resultat.VIS_DATEEMBAUCHE = Convert.ToDateTime(tb_dateEmbauche);
+            }
+            // Faire une vérif si une modification a lieu 
+            MessageBox.Show("Les données ont bien été modifiées !");
+
+            // Reperer comment faire le SavesChanges
+            monModele.SaveChanges();
+
+            // Si le nom a été changé, l'ancien va quand même apparaître dans le comboBox
+            // Il faut recharger les données dans le comboBox dans ce cas
+            // PEUT-ETRE LIGNE A CHANGER SI ERREUR SURVENUE
+           // praticienBindingSource2.DataSource = med.ToList();
+           // cb_Select.DataSource = praticienBindingSource2;
+           // cb_Select.Refresh();
+           // Griser les champs pour que rien ne s'ajoute dans la combobox
         }
     }
 }
