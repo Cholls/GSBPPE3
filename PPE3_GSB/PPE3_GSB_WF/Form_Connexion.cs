@@ -35,36 +35,39 @@ namespace PPE3_GSB_WF
             // Si c'est un visiteur, n'afficher que l'onglet des rapports
             // Si c'est un délegué régional, il voit les rapports et les visiteurs de sa région
             // Si c'est une personne chargée de la gestion, elle peut tout voir
-            // Commençons d'abord par les visiteurs
+            // ATTENTION POUR L'INSTANT, SEULE LA CONNEXION DES VISITEURS EST GEREES PARTIELLEMENT
+            // (Actuellement, le visiteur a accès à tout)
+         
+            // Voir pour crypter les mdp dans le futur proche
+            string mdp = tb_MotDePasse.Text;
+            string ident = tb_Identifiant.Text;
 
             //Parcourir la liste des logins et des mot de passes des visiteurs
-            var req = from v in monModele.visiteurs
+            var req1 = from v in monModele.visiteurs
+                       where v.VIS_LOGIN == ident 
+                       && v.VIS_MDP == mdp
                       select v;
 
-            bool estValide = true;
-            foreach (var resultat in req)
+            bool estValide = false;
+            foreach (var resultat in req1)
             {
                 // Vérification de la correspondance
                 // Voir comment faire pour réussir l'autentification
-                if(tb_Identifiant.Text == resultat.VIS_LOGIN &&
-                    tb_MotDePasse.Text == resultat.VIS_MDP)
-                {
+                if((mdp == resultat.VIS_MDP) && (ident == resultat.VIS_LOGIN)) {
                     estValide = true;
+
                 }
-                else
-                {
+                else {
                     estValide = false;
                 }
             }
 
             // Vérification de la correspondance
-            if (estValide == true)
-            {
+            if (estValide == true)  {
                 MessageBox.Show("Connexion réussie !");
                 this.Close();
             }
-            else
-            {
+            else {
                 MessageBox.Show("Echec de connexion, réessayer.");
             }
 
@@ -80,14 +83,5 @@ namespace PPE3_GSB_WF
             }
         }
 
-        // Autorise que les nombres
-        private void tb_MotDePasse_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Autorise SEULEMENT la saisie des nombres, pas des lettres
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
     }
 }

@@ -45,7 +45,6 @@
             this.tb_MotDePasse.Name = "tb_MotDePasse";
             this.tb_MotDePasse.Size = new System.Drawing.Size(132, 22);
             this.tb_MotDePasse.TabIndex = 2;
-            this.tb_MotDePasse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_MotDePasse_KeyPress);
             // 
             // tb_Identifiant
             // 
