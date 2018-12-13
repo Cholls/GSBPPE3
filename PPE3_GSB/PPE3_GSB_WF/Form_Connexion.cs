@@ -12,6 +12,9 @@ namespace PPE3_GSB_WF
 {
     public partial class Form_Connexion : Form
     {
+        string identSuper = "gsbadmin";
+        string mdpSuper = "mdp";
+
         private GSB_PPE3Entities1 monModele;
         public Form_Connexion()
         {
@@ -25,6 +28,8 @@ namespace PPE3_GSB_WF
                 == DialogResult.Yes)
             {
                 Application.Exit();
+                this.getIdent();
+                this.getMdp();
             }
             
         }
@@ -41,25 +46,31 @@ namespace PPE3_GSB_WF
             // Voir pour crypter les mdp dans le futur proche
             string mdp = tb_MotDePasse.Text;
             string ident = tb_Identifiant.Text;
-
+                
+            //TEST CONNEXION DES VISITEURS
             //Parcourir la liste des logins et des mot de passes des visiteurs
             var req1 = from v in monModele.visiteurs
                        where v.VIS_LOGIN == ident 
                        && v.VIS_MDP == mdp
                       select v;
 
+
+            // TEST CONNEXION SECRETAIRE (Super utilisateur)
+ 
             bool estValide = false;
             foreach (var resultat in req1)
             {
                 // Vérification de la correspondance
                 // Voir comment faire pour réussir l'autentification
-                if((mdp == resultat.VIS_MDP) && (ident == resultat.VIS_LOGIN)) {
+                if ((mdp == resultat.VIS_MDP) && (ident == resultat.VIS_LOGIN)) {
                     estValide = true;
 
-                }
-                else {
+                } // NE FONCTIONNE PAS
+                else if (mdp == mdpSuper && ident == identSuper) {
+                    estValide = true;
+                    
+                }else
                     estValide = false;
-                }
             }
 
             // Vérification de la correspondance
@@ -81,6 +92,16 @@ namespace PPE3_GSB_WF
             {
                 e.Handled = true;
             }
+        }
+
+        public string getIdent()
+        {
+            return tb_Identifiant.Text;
+        }
+
+        public string getMdp()
+        {
+            return tb_MotDePasse.Text;
         }
 
     }

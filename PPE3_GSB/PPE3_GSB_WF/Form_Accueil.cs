@@ -12,14 +12,31 @@ namespace PPE3_GSB_WF
 {
     public partial class Form_Accueil : Form
     {
+        string identSuper = "gsbadmin";
+        string mdpSuper = "mdp";
+
         public Form_Accueil()
         {
             InitializeComponent();
         }
 
+
+        public void DesactiverMenu()
+        {
+            mnu_Visiteurs.Enabled = false;
+            mnu_Medicaments.Enabled = false;
+            mnu_Medecins.Enabled = false;
+        }
+
+
         private void Form_Accueil_Load(object sender, EventArgs e)
         {
             Form_Connexion seConnecte = new Form_Connexion();
+            if(seConnecte.getIdent() == identSuper && seConnecte.getMdp() == mdpSuper)
+            {
+                DesactiverMenu();
+            }
+            
             seConnecte.ShowDialog();
         }
 

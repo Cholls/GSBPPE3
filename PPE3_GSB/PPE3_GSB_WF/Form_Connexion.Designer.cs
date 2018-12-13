@@ -40,19 +40,20 @@
             // 
             // tb_MotDePasse
             // 
+            this.tb_MotDePasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_MotDePasse.Location = new System.Drawing.Point(396, 198);
             this.tb_MotDePasse.Margin = new System.Windows.Forms.Padding(4);
             this.tb_MotDePasse.Name = "tb_MotDePasse";
-            this.tb_MotDePasse.Size = new System.Drawing.Size(132, 22);
+            this.tb_MotDePasse.Size = new System.Drawing.Size(132, 27);
             this.tb_MotDePasse.TabIndex = 2;
             // 
             // tb_Identifiant
             // 
-            this.tb_Identifiant.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Identifiant.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Identifiant.Location = new System.Drawing.Point(107, 198);
             this.tb_Identifiant.Margin = new System.Windows.Forms.Padding(4);
             this.tb_Identifiant.Name = "tb_Identifiant";
-            this.tb_Identifiant.Size = new System.Drawing.Size(132, 23);
+            this.tb_Identifiant.Size = new System.Drawing.Size(132, 28);
             this.tb_Identifiant.TabIndex = 1;
             this.tb_Identifiant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Identifiant_KeyPress);
             // 
