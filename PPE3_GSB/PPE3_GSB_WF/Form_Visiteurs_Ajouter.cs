@@ -75,6 +75,7 @@ namespace PPE3_GSB_WF
                         // Déclaration d'un nouveau visiteur
                         var unVisiteur = new visiteur()
                         {
+                          
                             VIS_MATRICULE = tb_Matricule.Text,
                             VIS_NOM = tb_Nom.Text,
                             VIS_PRENOM = tb_Prenom.Text,
