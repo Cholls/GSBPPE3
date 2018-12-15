@@ -30,11 +30,14 @@ namespace PPE3_GSB_WF
 
         private void Form_Medecins_Load(object sender, EventArgs e)
         {
-            // LIGNES PEUT-ËTRE A SUPPRIMER
-            // TODO: cette ligne de code charge les données dans la table 'gSB_PPE3DataSet2.praticien'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.praticienTableAdapter1.Fill(this.gSB_PPE3DataSet2.praticien);
-            // TODO: cette ligne de code charge les données dans la table 'gSB_PPE3DataSet1.praticien'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.praticienTableAdapter.Fill(this.gSB_PPE3DataSet1.praticien);
+            // dans le combobox sans utiliser un binding pointant sur la base de données
+            var req = from p in monModele.praticiens
+                      select p.PRA_NOM;
+
+            foreach (var resultat in req)
+            {
+                cb_Select.Items.Add(resultat);
+            }
 
         }
 
@@ -64,15 +67,17 @@ namespace PPE3_GSB_WF
             tb_coefConf.ReadOnly = false;
             tb_coefNot.ReadOnly = false;
             tb_coefNot.ReadOnly = false;
-            
-            string selection = cb_Select.SelectedValue.ToString();
+            tb_type.ReadOnly = false;
+
+            // Récupération du contenu du combobox 
+            string selection = cb_Select.SelectedItem.ToString();
+
             var req = from p in monModele.praticiens
                       where p.PRA_NOM == selection
                       select p;
             // Tout afficher dans les TextBox
             foreach (var resultat in req)
             {
-                tb_num.Text = Convert.ToString(resultat.PRA_NUM);
                 tb_nom.Text = resultat.PRA_NOM;
                 tb_prenom.Text = resultat.PRA_PRENOM;
                 tb_adresse.Text = resultat.PRA_ADRESSE;
@@ -80,7 +85,7 @@ namespace PPE3_GSB_WF
                 tb_ville.Text = resultat.PRA_VILLE;
                 tb_coefNot.Text = Convert.ToString(resultat.PRA_COEFNOTORIETE);
                 tb_coefConf.Text = Convert.ToString(resultat.PRA_COEFCONFIANCE);
-                tb_spe.Text = resultat.TYP_CODE;
+                tb_type.Text = resultat.TYP_CODE;
             }
         }
 

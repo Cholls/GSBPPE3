@@ -30,14 +30,31 @@ namespace PPE3_GSB_WF
 
         private void Form_Medicaments_Load(object sender, EventArgs e)
         {
-            // TODO: cette ligne de code charge les données dans la table 'gSB_PPE3DataSet5.medicament'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.medicamentTableAdapter.Fill(this.gSB_PPE3DataSet5.medicament);
+
+            // dans le combobox sans utiliser un binding pointant sur la base de données
+            var req = from m in monModele.medicaments
+                      select m.MED_NOMCOMMERCIAL;
+
+            foreach (var resultat in req)
+            {
+                cb_select.Items.Add(resultat);
+            }
 
         }
 
         private void bt_valid_Click(object sender, EventArgs e)
         {
-            string selection = cb_select.SelectedValue.ToString();
+            // Bouton cliqué, donc on peut activer les champs 
+            // correspondant aux différents attributs
+            tb_nom.ReadOnly = false;
+            tb_compo.ReadOnly = false;
+            tb_contre.ReadOnly = false;
+            tb_effet.ReadOnly = false;
+            //tb_famille.ReadOnly = false;
+
+
+            // Pour récupérer la valeur dans le comboBox
+            string selection = cb_select.SelectedItem.ToString();
             var req = from p in monModele.medicaments
                       where p.MED_NOMCOMMERCIAL == selection
                       select p;
@@ -45,11 +62,23 @@ namespace PPE3_GSB_WF
             foreach (var resultat in req)
             {
                 tb_nom.Text = resultat.MED_NOMCOMMERCIAL;
-                tb_depot.Text = resultat.MED_DEPOTLEGAL;
                 tb_compo.Text = resultat.MED_COMPOSITION;
                 tb_effet.Text = resultat.MED_EFFETS;
                 tb_contre.Text = resultat.MED_CONTREINDIC;
+                tb_famille.Text = resultat.FAM_CODE;
+                
             }
+        }
+
+        /// <summary>
+        /// Ouvre la fenêtre d'ajout de médicaments
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bt_ajouter_Click(object sender, EventArgs e)
+        {
+            Form_Medicament_Ajouter fa = new Form_Medicament_Ajouter();
+            fa.Show();
         }
     }
 }

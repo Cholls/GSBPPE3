@@ -197,6 +197,7 @@
             this.tb_DateEmbauche.Name = "tb_DateEmbauche";
             this.tb_DateEmbauche.Size = new System.Drawing.Size(131, 22);
             this.tb_DateEmbauche.TabIndex = 7;
+            this.tb_DateEmbauche.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_DateEmbauche_KeyPress);
             // 
             // btn_Valider
             // 

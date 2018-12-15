@@ -41,13 +41,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tb_contre = new System.Windows.Forms.TextBox();
             this.tb_effet = new System.Windows.Forms.TextBox();
             this.tb_compo = new System.Windows.Forms.TextBox();
-            this.tb_depot = new System.Windows.Forms.TextBox();
             this.tb_nom = new System.Windows.Forms.TextBox();
+            this.bt_ajouter = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tb_famille = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentBindingSource)).BeginInit();
@@ -119,14 +120,11 @@
             // 
             // cb_select
             // 
-            this.cb_select.DataSource = this.medicamentBindingSource1;
-            this.cb_select.DisplayMember = "MED_NOMCOMMERCIAL";
             this.cb_select.FormattingEnabled = true;
             this.cb_select.Location = new System.Drawing.Point(65, 147);
             this.cb_select.Name = "cb_select";
             this.cb_select.Size = new System.Drawing.Size(237, 24);
             this.cb_select.TabIndex = 42;
-            this.cb_select.ValueMember = "MED_NOMCOMMERCIAL";
             // 
             // label6
             // 
@@ -157,16 +155,6 @@
             this.label4.Size = new System.Drawing.Size(108, 23);
             this.label4.TabIndex = 67;
             this.label4.Text = "Composition";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(421, 141);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 23);
-            this.label3.TabIndex = 66;
-            this.label3.Text = "Dépot légal";
             // 
             // label2
             // 
@@ -207,15 +195,6 @@
             this.tb_compo.Size = new System.Drawing.Size(295, 51);
             this.tb_compo.TabIndex = 62;
             // 
-            // tb_depot
-            // 
-            this.tb_depot.Location = new System.Drawing.Point(425, 167);
-            this.tb_depot.MaxLength = 30;
-            this.tb_depot.Name = "tb_depot";
-            this.tb_depot.ReadOnly = true;
-            this.tb_depot.Size = new System.Drawing.Size(137, 22);
-            this.tb_depot.TabIndex = 61;
-            // 
             // tb_nom
             // 
             this.tb_nom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -227,20 +206,52 @@
             this.tb_nom.Size = new System.Drawing.Size(166, 29);
             this.tb_nom.TabIndex = 60;
             // 
+            // bt_ajouter
+            // 
+            this.bt_ajouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_ajouter.Location = new System.Drawing.Point(28, 377);
+            this.bt_ajouter.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_ajouter.Name = "bt_ajouter";
+            this.bt_ajouter.Size = new System.Drawing.Size(139, 47);
+            this.bt_ajouter.TabIndex = 70;
+            this.bt_ajouter.Text = "Ajouter";
+            this.bt_ajouter.UseVisualStyleBackColor = true;
+            this.bt_ajouter.Click += new System.EventHandler(this.bt_ajouter_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(805, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 23);
+            this.label7.TabIndex = 72;
+            this.label7.Text = "Famille";
+            // 
+            // tb_famille
+            // 
+            this.tb_famille.Location = new System.Drawing.Point(809, 47);
+            this.tb_famille.MaxLength = 30;
+            this.tb_famille.Name = "tb_famille";
+            this.tb_famille.ReadOnly = true;
+            this.tb_famille.Size = new System.Drawing.Size(137, 22);
+            this.tb_famille.TabIndex = 71;
+            // 
             // Form_Medicaments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 523);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.tb_famille);
+            this.Controls.Add(this.bt_ajouter);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb_contre);
             this.Controls.Add(this.tb_effet);
             this.Controls.Add(this.tb_compo);
-            this.Controls.Add(this.tb_depot);
             this.Controls.Add(this.tb_nom);
             this.Controls.Add(this.bt_valid);
             this.Controls.Add(this.label1);
@@ -275,12 +286,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_contre;
         private System.Windows.Forms.TextBox tb_effet;
         private System.Windows.Forms.TextBox tb_compo;
-        private System.Windows.Forms.TextBox tb_depot;
         private System.Windows.Forms.TextBox tb_nom;
+        private System.Windows.Forms.Button bt_ajouter;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tb_famille;
     }
 }

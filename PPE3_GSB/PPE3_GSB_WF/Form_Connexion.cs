@@ -12,8 +12,21 @@ namespace PPE3_GSB_WF
 {
     public partial class Form_Connexion : Form
     {
-        string identSuper = "gsbadmin";
-        string mdpSuper = "mdp";
+        string identSuper = "test";
+        string mdpSuper = "test";
+        string utilisateur = "";
+
+        /// <summary>
+        /// Pour récupérer la variable
+        /// utilisateur qui nous permet de savoir qui est connecté
+        /// V pour visiteur et S pour super utilisateur
+        /// // Cette variable va être récupérée par accueil
+        /// </summary>
+        /// <returns></returns>
+        public string Input
+        {
+            get { return utilisateur; }
+        }
 
         private GSB_PPE3Entities1 monModele;
         public Form_Connexion()
@@ -28,8 +41,6 @@ namespace PPE3_GSB_WF
                 == DialogResult.Yes)
             {
                 Application.Exit();
-                this.getIdent();
-                this.getMdp();
             }
             
         }
@@ -64,19 +75,28 @@ namespace PPE3_GSB_WF
                 // Voir comment faire pour réussir l'autentification
                 if ((mdp == resultat.VIS_MDP) && (ident == resultat.VIS_LOGIN)) {
                     estValide = true;
-
-                } // NE FONCTIONNE PAS
-                else if (mdp == mdpSuper && ident == identSuper) {
-                    estValide = true;
-                    
-                }else
-                    estValide = false;
+                    MessageBox.Show("Visiteur : Connexion réussie !");
+                    utilisateur = "V";
+                } 
             }
+            if ((mdp == mdpSuper) && (ident == identSuper))
+            {
+                estValide = true;
+                utilisateur = "S";
+                MessageBox.Show("Secrétaire : Connexion réussie !");
+            }
+
+            //Delegues regionaux
+            /*if ((mdp == resultat.DEL_MDP) && (ident == resultat.DEL_LOGIN))
+            {
+                estValide = true;
+                utilisateur = "D";
+                MessageBox.Show("Délégué régional : Connexion réussie !");
+            }*/
 
             // Vérification de la correspondance
             if (estValide == true)  {
-                MessageBox.Show("Connexion réussie !");
-                this.Close();
+                this.Close(); // Ferme ce formulaire et ouvre l'accueil
             }
             else {
                 MessageBox.Show("Echec de connexion, réessayer.");

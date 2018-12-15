@@ -41,6 +41,7 @@
             this.mnu_Medecins = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterUnMédecinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualiserLesMedecintoolTip = new System.Windows.Forms.ToolStripMenuItem();
+            this.seDéconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_Accueil.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@
             this.mnu_Visiteurs,
             this.mnu_Rapports,
             this.mnu_Medicaments,
-            this.mnu_Medecins});
+            this.mnu_Medecins,
+            this.seDéconnecterToolStripMenuItem});
             this.mnu_Accueil.Location = new System.Drawing.Point(0, 0);
             this.mnu_Accueil.Name = "mnu_Accueil";
             this.mnu_Accueil.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -151,6 +153,13 @@
             this.visualiserLesMedecintoolTip.Text = "Visualiser les médecins";
             this.visualiserLesMedecintoolTip.Click += new System.EventHandler(this.visualiserLesMedecintoolTip_Click);
             // 
+            // seDéconnecterToolStripMenuItem
+            // 
+            this.seDéconnecterToolStripMenuItem.Name = "seDéconnecterToolStripMenuItem";
+            this.seDéconnecterToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
+            this.seDéconnecterToolStripMenuItem.Text = "Se déconnecter";
+            this.seDéconnecterToolStripMenuItem.Click += new System.EventHandler(this.seDéconnecterToolStripMenuItem_Click);
+            // 
             // Form_Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -189,5 +198,6 @@
         private System.Windows.Forms.ToolStripMenuItem visualiserLesMédicamentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajouterUnMédecinToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualiserLesMedecintoolTip;
+        private System.Windows.Forms.ToolStripMenuItem seDéconnecterToolStripMenuItem;
     }
 }

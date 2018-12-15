@@ -46,6 +46,8 @@
             this.lbl_Nom = new System.Windows.Forms.Label();
             this.lbl_Matricule = new System.Windows.Forms.Label();
             this.cb_spe = new System.Windows.Forms.ComboBox();
+            this.praticienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gSB_PPE3DataSet6 = new PPE3_GSB_WF.GSB_PPE3DataSet6();
             this.specialiteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gSB_PPE3DataSet3 = new PPE3_GSB_WF.GSB_PPE3DataSet3();
             this.specialiteTableAdapter = new PPE3_GSB_WF.GSB_PPE3DataSet3TableAdapters.specialiteTableAdapter();
@@ -53,13 +55,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tb_coefNot = new System.Windows.Forms.TextBox();
             this.tb_coefConf = new System.Windows.Forms.TextBox();
-            this.gSB_PPE3DataSet6 = new PPE3_GSB_WF.GSB_PPE3DataSet6();
-            this.praticienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.praticienTableAdapter = new PPE3_GSB_WF.GSB_PPE3DataSet6TableAdapters.praticienTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.specialiteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_AjoutVisiteur
@@ -101,9 +101,9 @@
             // 
             this.tb_Nom.Location = new System.Drawing.Point(160, 104);
             this.tb_Nom.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_Nom.MaxLength = 15;
+            this.tb_Nom.MaxLength = 20;
             this.tb_Nom.Name = "tb_Nom";
-            this.tb_Nom.Size = new System.Drawing.Size(199, 22);
+            this.tb_Nom.Size = new System.Drawing.Size(211, 22);
             this.tb_Nom.TabIndex = 2;
             this.tb_Nom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Nom_KeyPress);
             // 
@@ -111,9 +111,9 @@
             // 
             this.tb_Prenom.Location = new System.Drawing.Point(160, 134);
             this.tb_Prenom.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_Prenom.MaxLength = 15;
+            this.tb_Prenom.MaxLength = 20;
             this.tb_Prenom.Name = "tb_Prenom";
-            this.tb_Prenom.Size = new System.Drawing.Size(199, 22);
+            this.tb_Prenom.Size = new System.Drawing.Size(211, 22);
             this.tb_Prenom.TabIndex = 3;
             this.tb_Prenom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Prenom_KeyPress);
             // 
@@ -121,7 +121,7 @@
             // 
             this.tb_Adresse.Location = new System.Drawing.Point(160, 174);
             this.tb_Adresse.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_Adresse.MaxLength = 40;
+            this.tb_Adresse.MaxLength = 45;
             this.tb_Adresse.Name = "tb_Adresse";
             this.tb_Adresse.Size = new System.Drawing.Size(357, 22);
             this.tb_Adresse.TabIndex = 4;
@@ -140,9 +140,9 @@
             // 
             this.tb_Ville.Location = new System.Drawing.Point(160, 247);
             this.tb_Ville.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_Ville.MaxLength = 15;
+            this.tb_Ville.MaxLength = 45;
             this.tb_Ville.Name = "tb_Ville";
-            this.tb_Ville.Size = new System.Drawing.Size(160, 22);
+            this.tb_Ville.Size = new System.Drawing.Size(225, 22);
             this.tb_Ville.TabIndex = 6;
             this.tb_Ville.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Ville_KeyPress);
             // 
@@ -243,6 +243,16 @@
             this.cb_spe.TabIndex = 9;
             this.cb_spe.ValueMember = "TYP_CODE";
             // 
+            // praticienBindingSource
+            // 
+            this.praticienBindingSource.DataMember = "praticien";
+            this.praticienBindingSource.DataSource = this.gSB_PPE3DataSet6;
+            // 
+            // gSB_PPE3DataSet6
+            // 
+            this.gSB_PPE3DataSet6.DataSetName = "GSB_PPE3DataSet6";
+            this.gSB_PPE3DataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // specialiteBindingSource
             // 
             this.specialiteBindingSource.DataMember = "specialite";
@@ -297,16 +307,6 @@
             this.tb_coefConf.Size = new System.Drawing.Size(91, 22);
             this.tb_coefConf.TabIndex = 8;
             // 
-            // gSB_PPE3DataSet6
-            // 
-            this.gSB_PPE3DataSet6.DataSetName = "GSB_PPE3DataSet6";
-            this.gSB_PPE3DataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // praticienBindingSource
-            // 
-            this.praticienBindingSource.DataMember = "praticien";
-            this.praticienBindingSource.DataSource = this.gSB_PPE3DataSet6;
-            // 
             // praticienTableAdapter
             // 
             this.praticienTableAdapter.ClearBeforeFill = true;
@@ -342,10 +342,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Medecins_Ajouter";
             this.Load += new System.EventHandler(this.Form_Medecins_Ajouter_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.specialiteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gSB_PPE3DataSet6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.praticienBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

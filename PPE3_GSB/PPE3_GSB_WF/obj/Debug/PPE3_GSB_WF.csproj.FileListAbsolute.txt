@@ -95,3 +95,4 @@ C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\fr\EntityFram
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medicament_Ajouter.resources

@@ -122,6 +122,12 @@
     <Compile Include="Form_Medicaments.Designer.cs">
       <DependentUpon>Form_Medicaments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Medicament_Ajouter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Medicament_Ajouter.Designer.cs">
+      <DependentUpon>Form_Medicament_Ajouter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Rapports.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,41 +151,6 @@
     </Compile>
     <Compile Include="Form_Visiteurs_Modifier.Designer.cs">
       <DependentUpon>Form_Visiteurs_Modifier.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GSB_PPE3DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GSB_PPE3DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GSB_PPE3DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GSB_PPE3DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GSB_PPE3DataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GSB_PPE3DataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GSB_PPE3DataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GSB_PPE3DataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GSB_PPE3DataSet4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GSB_PPE3DataSet4.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GSB_PPE3DataSet5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GSB_PPE3DataSet5.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GSB_PPE3DataSet6.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GSB_PPE3DataSet6.xsd</DependentUpon>
     </Compile>
     <Compile Include="inviter.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
@@ -267,6 +238,9 @@
     <EmbeddedResource Include="Form_Medicaments.resx">
       <DependentUpon>Form_Medicaments.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Medicament_Ajouter.resx">
+      <DependentUpon>Form_Medicament_Ajouter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Rapports.resx">
       <DependentUpon>Form_Rapports.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,87 +274,10 @@
     <None Include="ECOLECONDUITEDataSet.xss">
       <DependentUpon>ECOLECONDUITEDataSet.xsd</DependentUpon>
     </None>
-    <None Include="GSB_PPE3DataSet.xsc">
-      <DependentUpon>GSB_PPE3DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GSB_PPE3DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GSB_PPE3DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GSB_PPE3DataSet.xss">
-      <DependentUpon>GSB_PPE3DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GSB_PPE3DataSet1.xsc">
-      <DependentUpon>GSB_PPE3DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="GSB_PPE3DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GSB_PPE3DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GSB_PPE3DataSet1.xss">
-      <DependentUpon>GSB_PPE3DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="GSB_PPE3DataSet2.xsc">
-      <DependentUpon>GSB_PPE3DataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="GSB_PPE3DataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GSB_PPE3DataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GSB_PPE3DataSet2.xss">
-      <DependentUpon>GSB_PPE3DataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="GSB_PPE3DataSet3.xsc">
-      <DependentUpon>GSB_PPE3DataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="GSB_PPE3DataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GSB_PPE3DataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GSB_PPE3DataSet3.xss">
-      <DependentUpon>GSB_PPE3DataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="GSB_PPE3DataSet4.xsc">
-      <DependentUpon>GSB_PPE3DataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="GSB_PPE3DataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GSB_PPE3DataSet4.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GSB_PPE3DataSet4.xss">
-      <DependentUpon>GSB_PPE3DataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="GSB_PPE3DataSet5.xsc">
-      <DependentUpon>GSB_PPE3DataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="GSB_PPE3DataSet5.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GSB_PPE3DataSet5.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GSB_PPE3DataSet5.xss">
-      <DependentUpon>GSB_PPE3DataSet5.xsd</DependentUpon>
-    </None>
     <EntityDeploy Include="ModeleGSB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModeleGSB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="GSB_PPE3DataSet6.xsc">
-      <DependentUpon>GSB_PPE3DataSet6.xsd</DependentUpon>
-    </None>
-    <None Include="GSB_PPE3DataSet6.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GSB_PPE3DataSet6.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GSB_PPE3DataSet6.xss">
-      <DependentUpon>GSB_PPE3DataSet6.xsd</DependentUpon>
-    </None>
     <None Include="ModeleGSB.edmx.diagram">
       <DependentUpon>ModeleGSB.edmx</DependentUpon>
     </None>

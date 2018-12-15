@@ -46,6 +46,7 @@
             this.tb_MotDePasse.Name = "tb_MotDePasse";
             this.tb_MotDePasse.Size = new System.Drawing.Size(132, 27);
             this.tb_MotDePasse.TabIndex = 2;
+            this.tb_MotDePasse.UseSystemPasswordChar = true;
             // 
             // tb_Identifiant
             // 
@@ -70,6 +71,7 @@
             // 
             // btn_Connexion
             // 
+            this.btn_Connexion.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btn_Connexion.Location = new System.Drawing.Point(332, 261);
             this.btn_Connexion.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Connexion.Name = "btn_Connexion";

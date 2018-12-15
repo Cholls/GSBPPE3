@@ -50,9 +50,8 @@
             this.tb_cp = new System.Windows.Forms.TextBox();
             this.tb_ville = new System.Windows.Forms.TextBox();
             this.tb_coefNot = new System.Windows.Forms.TextBox();
-            this.tb_num = new System.Windows.Forms.TextBox();
             this.tb_coefConf = new System.Windows.Forms.TextBox();
-            this.tb_spe = new System.Windows.Forms.TextBox();
+            this.tb_type = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -152,14 +151,11 @@
             // 
             // cb_Select
             // 
-            this.cb_Select.DataSource = this.praticienBindingSource2;
-            this.cb_Select.DisplayMember = "PRA_NOM";
             this.cb_Select.FormattingEnabled = true;
             this.cb_Select.Location = new System.Drawing.Point(43, 138);
             this.cb_Select.Name = "cb_Select";
             this.cb_Select.Size = new System.Drawing.Size(237, 24);
             this.cb_Select.TabIndex = 25;
-            this.cb_Select.ValueMember = "PRA_NOM";
             // 
             // praticienBindingSource2
             // 
@@ -231,29 +227,21 @@
             this.tb_coefNot.Size = new System.Drawing.Size(72, 22);
             this.tb_coefNot.TabIndex = 6;
             // 
-            // tb_num
-            // 
-            this.tb_num.Location = new System.Drawing.Point(442, 12);
-            this.tb_num.Name = "tb_num";
-            this.tb_num.ReadOnly = true;
-            this.tb_num.Size = new System.Drawing.Size(36, 22);
-            this.tb_num.TabIndex = 33;
-            // 
             // tb_coefConf
             // 
-            this.tb_coefConf.Location = new System.Drawing.Point(888, 300);
+            this.tb_coefConf.Location = new System.Drawing.Point(910, 300);
             this.tb_coefConf.Name = "tb_coefConf";
             this.tb_coefConf.ReadOnly = true;
-            this.tb_coefConf.Size = new System.Drawing.Size(57, 22);
+            this.tb_coefConf.Size = new System.Drawing.Size(64, 22);
             this.tb_coefConf.TabIndex = 7;
             // 
-            // tb_spe
+            // tb_type
             // 
-            this.tb_spe.Location = new System.Drawing.Point(442, 365);
-            this.tb_spe.Name = "tb_spe";
-            this.tb_spe.ReadOnly = true;
-            this.tb_spe.Size = new System.Drawing.Size(50, 22);
-            this.tb_spe.TabIndex = 8;
+            this.tb_type.Location = new System.Drawing.Point(442, 365);
+            this.tb_type.Name = "tb_type";
+            this.tb_type.ReadOnly = true;
+            this.tb_type.Size = new System.Drawing.Size(50, 22);
+            this.tb_type.TabIndex = 8;
             // 
             // button1
             // 
@@ -385,9 +373,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.tb_spe);
+            this.Controls.Add(this.tb_type);
             this.Controls.Add(this.tb_coefConf);
-            this.Controls.Add(this.tb_num);
             this.Controls.Add(this.tb_coefNot);
             this.Controls.Add(this.tb_ville);
             this.Controls.Add(this.tb_cp);
@@ -439,9 +426,8 @@
         private System.Windows.Forms.TextBox tb_cp;
         private System.Windows.Forms.TextBox tb_ville;
         private System.Windows.Forms.TextBox tb_coefNot;
-        private System.Windows.Forms.TextBox tb_num;
         private System.Windows.Forms.TextBox tb_coefConf;
-        private System.Windows.Forms.TextBox tb_spe;
+        private System.Windows.Forms.TextBox tb_type;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

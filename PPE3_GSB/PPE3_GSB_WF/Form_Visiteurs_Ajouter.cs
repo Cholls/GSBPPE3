@@ -75,7 +75,7 @@ namespace PPE3_GSB_WF
                         // Déclaration d'un nouveau visiteur
                         var unVisiteur = new visiteur()
                         {
-                          
+
                             VIS_MATRICULE = tb_Matricule.Text,
                             VIS_NOM = tb_Nom.Text,
                             VIS_PRENOM = tb_Prenom.Text,
@@ -86,13 +86,25 @@ namespace PPE3_GSB_WF
                             VIS_LOGIN = tb_Login.Text,
                             VIS_MDP = tb_MotDePasse.Text
                         };
+
                         // Ajout du visiteur dans la liste gérees par le programme
                         context.visiteurs.Add(unVisiteur);
                         // Sauvegarde de l'ajout dans la BDD
                         context.SaveChanges();
+                        MessageBox.Show("Le visiteur " + tb_Nom.Text + " " + tb_Prenom.Text + " à bien été ajouté", "ok", MessageBoxButtons.OK);
+                        tb_Matricule.Text = "";
+                        tb_Nom.Text = "";
+                        tb_Prenom.Text = "";
+                        tb_Adresse.Text = "";
+                        tb_CP.Text = "";
+                        tb_Ville.Text = "";
+                        tb_DateEmbauche.Text = "";
+                        tb_Login.Text = "";
+                        tb_MotDePasse.Text = "";
                     }
                 }
             }
+
         }
 
         // TOUS LES TESTS DE SAISIES SE TROUVENT ICI
@@ -162,6 +174,9 @@ namespace PPE3_GSB_WF
             AutoriserLettres(e);
         }
 
-     
+        private void tb_DateEmbauche_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            AutoriserNombre(e);
+        }
     }
 }

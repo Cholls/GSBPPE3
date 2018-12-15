@@ -21,11 +21,14 @@ namespace PPE3_GSB_WF
 
         private void Form_Visiteurs_Load(object sender, EventArgs e)
         {
-            // TODO: cette ligne de code charge les données dans la table 'gSB_PPE3DataSet4.visiteurs'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.visiteursTableAdapter1.Fill(this.gSB_PPE3DataSet4.visiteurs);
-            // TODO: cette ligne de code charge les données dans la table 'gSB_PPE3DataSet.visiteurs'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            // dans le combobox sans utiliser un binding pointant sur la base de données
+            var req = from v in monModele.visiteurs
+                      select v.VIS_NOM;
 
-
+            foreach (var resultat in req)
+            {
+                cb_select.Items.Add(resultat);
+            }
         }
 
         private void btn_Quitter_Click(object sender, EventArgs e)
@@ -43,10 +46,6 @@ namespace PPE3_GSB_WF
             fva.Show();
         }
 
-        private void btn_Supprimer_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_Modifier_Click(object sender, EventArgs e)
         {
@@ -73,7 +72,9 @@ namespace PPE3_GSB_WF
             tb_adresse.ReadOnly = false;
             tb_dateEmbauche.ReadOnly = false;
 
-            string selection = cb_select.SelectedValue.ToString();
+            // Récupération du contenu du combobox 
+            string selection = cb_select.SelectedItem.ToString();
+
             var req = from p in monModele.visiteurs
                       where p.VIS_NOM == selection
                       select p;
@@ -81,7 +82,6 @@ namespace PPE3_GSB_WF
             // Tout afficher dans les TextBox
             foreach (var resultat in req)
             {
-                tb_num.Text = Convert.ToString(resultat.VIS_MATRICULE);
                 tb_nom.Text = resultat.VIS_NOM;
                 tb_prenom.Text = resultat.VIS_PRENOM;
                 tb_adresse.Text = resultat.VIS_ADRESSE;
@@ -121,13 +121,19 @@ namespace PPE3_GSB_WF
             // Reperer comment faire le SavesChanges
             monModele.SaveChanges();
 
-            // Si le nom a été changé, l'ancien va quand même apparaître dans le comboBox
-            // Il faut recharger les données dans le comboBox dans ce cas
-            // PEUT-ETRE LIGNE A CHANGER SI ERREUR SURVENUE
-           // praticienBindingSource2.DataSource = med.ToList();
-           // cb_Select.DataSource = praticienBindingSource2;
-           // cb_Select.Refresh();
-           // Griser les champs pour que rien ne s'ajoute dans la combobox
+        }
+
+        // Essai pour empêcher de valider si la valeur du comboBox n'a pas changé
+        // FONCTIONNE MAIS ON PEUT QUAND MEME NE RIEN RENTRER ET VALIDER
+        // FAIRE EN SORTE QU'ON NE PUISSE PAS QUAND MEME tant que vide 
+        private void cb_select_TextChanged(object sender, EventArgs e)
+        {
+            bt_valid.Enabled = true;
+        }
+
+        private void cb_select_MouseClick(object sender, MouseEventArgs e)
+        {
+            bt_valid.Enabled = true;
         }
     }
 }

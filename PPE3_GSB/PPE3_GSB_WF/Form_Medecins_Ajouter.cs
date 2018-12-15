@@ -74,6 +74,16 @@ namespace PPE3_GSB_WF
                         context.praticiens.Add(unPraticien);
                         // Sauvegarde de l'ajout dans la BDD
                         context.SaveChanges();
+
+                        MessageBox.Show("Le praticien " + tb_Nom.Text + " " + tb_Prenom.Text + " à bien été ajouté", "ok", MessageBoxButtons.OK);
+                        tb_Matricule.Text = "";
+                        tb_Nom.Text = "";
+                        tb_Prenom.Text = "";
+                        tb_Adresse.Text = "";
+                        tb_CP.Text = "";
+                        tb_Ville.Text = "";
+                        tb_coefNot.Text = "";
+                        tb_coefConf.Text = "";
                     }
                     
                 }

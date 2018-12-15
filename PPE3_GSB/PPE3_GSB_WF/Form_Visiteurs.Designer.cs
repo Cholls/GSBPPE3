@@ -56,7 +56,6 @@
             this.tb_adresse = new System.Windows.Forms.TextBox();
             this.tb_prenom = new System.Windows.Forms.TextBox();
             this.tb_nom = new System.Windows.Forms.TextBox();
-            this.tb_num = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.visiteursBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSBPPE3DataSet4BindingSource)).BeginInit();
@@ -147,6 +146,7 @@
             // 
             // bt_valid
             // 
+            this.bt_valid.Enabled = false;
             this.bt_valid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_valid.Location = new System.Drawing.Point(101, 177);
             this.bt_valid.Margin = new System.Windows.Forms.Padding(4);
@@ -169,14 +169,13 @@
             // 
             // cb_select
             // 
-            this.cb_select.DataSource = this.visiteursBindingSource2;
-            this.cb_select.DisplayMember = "VIS_NOM";
             this.cb_select.FormattingEnabled = true;
             this.cb_select.Location = new System.Drawing.Point(55, 135);
             this.cb_select.Name = "cb_select";
             this.cb_select.Size = new System.Drawing.Size(237, 24);
             this.cb_select.TabIndex = 39;
-            this.cb_select.ValueMember = "VIS_NOM";
+            this.cb_select.TextChanged += new System.EventHandler(this.cb_select_TextChanged);
+            this.cb_select.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cb_select_MouseClick);
             // 
             // label7
             // 
@@ -296,14 +295,6 @@
             this.tb_nom.Size = new System.Drawing.Size(179, 32);
             this.tb_nom.TabIndex = 1;
             // 
-            // tb_num
-            // 
-            this.tb_num.Location = new System.Drawing.Point(545, 18);
-            this.tb_num.Name = "tb_num";
-            this.tb_num.ReadOnly = true;
-            this.tb_num.Size = new System.Drawing.Size(36, 22);
-            this.tb_num.TabIndex = 63;
-            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -322,7 +313,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 523);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.tb_num);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -388,7 +378,6 @@
         private System.Windows.Forms.TextBox tb_adresse;
         private System.Windows.Forms.TextBox tb_prenom;
         private System.Windows.Forms.TextBox tb_nom;
-        private System.Windows.Forms.TextBox tb_num;
         private System.Windows.Forms.Button button2;
     }
 }
