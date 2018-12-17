@@ -72,213 +72,206 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="activite_compl.cs">
+    <Compile Include="Accès aux données\activite_compl.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="composant.cs">
+    <Compile Include="Accès aux données\composant.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="constituer.cs">
+    <Compile Include="Accès aux données\constituer.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="dosage.cs">
+    <Compile Include="Accès aux données\dosage.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="ECOLECONDUITEDataSet.Designer.cs">
+    <Compile Include="Accès aux données\famille.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ECOLECONDUITEDataSet.xsd</DependentUpon>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="famille.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Form_Accueil.cs">
+    <Compile Include="UI\Form_Accueil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Accueil.Designer.cs">
+    <Compile Include="UI\Form_Accueil.Designer.cs">
       <DependentUpon>Form_Accueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Connexion.cs">
+    <Compile Include="UI\Form_Connexion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Connexion.Designer.cs">
+    <Compile Include="UI\Form_Connexion.Designer.cs">
       <DependentUpon>Form_Connexion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Medecins.cs">
+    <Compile Include="UI\Form_Medecins.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Medecins.Designer.cs">
+    <Compile Include="UI\Form_Medecins.Designer.cs">
       <DependentUpon>Form_Medecins.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Medecins_Ajouter.cs">
+    <Compile Include="UI\Form_Medecins_Ajouter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Medecins_Ajouter.Designer.cs">
+    <Compile Include="UI\Form_Medecins_Ajouter.Designer.cs">
       <DependentUpon>Form_Medecins_Ajouter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Medicaments.cs">
+    <Compile Include="UI\Form_Medicaments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Medicaments.Designer.cs">
+    <Compile Include="UI\Form_Medicaments.Designer.cs">
       <DependentUpon>Form_Medicaments.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Medicament_Ajouter.cs">
+    <Compile Include="UI\Form_Medicament_Ajouter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Medicament_Ajouter.Designer.cs">
+    <Compile Include="UI\Form_Medicament_Ajouter.Designer.cs">
       <DependentUpon>Form_Medicament_Ajouter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Rapports.cs">
+    <Compile Include="UI\Form_Rapports_Secretaria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Rapports.Designer.cs">
-      <DependentUpon>Form_Rapports.cs</DependentUpon>
+    <Compile Include="UI\Form_Rapports_Secretaria.Designer.cs">
+      <DependentUpon>Form_Rapports_Secretaria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Visiteurs.cs">
+    <Compile Include="UI\Form_Rapports_Visiteur.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Visiteurs.Designer.cs">
+    <Compile Include="UI\Form_Rapports_Visiteur.Designer.cs">
+      <DependentUpon>Form_Rapports_Visiteur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Form_Visiteurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form_Visiteurs.Designer.cs">
       <DependentUpon>Form_Visiteurs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Visiteurs_Ajouter.cs">
+    <Compile Include="UI\Form_Visiteurs_Ajouter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Visiteurs_Ajouter.Designer.cs">
+    <Compile Include="UI\Form_Visiteurs_Ajouter.Designer.cs">
       <DependentUpon>Form_Visiteurs_Ajouter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Visiteurs_Modifier.cs">
+    <Compile Include="UI\Form_Visiteurs_Modifier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Visiteurs_Modifier.Designer.cs">
+    <Compile Include="UI\Form_Visiteurs_Modifier.Designer.cs">
       <DependentUpon>Form_Visiteurs_Modifier.cs</DependentUpon>
     </Compile>
-    <Compile Include="inviter.cs">
+    <Compile Include="Accès aux données\inviter.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="medicament.cs">
+    <Compile Include="Accès aux données\medicament.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModeleGSB.Context.cs">
+    <Compile Include="Accès aux données\ModeleGSB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeleGSB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModeleGSB.cs">
+    <Compile Include="Accès aux données\ModeleGSB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModeleGSB.Designer.cs">
+    <Compile Include="Accès aux données\ModeleGSB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeleGSB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="motif.cs">
+    <Compile Include="Accès aux données\motif.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="offrir.cs">
+    <Compile Include="Accès aux données\offrir.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="posseder.cs">
+    <Compile Include="Accès aux données\posseder.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="praticien.cs">
+    <Compile Include="Accès aux données\praticien.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="prescrire.cs">
+    <Compile Include="Accès aux données\prescrire.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="presentation.cs">
+    <Compile Include="Accès aux données\presentation.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="rapport_visite.cs">
+    <Compile Include="Accès aux données\rapport_visite.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="realiser.cs">
+    <Compile Include="Accès aux données\realiser.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="region.cs">
+    <Compile Include="Accès aux données\region.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="responsable.cs">
+    <Compile Include="Accès aux données\responsable.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="secteur.cs">
+    <Compile Include="Accès aux données\secteur.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="specialite.cs">
+    <Compile Include="Accès aux données\specialite.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="travailler.cs">
+    <Compile Include="Accès aux données\travailler.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="type_individu.cs">
+    <Compile Include="Accès aux données\type_individu.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="type_praticien.cs">
+    <Compile Include="Accès aux données\type_praticien.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <Compile Include="visiteur.cs">
+    <Compile Include="Accès aux données\visiteur.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form_Accueil.resx">
+    <EmbeddedResource Include="UI\Form_Accueil.resx">
       <DependentUpon>Form_Accueil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Connexion.resx">
+    <EmbeddedResource Include="UI\Form_Connexion.resx">
       <DependentUpon>Form_Connexion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Medecins.resx">
+    <EmbeddedResource Include="UI\Form_Medecins.resx">
       <DependentUpon>Form_Medecins.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Medecins_Ajouter.resx">
+    <EmbeddedResource Include="UI\Form_Medecins_Ajouter.resx">
       <DependentUpon>Form_Medecins_Ajouter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Medicaments.resx">
+    <EmbeddedResource Include="UI\Form_Medicaments.resx">
       <DependentUpon>Form_Medicaments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Medicament_Ajouter.resx">
+    <EmbeddedResource Include="UI\Form_Medicament_Ajouter.resx">
       <DependentUpon>Form_Medicament_Ajouter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Rapports.resx">
-      <DependentUpon>Form_Rapports.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Form_Rapports_Secretaria.resx">
+      <DependentUpon>Form_Rapports_Secretaria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Visiteurs.resx">
+    <EmbeddedResource Include="UI\Form_Rapports_Visiteur.resx">
+      <DependentUpon>Form_Rapports_Visiteur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Form_Visiteurs.resx">
       <DependentUpon>Form_Visiteurs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Visiteurs_Ajouter.resx">
+    <EmbeddedResource Include="UI\Form_Visiteurs_Ajouter.resx">
       <DependentUpon>Form_Visiteurs_Ajouter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Visiteurs_Modifier.resx">
+    <EmbeddedResource Include="UI\Form_Visiteurs_Modifier.resx">
       <DependentUpon>Form_Visiteurs_Modifier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="ECOLECONDUITEDataSet.xsc">
-      <DependentUpon>ECOLECONDUITEDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ECOLECONDUITEDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ECOLECONDUITEDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ECOLECONDUITEDataSet.xss">
-      <DependentUpon>ECOLECONDUITEDataSet.xsd</DependentUpon>
-    </None>
-    <EntityDeploy Include="ModeleGSB.edmx">
+    <EntityDeploy Include="Accès aux données\ModeleGSB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModeleGSB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ModeleGSB.edmx.diagram">
+    <None Include="Accès aux données\ModeleGSB.edmx.diagram">
       <DependentUpon>ModeleGSB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -296,21 +289,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logogsb.png" />
+    <None Include="Ressources\logogsb.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\gsb.jpg" />
+    <None Include="Ressources\gsb.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ModeleGSB.Context.tt">
+    <Content Include="Accès aux données\ModeleGSB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModeleGSB.edmx</DependentUpon>
       <LastGenOutput>ModeleGSB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ModeleGSB.tt">
+    <Content Include="Accès aux données\ModeleGSB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModeleGSB.edmx</DependentUpon>
       <LastGenOutput>ModeleGSB.cs</LastGenOutput>

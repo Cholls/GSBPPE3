@@ -81,7 +81,6 @@ C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.F
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Connexion.resources
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medecins.resources
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medicaments.resources
-C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Rapports.resources
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Visiteurs.resources
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Visiteurs_Ajouter.resources
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Visiteurs_Modifier.resources
@@ -96,3 +95,5 @@ C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\EntityFramewo
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medicament_Ajouter.resources
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Rapports_Visiteur.resources
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Rapports_Secretaria.resources
