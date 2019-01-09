@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lbl_AjoutVisiteur = new System.Windows.Forms.Label();
             this.btn_Annuler = new System.Windows.Forms.Button();
             this.btn_Valider = new System.Windows.Forms.Button();
@@ -46,11 +45,9 @@
             this.lbl_Nom = new System.Windows.Forms.Label();
             this.lbl_Matricule = new System.Windows.Forms.Label();
             this.cb_spe = new System.Windows.Forms.ComboBox();
-
             this.label2 = new System.Windows.Forms.Label();
             this.tb_coefNot = new System.Windows.Forms.TextBox();
             this.tb_coefConf = new System.Windows.Forms.TextBox();
-     
             this.SuspendLayout();
             // 
             // lbl_AjoutVisiteur
@@ -222,7 +219,9 @@
             this.lbl_Matricule.Size = new System.Drawing.Size(160, 25);
             this.lbl_Matricule.TabIndex = 61;
             this.lbl_Matricule.Text = "Numéro medecin";
-  
+            // 
+            // cb_spe
+            // 
             this.cb_spe.DisplayMember = "TYP_CODE";
             this.cb_spe.FormattingEnabled = true;
             this.cb_spe.Location = new System.Drawing.Point(160, 369);
@@ -230,18 +229,6 @@
             this.cb_spe.Size = new System.Drawing.Size(57, 24);
             this.cb_spe.TabIndex = 9;
             this.cb_spe.ValueMember = "TYP_CODE";
-
-       
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 282);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(270, 25);
-            this.label1.TabIndex = 68;
-            this.label1.Text = "Coefficient de notoriété(en %)";
             // 
             // label2
             // 
@@ -271,7 +258,6 @@
             this.tb_coefConf.Name = "tb_coefConf";
             this.tb_coefConf.Size = new System.Drawing.Size(91, 22);
             this.tb_coefConf.TabIndex = 8;
-
             // 
             // Form_Medecins_Ajouter
             // 
@@ -281,7 +267,6 @@
             this.Controls.Add(this.tb_coefConf);
             this.Controls.Add(this.tb_coefNot);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_spe);
             this.Controls.Add(this.btn_Annuler);
             this.Controls.Add(this.btn_Valider);
@@ -299,12 +284,11 @@
             this.Controls.Add(this.lbl_Nom);
             this.Controls.Add(this.lbl_Matricule);
             this.Controls.Add(this.lbl_AjoutVisiteur);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form_Medecins_Ajouter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_Medecins_Ajouter";
+            this.Text = "Ajout d\'un médecin";
             this.Load += new System.EventHandler(this.Form_Medecins_Ajouter_Load);
-        
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -56,12 +56,7 @@ namespace PPE3_GSB_WF
             monModele = new GSB_PPE3Entities1();
         }
 
-        public string LeNomVisiteur
-        {
-            get { return tb_Identifiant.Text; }
-        }
-
-
+  
         /// <summary>
         /// Fermeture du programme
         /// </summary>
@@ -112,13 +107,12 @@ namespace PPE3_GSB_WF
                     identVisiteur = resultat.VIS_NOM;
                 }
                 else {
-                    MessageBox.Show("Passe par le else de la boucle");
                     estValide = false;
                 }
             }
 
             // TEST ENLEVER MAIS A REMETTRE
-            /* if ((mdpVisiteur == mdpSuper) && (identVisiteur == identSuper))
+            if ((mdpVisiteur == mdpSuper) && (identVisiteur == identSuper))
              {
                  estValide = true;
                  utilisateur = "S";
@@ -126,19 +120,8 @@ namespace PPE3_GSB_WF
              }
              else
              {
-                 // C'EST FALSE ET POURTANT CA AFFICHE LA FENETRE DE L'ACCUEIL
                  estValide = false;
-                 MessageBox.Show("Passe par le else de la condition" + estValide.ToString());
-             }*/
-
-            //Delegues regionaux
-            /*if ((mdp == resultat.DEL_MDP) && (ident == resultat.DEL_LOGIN))
-            {
-                estValide = true;
-                utilisateur = "D";
-                MessageBox.Show("Délégué régional : Connexion réussie !");
-            }*/
-
+             }
 
             // Vérification de la correspondance
            if (estValide == true)  {
@@ -146,7 +129,7 @@ namespace PPE3_GSB_WF
                 MessageBox.Show("Connexion réussie");
             }
             else {
-                MessageBox.Show("Echec de connexion, réessayer.");
+                //MessageBox.Show("Echec de connexion, réessayer.");
 
             }
         }

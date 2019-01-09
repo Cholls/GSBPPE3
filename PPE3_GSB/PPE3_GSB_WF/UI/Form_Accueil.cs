@@ -13,15 +13,13 @@ namespace PPE3_GSB_WF
 {
     public partial class Form_Accueil : Form
     {
-        String nomVisiteur, prenomVisiteur;
+ 
         private GSB_PPE3Entities1 monModele;
         Form_Connexion seConnecte;
         public Form_Accueil()
         {
             InitializeComponent();
             seConnecte = new Form_Connexion();
-            nomVisiteur = seConnecte.InputIdent;
-            prenomVisiteur = seConnecte.InputMdp;
             monModele = new GSB_PPE3Entities1();
 
         }
@@ -36,6 +34,17 @@ namespace PPE3_GSB_WF
             mnu_Visiteurs.Enabled = false;
             mnu_Medicaments.Enabled = false;
             mnu_Medecins.Enabled = false;
+        }
+
+        /// <summary>
+        /// Fait en sorte que si un formulaire est déjà ouvert, on le ferme pour ouvrir le nouveau
+        /// </summary>
+        public void FermerMDI()
+        {
+            Form c;
+            c = this.ActiveMdiChild;
+            if (c != null)
+                c.Close();
         }
 
         private void Form_Accueil_Load(object sender, EventArgs e)
@@ -65,6 +74,15 @@ namespace PPE3_GSB_WF
                     //MessageBox.Show("Super utilisateur connecté !");
                     visualSecretaria.Visible = true;
                     visualVisiteur.Visible = false;
+                    labelPrenom.Text = "";
+                    labelNom.Text = "";
+                    label1.Text = "Bienvenue, compte réservé à l'administration";
+                }
+                else
+                {
+                    // Solution pour que l'application reprenne quand une identification est mauvaise
+                    MessageBox.Show("Erreur connexion, mauvais identifiant et/ou mot de passe ou champ(s) vide(s). Reessayer.");
+                    seConnecte.ShowDialog();
                 }
             }
         }
@@ -77,6 +95,7 @@ namespace PPE3_GSB_WF
 
         private void visualiserLesVisiteursToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FermerMDI();
             Form_Visiteurs fv = new Form_Visiteurs();
             fv.MdiParent = this;
             fv.Show();
@@ -90,6 +109,7 @@ namespace PPE3_GSB_WF
         // Ici ouvrir la page de rapport du secrétaria
         private void visualiserLesRapportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FermerMDI();
             Form_Rapports_Secretaria f = new Form_Rapports_Secretaria();
             f.MdiParent = this;
             f.Show();
@@ -98,6 +118,7 @@ namespace PPE3_GSB_WF
         // Ici ouvrir la page de rapport du visiteur
         private void visualVisiteur_Click(object sender, EventArgs e)
         {
+            FermerMDI();
             Form_Rapports_Visiteur f = new Form_Rapports_Visiteur();
             f.MdiParent = this;
             // Récupération du nom et du prénom du visiteur sur les labels de l'accueil
@@ -108,6 +129,7 @@ namespace PPE3_GSB_WF
 
         private void ajouterUnMédicamentToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             Form_Medicament_Ajouter fa = new Form_Medicament_Ajouter();
             fa.Show();
 
@@ -115,6 +137,7 @@ namespace PPE3_GSB_WF
 
         private void visualiserLesMédicamentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FermerMDI();
             Form_Medicaments fv = new Form_Medicaments();
             fv.MdiParent = this;
             fv.Show();
@@ -128,20 +151,13 @@ namespace PPE3_GSB_WF
 
         private void visualiserLesMedecintoolTip_Click(object sender, EventArgs e)
         {
+            FermerMDI();
             Form_Medecins fva = new Form_Medecins();
             fva.MdiParent = this;
             fva.Show();
         }
 
-  
-        private void bt_rapport_Click(object sender, EventArgs e)
-        {
-            Form_Rapports_Visiteur f = new Form_Rapports_Visiteur();
-            f.MdiParent = this;
-            f.labelNom.Text = labelNom.Text;
-            f.labelPrenom.Text = labelPrenom.Text;
-            f.Show();
-        }
+ 
 
         /// <summary>
         /// Permet de déclencher la déconnexion, faisant revenir à la fenêtre de connexion
@@ -150,9 +166,10 @@ namespace PPE3_GSB_WF
         /// <param name="e"></param>
         private void seDéconnecterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Ne fonctionne pas encore, ne ferme pas la fenêtre de l'accueil
-            //Form_Connexion seConnecte = new Form_Connexion();
+            //Ne fonctionne pas encore, ne ferme pas la fenêtre de l'accueil
+            //this.Close();
             //seConnecte.ShowDialog();
+            
             
         }
     }

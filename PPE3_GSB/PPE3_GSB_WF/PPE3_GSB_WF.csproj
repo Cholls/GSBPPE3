@@ -140,6 +140,12 @@
     <Compile Include="UI\Form_Rapports_Visiteur.Designer.cs">
       <DependentUpon>Form_Rapports_Visiteur.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Form_Rapport_Ajouter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form_Rapport_Ajouter.Designer.cs">
+      <DependentUpon>Form_Rapport_Ajouter.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Form_Visiteurs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Form_Rapports_Visiteur.resx">
       <DependentUpon>Form_Rapports_Visiteur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Form_Rapport_Ajouter.resx">
+      <DependentUpon>Form_Rapport_Ajouter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Form_Visiteurs.resx">
       <DependentUpon>Form_Visiteurs.cs</DependentUpon>

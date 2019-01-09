@@ -32,6 +32,7 @@ namespace PPE3_GSB_WF
 
         private void Form_Medecins_Load(object sender, EventArgs e)
         {
+            // Charge les médecins dans le ComboBox
             // dans le combobox sans utiliser un binding pointant sur la base de données
             var req = from p in monModele.praticiens
                       select p.PRA_NOM;
@@ -40,7 +41,6 @@ namespace PPE3_GSB_WF
             {
                 cb_Select.Items.Add(resultat);
             }
-
         }
 
    
@@ -53,7 +53,7 @@ namespace PPE3_GSB_WF
         /// <summary>
         /// Permet de sélectionner un praticien parmi la liste du combobox
         /// Ce qui a pour effet de remplir les textbox sur le côté 
-        /// (les informations du médecin sélectionner
+        /// (les informations du médecin sélectionnées)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -77,6 +77,7 @@ namespace PPE3_GSB_WF
             var req = from p in monModele.praticiens
                       where p.PRA_NOM == selection
                       select p;
+
             // Tout afficher dans les TextBox
             foreach (var resultat in req)
             {

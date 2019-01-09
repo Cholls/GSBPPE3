@@ -188,7 +188,7 @@
             this.labelNom.AutoSize = true;
             this.labelNom.BackColor = System.Drawing.Color.WhiteSmoke;
             this.labelNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNom.Location = new System.Drawing.Point(704, 4);
+            this.labelNom.Location = new System.Drawing.Point(678, 4);
             this.labelNom.Name = "labelNom";
             this.labelNom.Size = new System.Drawing.Size(51, 24);
             this.labelNom.TabIndex = 4;

@@ -97,3 +97,4 @@ C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\bin\Debug\fr\EntityFram
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medicament_Ajouter.resources
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Rapports_Visiteur.resources
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Rapports_Secretaria.resources
+C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.UI.Form_Rapport_Ajouter.resources

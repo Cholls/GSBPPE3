@@ -102,6 +102,7 @@ namespace PPE3_GSB_WF
                         tb_DateEmbauche.Text = "";
                         tb_Login.Text = "";
                         tb_MotDePasse.Text = "";
+                        
                     }
                 }
             }
