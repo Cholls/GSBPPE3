@@ -16,6 +16,7 @@ namespace PPE3_GSB_WF
     {
         private GSB_PPE3Entities1 monModele;
     
+        // Récupération du labelNom 
         public string Nom
         {
             get { return labelNom.Text; }
@@ -88,6 +89,7 @@ namespace PPE3_GSB_WF
                 tb_motif.Text = motif;
             }
 
+            // A CONTINUER
             // Récupération du numéro du rapport
             matricule = Convert.ToInt32(tb_num.Text);
 

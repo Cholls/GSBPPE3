@@ -60,10 +60,10 @@
             // 
             // btn_Fermer
             // 
-            this.btn_Fermer.Location = new System.Drawing.Point(168, 261);
+            this.btn_Fermer.Location = new System.Drawing.Point(153, 259);
             this.btn_Fermer.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Fermer.Name = "btn_Fermer";
-            this.btn_Fermer.Size = new System.Drawing.Size(100, 28);
+            this.btn_Fermer.Size = new System.Drawing.Size(117, 38);
             this.btn_Fermer.TabIndex = 5;
             this.btn_Fermer.Text = "Fermer";
             this.btn_Fermer.UseVisualStyleBackColor = true;
@@ -72,10 +72,10 @@
             // btn_Connexion
             // 
             this.btn_Connexion.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btn_Connexion.Location = new System.Drawing.Point(332, 261);
+            this.btn_Connexion.Location = new System.Drawing.Point(332, 259);
             this.btn_Connexion.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Connexion.Name = "btn_Connexion";
-            this.btn_Connexion.Size = new System.Drawing.Size(100, 28);
+            this.btn_Connexion.Size = new System.Drawing.Size(109, 38);
             this.btn_Connexion.TabIndex = 4;
             this.btn_Connexion.Text = "Connexion";
             this.btn_Connexion.UseVisualStyleBackColor = true;
@@ -116,6 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(573, 321);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_MotDePasse);

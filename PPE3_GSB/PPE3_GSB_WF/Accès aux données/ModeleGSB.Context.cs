@@ -44,7 +44,6 @@ namespace PPE3_GSB_WF.Accès_aux_données
         public virtual DbSet<responsable> responsables { get; set; }
         public virtual DbSet<secteur> secteurs { get; set; }
         public virtual DbSet<specialite> specialites { get; set; }
-        public virtual DbSet<travailler> travaillers { get; set; }
         public virtual DbSet<type_individu> type_individu { get; set; }
         public virtual DbSet<type_praticien> type_praticien { get; set; }
         public virtual DbSet<visiteur> visiteurs { get; set; }

@@ -17,8 +17,8 @@ namespace PPE3_GSB_WF.Accès_aux_données
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public region()
         {
-            this.travaillers = new HashSet<travailler>();
             this.visiteurs = new HashSet<visiteur>();
+            this.visiteurs1 = new HashSet<visiteur>();
         }
     
         public string REG_CODE { get; set; }
@@ -27,8 +27,8 @@ namespace PPE3_GSB_WF.Accès_aux_données
     
         public virtual secteur secteur { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<travailler> travaillers { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<visiteur> visiteurs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<visiteur> visiteurs1 { get; set; }
     }
 }

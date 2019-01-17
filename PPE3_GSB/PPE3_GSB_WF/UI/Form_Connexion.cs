@@ -101,7 +101,7 @@ namespace PPE3_GSB_WF
                 // Voir comment faire pour réussir l'autentification
                 if ((mdpVisiteur == resultat.VIS_MDP) && (identVisiteur == resultat.VIS_LOGIN)) {
                     estValide = true;
-                    MessageBox.Show("Visiteur : Connexion réussie !");
+                    MessageBox.Show("Visiteur : Connexion réussie !", "Connexion réussie");
                     utilisateur = "V";
                     mdpVisiteur = resultat.VIS_MDP;
                     identVisiteur = resultat.VIS_NOM;
@@ -116,11 +116,11 @@ namespace PPE3_GSB_WF
              {
                  estValide = true;
                  utilisateur = "S";
-                 MessageBox.Show("Secrétaire : Connexion réussie !" + estValide.ToString());
              }
              else
              {
                  estValide = false;
+      
              }
 
             // Vérification de la correspondance

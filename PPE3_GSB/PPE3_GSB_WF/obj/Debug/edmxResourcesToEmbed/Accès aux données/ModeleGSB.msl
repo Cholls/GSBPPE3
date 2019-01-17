@@ -187,15 +187,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="travaillers">
-      <EntityTypeMapping TypeName="GSB_PPE3Model.travailler">
-        <MappingFragment StoreEntitySet="travailler">
-          <ScalarProperty Name="VIS_MATRICULE" ColumnName="VIS_MATRICULE" />
-          <ScalarProperty Name="JJMMAA" ColumnName="JJMMAA" />
-          <ScalarProperty Name="REG_CODE" ColumnName="REG_CODE" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="type_individu">
       <EntityTypeMapping TypeName="GSB_PPE3Model.type_individu">
         <MappingFragment StoreEntitySet="type_individu">
@@ -216,6 +207,7 @@
     <EntitySetMapping Name="visiteurs">
       <EntityTypeMapping TypeName="GSB_PPE3Model.visiteur">
         <MappingFragment StoreEntitySet="visiteurs">
+          <ScalarProperty Name="REG_CODE" ColumnName="REG_CODE" />
           <ScalarProperty Name="VIS_MATRICULE" ColumnName="VIS_MATRICULE" />
           <ScalarProperty Name="VIS_NOM" ColumnName="VIS_NOM" />
           <ScalarProperty Name="VIS_PRENOM" ColumnName="VIS_PRENOM" />

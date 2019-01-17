@@ -19,7 +19,6 @@ namespace PPE3_GSB_WF.Accès_aux_données
         {
             this.rapport_visite = new HashSet<rapport_visite>();
             this.realisers = new HashSet<realiser>();
-            this.travaillers = new HashSet<travailler>();
         }
     
         public string VIS_MATRICULE { get; set; }
@@ -31,14 +30,14 @@ namespace PPE3_GSB_WF.Accès_aux_données
         public Nullable<System.DateTime> VIS_DATEEMBAUCHE { get; set; }
         public string VIS_LOGIN { get; set; }
         public string VIS_MDP { get; set; }
+        public string REG_CODE { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<rapport_visite> rapport_visite { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<realiser> realisers { get; set; }
         public virtual responsable responsable { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<travailler> travaillers { get; set; }
         public virtual region region { get; set; }
+        public virtual region region1 { get; set; }
     }
 }

@@ -194,8 +194,8 @@
     <Property Name="SEC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="REG_NOM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="secteur" Relationship="Self.region_ibfk_1" FromRole="region" ToRole="secteur" />
-    <NavigationProperty Name="travaillers" Relationship="Self.travailler_ibfk_1" FromRole="region" ToRole="travailler" />
     <NavigationProperty Name="visiteurs" Relationship="Self.delegue_regional" FromRole="region" ToRole="visiteurs" />
+    <NavigationProperty Name="visiteurs1" Relationship="GSB_PPE3Model.REG_CODE" FromRole="region" ToRole="visiteur" />
   </EntityType>
   <EntityType Name="responsable">
     <Key>
@@ -222,18 +222,6 @@
     <Property Name="SPE_CODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="SPE_LIBELLE" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="posseders" Relationship="Self.posseder_ibfk_1" FromRole="specialite" ToRole="posseder" />
-  </EntityType>
-  <EntityType Name="travailler">
-    <Key>
-      <PropertyRef Name="VIS_MATRICULE" />
-      <PropertyRef Name="JJMMAA" />
-      <PropertyRef Name="REG_CODE" />
-    </Key>
-    <Property Name="VIS_MATRICULE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="JJMMAA" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="REG_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="region" Relationship="Self.travailler_ibfk_1" FromRole="travailler" ToRole="region" />
-    <NavigationProperty Name="visiteur" Relationship="Self.travailler_ibfk_2" FromRole="travailler" ToRole="visiteurs" />
   </EntityType>
   <EntityType Name="type_individu">
     <Key>
@@ -268,8 +256,9 @@
     <NavigationProperty Name="rapport_visite" Relationship="Self.rapport_visite_ibfk_3" FromRole="visiteurs" ToRole="rapport_visite" />
     <NavigationProperty Name="realisers" Relationship="Self.realiser_ibfk_2" FromRole="visiteurs" ToRole="realiser" />
     <NavigationProperty Name="responsable" Relationship="Self.responsable_ibfk_1" FromRole="visiteurs" ToRole="responsable" />
-    <NavigationProperty Name="travaillers" Relationship="Self.travailler_ibfk_2" FromRole="visiteurs" ToRole="travailler" />
     <NavigationProperty Name="region" Relationship="Self.delegue_regional" FromRole="visiteurs" ToRole="region" />
+    <Property Name="REG_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="region1" Relationship="GSB_PPE3Model.REG_CODE" FromRole="visiteur" ToRole="region" />
   </EntityType>
   <Association Name="inviter_ibfk_1">
     <End Role="activite_compl" Type="Self.activite_compl" Multiplicity="1" />
@@ -513,18 +502,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="travailler_ibfk_1">
-    <End Role="region" Type="Self.region" Multiplicity="1" />
-    <End Role="travailler" Type="Self.travailler" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="region">
-        <PropertyRef Name="REG_CODE" />
-      </Principal>
-      <Dependent Role="travailler">
-        <PropertyRef Name="REG_CODE" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="responsable_ibfk_1">
     <End Role="visiteurs" Type="Self.visiteur" Multiplicity="1" />
     <End Role="responsable" Type="Self.responsable" Multiplicity="0..1" />
@@ -546,18 +523,6 @@
       </Principal>
       <Dependent Role="responsable">
         <PropertyRef Name="SEC_CODE" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="travailler_ibfk_2">
-    <End Role="visiteurs" Type="Self.visiteur" Multiplicity="1" />
-    <End Role="travailler" Type="Self.travailler" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="visiteurs">
-        <PropertyRef Name="VIS_MATRICULE" />
-      </Principal>
-      <Dependent Role="travailler">
-        <PropertyRef Name="VIS_MATRICULE" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -597,7 +562,6 @@
     <EntitySet Name="responsables" EntityType="Self.responsable" />
     <EntitySet Name="secteurs" EntityType="Self.secteur" />
     <EntitySet Name="specialites" EntityType="Self.specialite" />
-    <EntitySet Name="travaillers" EntityType="Self.travailler" />
     <EntitySet Name="type_individu" EntityType="Self.type_individu" />
     <EntitySet Name="type_praticien" EntityType="Self.type_praticien" />
     <EntitySet Name="visiteurs" EntityType="Self.visiteur" />
@@ -681,10 +645,6 @@
       <End Role="secteur" EntitySet="secteurs" />
       <End Role="region" EntitySet="regions" />
     </AssociationSet>
-    <AssociationSet Name="travailler_ibfk_1" Association="Self.travailler_ibfk_1">
-      <End Role="region" EntitySet="regions" />
-      <End Role="travailler" EntitySet="travaillers" />
-    </AssociationSet>
     <AssociationSet Name="responsable_ibfk_1" Association="Self.responsable_ibfk_1">
       <End Role="visiteurs" EntitySet="visiteurs" />
       <End Role="responsable" EntitySet="responsables" />
@@ -692,10 +652,6 @@
     <AssociationSet Name="responsable_ibfk_2" Association="Self.responsable_ibfk_2">
       <End Role="secteur" EntitySet="secteurs" />
       <End Role="responsable" EntitySet="responsables" />
-    </AssociationSet>
-    <AssociationSet Name="travailler_ibfk_2" Association="Self.travailler_ibfk_2">
-      <End Role="visiteurs" EntitySet="visiteurs" />
-      <End Role="travailler" EntitySet="travaillers" />
     </AssociationSet>
     <AssociationSet Name="delegue_regional" Association="Self.delegue_regional">
       <End Role="visiteurs" EntitySet="visiteurs" />
@@ -713,5 +669,21 @@
       <End Role="medicament" EntitySet="medicaments" />
       <End Role="rapport_visite" EntitySet="rapport_visite" />
     </AssociationSet>
+    <AssociationSet Name="REG_CODE" Association="GSB_PPE3Model.REG_CODE">
+      <End Role="region" EntitySet="regions" />
+      <End Role="visiteur" EntitySet="visiteurs" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="REG_CODE">
+    <End Type="GSB_PPE3Model.region" Role="region" Multiplicity="0..1" />
+    <End Type="GSB_PPE3Model.visiteur" Role="visiteur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="region">
+        <PropertyRef Name="REG_CODE" />
+      </Principal>
+      <Dependent Role="visiteur">
+        <PropertyRef Name="REG_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

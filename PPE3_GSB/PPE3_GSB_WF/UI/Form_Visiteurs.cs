@@ -14,6 +14,7 @@ namespace PPE3_GSB_WF
     public partial class Form_Visiteurs : Form
     {
         private GSB_PPE3Entities1 monModele;
+        private string recupRegCode;
         public Form_Visiteurs()
         {
             InitializeComponent();
@@ -27,24 +28,8 @@ namespace PPE3_GSB_WF
         /// <param name="e"></param>
         private void Form_Visiteurs_Load(object sender, EventArgs e)
         {
-
-            // Faire le compteur des visiteurs
-            var reqNbVisiteur= from v in monModele.visiteurs
-                      select v;
-            int nbVisiteur = reqNbVisiteur.Count();
-            tx_visiteur.Text = Convert.ToString(nbVisiteur);
-            // Récupère les régions dans la base de données
-            var req = from v in monModele.regions
-                      select v;
-
-            
-            // Faire la vérification si dans une région il y a aucun visiteur, ne pas afficher la région
-            // PAS ENCORE REUSSI
-            foreach (var resultat in req)
-            {
-                cb_region.Items.Add(resultat.REG_NOM);
-            }
- 
+            RechargerCompteur();
+            RechargerDonneescb();
         }
 
         private void btn_Quitter_Click(object sender, EventArgs e)
@@ -71,7 +56,7 @@ namespace PPE3_GSB_WF
 
 
         /// <summary>
-        /// Pour afficher les informations d'un visiteur sélectionner
+        /// Pour afficher les informations d'un visiteur sélectionné
         /// dans un comboBox
         /// </summary>
         /// <param name="sender"></param>
@@ -80,6 +65,7 @@ namespace PPE3_GSB_WF
         {
             // Bouton cliqué, donc on peut activer les champs 
             // correspondant aux différents attributs
+            btn_suppr.Enabled = true;
             tb_nom.ReadOnly = false;
             tb_prenom.ReadOnly = false;
             tb_cp.ReadOnly = false;
@@ -87,64 +73,42 @@ namespace PPE3_GSB_WF
             tb_adresse.ReadOnly = false;
             tb_dateEmbauche.ReadOnly = false;
 
+            // Détecte si aucune entrée dans les combobox est sélectionnée
             if(cb_select.Text == "")
             {
-                MessageBox.Show("Aucune sélection, attention !");
-            }
-            else
-            { 
-                // Récupération du contenu du combobox 
-                string selection = cb_select.SelectedItem.ToString();
-
-                var req = from p in monModele.visiteurs
-                          where p.VIS_NOM == selection
-                          select p;
-
-               
-                // Tout afficher dans les TextBox
-                foreach (var resultat in req)
-                {
-                    tb_nom.Text = resultat.VIS_NOM;
-                    tb_prenom.Text = resultat.VIS_PRENOM;
-                    tb_adresse.Text = resultat.VIS_ADRESSE;
-                    tb_cp.Text = resultat.VIS_CP;
-                    tb_ville.Text = resultat.VIS_VILLE;
-                    tb_dateEmbauche.Text = Convert.ToString(resultat.VIS_DATEEMBAUCHE);
-                }
-
-
-                MessageBox.Show("Chargement d'un visiteur sélectionné : " + cb_select.Text);
-            }
-
-            /*
-            // Récupération du contenu du combobox 
-            string selection = cb_select.SelectedItem.ToString();
-
-            var req = from p in monModele.visiteurs
-                      where p.VIS_NOM == selection
-                      select p;
-
-            // Vérifie si le comboBox des visiteurs est vide,
-            // s'il est vide, afficher un message et ne pas afficher de données
-            // (pas de passage dans le foreach)
-            if (selection == " ")
-            {
-                MessageBox.Show("VIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIDE !!!!");
+                MessageBox.Show("Aucune sélection, attention !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("Remplissage !");
-                // Tout afficher dans les TextBox
-                foreach (var resultat in req)
+                try // Faire un bloc try catch au cas où une erreur pourrait survenir 
+                    // quand un visiteur n'est pas dans la région sélectionnée
                 {
-                    tb_nom.Text = resultat.VIS_NOM;
-                    tb_prenom.Text = resultat.VIS_PRENOM;
-                    tb_adresse.Text = resultat.VIS_ADRESSE;
-                    tb_cp.Text = resultat.VIS_CP;
-                    tb_ville.Text = resultat.VIS_VILLE;
-                    tb_dateEmbauche.Text = Convert.ToString(resultat.VIS_DATEEMBAUCHE);
-                }
-            }*/
+                    // Récupération du contenu du combobox 
+                    string selection = cb_select.SelectedItem.ToString();
+
+                    // Récupère les données du visiteur sélectionné dans la combobox
+                    var req = from p in monModele.visiteurs
+                              where p.VIS_NOM == selection
+                              select p;
+
+                    // Tout afficher dans les TextBox
+                    foreach (var resultat in req)
+                    {
+                        tb_nom.Text = resultat.VIS_NOM;
+                        tb_prenom.Text = resultat.VIS_PRENOM;
+                        tb_adresse.Text = resultat.VIS_ADRESSE;
+                        tb_cp.Text = resultat.VIS_CP;
+                        tb_ville.Text = resultat.VIS_VILLE;
+                        tb_dateEmbauche.Text = Convert.ToString(resultat.VIS_DATEEMBAUCHE);
+                    }
+                    MessageBox.Show("Chargement d'un visiteur sélectionné : " + cb_select.Text);
+                }catch(NullReferenceException) // Si le visiteur sélectionné n'est pas dans la région sélectionnée
+                {
+                    MessageBox.Show("Erreur, ce visiteur n'est pas dans cette région. Veuillez sélectionner un visiteur " +
+                        "dans la région sélectionnée. ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cb_select.Items.Clear();
+                } 
+            }
         }
 
         /// <summary>
@@ -156,13 +120,13 @@ namespace PPE3_GSB_WF
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-
             // Récupération du contenu du combobox 
             string selection = cb_select.SelectedItem.ToString();
             var vis = from p in monModele.visiteurs
                       where p.VIS_NOM == selection
                       select p;
 
+            // Remplissage des modifications sur chaque champ de la table de la base de données
             foreach (var resultat in vis)
             {
                 resultat.VIS_NOM = tb_nom.Text;
@@ -175,43 +139,112 @@ namespace PPE3_GSB_WF
             }
             // Faire une vérif si une modification a lieu 
             MessageBox.Show("Les données ont bien été modifiées !");
-
-            // Reperer comment faire le SavesChanges
             monModele.SaveChanges();
-
         }
 
-        // Essai pour empêcher de valider si la valeur du comboBox n'a pas changé
-        // FONCTIONNE MAIS ON PEUT QUAND MEME NE RIEN RENTRER ET VALIDER
-        // FAIRE EN SORTE QU'ON NE PUISSE PAS QUAND MEME tant que vide 
-        private void cb_select_TextChanged(object sender, EventArgs e)
-        {
-            bt_valid.Enabled = true;
-        }
-
-        private void cb_select_MouseClick(object sender, MouseEventArgs e)
-        {
-            bt_valid.Enabled = true;
-        }
-
-        // Se déclenche quand une région est sélectionnée
+        /// <summary>
+        /// Permet de charger les visiteurs dans la seconde combobox
+        /// correspondant à la région sélectionnée
+        /// </summary>
+        /// <remarks>
+        /// Se déclenche quand la valeur du premier comboBox est sélectionnée </remarks>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cb_region_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Quand une région est cliquée, cherche les visiteurs qui sont dans cette région
+            // Nettoie ce qui est déjà dans la comboBox
+            // Si une recherche a déjà été faite
             cb_select.Items.Clear();
+
+            // Récupère la sélection du premier comboBox (de la région)
             string selection = cb_region.SelectedItem.ToString();
-            var vis = from p in monModele.visiteurs
-                      where p.region.REG_NOM ==  selection
-                      select p;
-            foreach(var resultat in vis)
+
+            // Requête pour récupérer le code de la région
+            // de la région sélectionnée dans le premier combobox
+            var recupCode = from p in monModele.regions
+                            where p.REG_NOM == selection
+                            select p.REG_CODE;
+
+            // Récupération du code de la région
+            foreach (var resultat in recupCode)
             {
-                cb_select.Items.Add(resultat.VIS_NOM);
+                recupRegCode = resultat;
             }
+
+        // Récupération des visiteurs étant dans la région sélectionnée dans le comboBox
+            var vis = from p in monModele.visiteurs
+                      where p.REG_CODE == recupRegCode
+                      select p.VIS_NOM;
+
+            foreach (var resultat in vis)
+            {
+                    cb_select.Items.Add(resultat);
+            } 
         }
 
         private void cb_region_MouseClick(object sender, MouseEventArgs e)
         {
             cb_select.Items.Clear();
+        }
+
+        // Permet de supprimer un visiteur
+        private void btn_suppr_Click(object sender, EventArgs e)
+        {
+            string selection = tb_nom.Text;
+            if (cb_select.Text == "")
+            {
+                MessageBox.Show("Erreur, champ vide, suppression impossible. ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (MessageBox.Show("Voulez vous vraiment supprimer ce praticien ?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+               == DialogResult.Yes)
+                {
+                    var deletevis = from vis in monModele.visiteurs
+                                     where vis.VIS_NOM == selection
+                                     select vis;
+
+                    foreach (var vis in deletevis)
+                    {
+                        MessageBox.Show("Le praticien " + vis.VIS_NOM  + " a bien été supprimé.");
+                        monModele.visiteurs.Remove(vis);
+                        
+                    }
+                    monModele.SaveChanges();
+
+                    tb_adresse.Text = "";
+                    tb_cp.Text = "";
+                    tb_nom.Text = "";
+                    tb_prenom.Text = "";
+                    tb_adresse.Text = "";
+                    tb_ville.Text = "";
+                    tb_dateEmbauche.Text = "";
+                    cb_select.Items.Clear();
+                    RechargerDonneescb(); // Recharge les données de la comboBox des praticiens
+                    RechargerCompteur(); // Recompte le nombres des praticiens
+                }
+            }
+        }
+
+        private void RechargerCompteur()
+        {
+            // Faire le compteur des visiteurs
+            var reqNbVisiteur = from v in monModele.visiteurs
+                                select v;
+            int nbVisiteur = reqNbVisiteur.Count();
+            tx_visiteur.Text = Convert.ToString(nbVisiteur);
+        }
+
+        private void RechargerDonneescb()
+        {
+            // Récupère les régions dans la base de données
+            var req = from v in monModele.regions
+                      select v;
+
+            foreach (var resultat in req)
+            {
+                cb_region.Items.Add(resultat.REG_NOM);
+            }
         }
     }
 }

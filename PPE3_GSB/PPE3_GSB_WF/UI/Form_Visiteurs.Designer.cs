@@ -52,6 +52,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tx_visiteur = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.btn_suppr = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Quitter
@@ -91,7 +92,6 @@
             // 
             // bt_valid
             // 
-            this.bt_valid.Enabled = false;
             this.bt_valid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_valid.Location = new System.Drawing.Point(62, 243);
             this.bt_valid.Margin = new System.Windows.Forms.Padding(4);
@@ -119,8 +119,6 @@
             this.cb_select.Name = "cb_select";
             this.cb_select.Size = new System.Drawing.Size(237, 24);
             this.cb_select.TabIndex = 39;
-            this.cb_select.TextChanged += new System.EventHandler(this.cb_select_TextChanged);
-            this.cb_select.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cb_select_MouseClick);
             // 
             // label7
             // 
@@ -242,8 +240,8 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(622, 426);
+            this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(437, 446);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(255, 47);
@@ -284,9 +282,10 @@
             // 
             // tx_visiteur
             // 
-            this.tx_visiteur.Location = new System.Drawing.Point(699, 13);
+            this.tx_visiteur.Location = new System.Drawing.Point(705, 13);
             this.tx_visiteur.Name = "tx_visiteur";
-            this.tx_visiteur.Size = new System.Drawing.Size(67, 22);
+            this.tx_visiteur.ReadOnly = true;
+            this.tx_visiteur.Size = new System.Drawing.Size(52, 22);
             this.tx_visiteur.TabIndex = 64;
             // 
             // label10
@@ -299,11 +298,25 @@
             this.label10.TabIndex = 65;
             this.label10.Text = "visiteurs.";
             // 
+            // btn_suppr
+            // 
+            this.btn_suppr.Enabled = false;
+            this.btn_suppr.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_suppr.Location = new System.Drawing.Point(746, 445);
+            this.btn_suppr.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_suppr.Name = "btn_suppr";
+            this.btn_suppr.Size = new System.Drawing.Size(255, 48);
+            this.btn_suppr.TabIndex = 79;
+            this.btn_suppr.Text = "Supprimer le praticien sélectionné";
+            this.btn_suppr.UseVisualStyleBackColor = true;
+            this.btn_suppr.Click += new System.EventHandler(this.btn_suppr_Click);
+            // 
             // Form_Visiteurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 523);
+            this.Controls.Add(this.btn_suppr);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tx_visiteur);
             this.Controls.Add(this.label9);
@@ -367,5 +380,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.TextBox tx_visiteur;
+        private System.Windows.Forms.Button btn_suppr;
     }
 }

@@ -209,16 +209,6 @@
     <Property Name="SPE_CODE" Type="varchar" MaxLength="5" Nullable="false" />
     <Property Name="SPE_LIBELLE" Type="varchar" MaxLength="150" />
   </EntityType>
-  <EntityType Name="travailler">
-    <Key>
-      <PropertyRef Name="VIS_MATRICULE" />
-      <PropertyRef Name="JJMMAA" />
-      <PropertyRef Name="REG_CODE" />
-    </Key>
-    <Property Name="VIS_MATRICULE" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="JJMMAA" Type="date" Nullable="false" />
-    <Property Name="REG_CODE" Type="varchar" MaxLength="2" Nullable="false" />
-  </EntityType>
   <EntityType Name="type_individu">
     <Key>
       <PropertyRef Name="TIN_CODE" />
@@ -247,6 +237,7 @@
     <Property Name="VIS_DATEEMBAUCHE" Type="date" />
     <Property Name="VIS_LOGIN" Type="varchar" MaxLength="20" />
     <Property Name="VIS_MDP" Type="varchar" MaxLength="15" />
+    <Property Name="REG_CODE" Type="varchar" MaxLength="2" />
   </EntityType>
   <Association Name="constituer_ibfk_1">
     <End Role="composant" Type="Self.composant" Multiplicity="1" />
@@ -576,6 +567,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="REG_CODE">
+    <End Role="region" Type="Self.region" Multiplicity="0..1" />
+    <End Role="visiteurs" Type="Self.visiteurs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="region">
+        <PropertyRef Name="REG_CODE" />
+      </Principal>
+      <Dependent Role="visiteurs">
+        <PropertyRef Name="REG_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="region_ibfk_1">
     <End Role="secteur" Type="Self.secteur" Multiplicity="1" />
     <End Role="region" Type="Self.region" Multiplicity="*" />
@@ -612,30 +615,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="travailler_ibfk_1">
-    <End Role="region" Type="Self.region" Multiplicity="1" />
-    <End Role="travailler" Type="Self.travailler" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="region">
-        <PropertyRef Name="REG_CODE" />
-      </Principal>
-      <Dependent Role="travailler">
-        <PropertyRef Name="REG_CODE" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="travailler_ibfk_2">
-    <End Role="visiteurs" Type="Self.visiteurs" Multiplicity="1" />
-    <End Role="travailler" Type="Self.travailler" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="visiteurs">
-        <PropertyRef Name="VIS_MATRICULE" />
-      </Principal>
-      <Dependent Role="travailler">
-        <PropertyRef Name="VIS_MATRICULE" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="GSB_PPE3ModelStoreContainer">
     <EntitySet Name="activite_compl" EntityType="Self.activite_compl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="composant" EntityType="Self.composant" Schema="dbo" store:Type="Tables" />
@@ -660,7 +639,6 @@
     <EntitySet Name="responsable" EntityType="Self.responsable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="secteur" EntityType="Self.secteur" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="specialite" EntityType="Self.specialite" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="travailler" EntityType="Self.travailler" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="type_individu" EntityType="Self.type_individu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="type_praticien" EntityType="Self.type_praticien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="visiteurs" EntityType="Self.visiteurs" Schema="dbo" store:Type="Tables" />
@@ -772,6 +750,10 @@
       <End Role="visiteurs" EntitySet="visiteurs" />
       <End Role="realiser" EntitySet="realiser" />
     </AssociationSet>
+    <AssociationSet Name="REG_CODE" Association="Self.REG_CODE">
+      <End Role="region" EntitySet="region" />
+      <End Role="visiteurs" EntitySet="visiteurs" />
+    </AssociationSet>
     <AssociationSet Name="region_ibfk_1" Association="Self.region_ibfk_1">
       <End Role="secteur" EntitySet="secteur" />
       <End Role="region" EntitySet="region" />
@@ -783,14 +765,6 @@
     <AssociationSet Name="responsable_ibfk_2" Association="Self.responsable_ibfk_2">
       <End Role="secteur" EntitySet="secteur" />
       <End Role="responsable" EntitySet="responsable" />
-    </AssociationSet>
-    <AssociationSet Name="travailler_ibfk_1" Association="Self.travailler_ibfk_1">
-      <End Role="region" EntitySet="region" />
-      <End Role="travailler" EntitySet="travailler" />
-    </AssociationSet>
-    <AssociationSet Name="travailler_ibfk_2" Association="Self.travailler_ibfk_2">
-      <End Role="visiteurs" EntitySet="visiteurs" />
-      <End Role="travailler" EntitySet="travailler" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

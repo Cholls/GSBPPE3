@@ -87,6 +87,57 @@
     <Compile Include="Accès aux données\famille.cs">
       <DependentUpon>ModeleGSB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Accès aux données\inviter.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\medicament.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\motif.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\offrir.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\posseder.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\praticien.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\prescrire.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\presentation.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\rapport_visite.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\realiser.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\region.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\responsable.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\secteur.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\specialite.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\type_individu.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\type_praticien.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accès aux données\visiteur.cs">
+      <DependentUpon>ModeleGSB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,6 +166,12 @@
     </Compile>
     <Compile Include="UI\Form_Medecins_Ajouter.Designer.cs">
       <DependentUpon>Form_Medecins_Ajouter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Form_Medecins_Visiteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form_Medecins_Visiteur.Designer.cs">
+      <DependentUpon>Form_Medecins_Visiteur.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Form_Medicaments.cs">
       <SubType>Form</SubType>
@@ -164,12 +221,6 @@
     <Compile Include="UI\Form_Visiteurs_Modifier.Designer.cs">
       <DependentUpon>Form_Visiteurs_Modifier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Accès aux données\inviter.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Accès aux données\medicament.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Accès aux données\ModeleGSB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -185,56 +236,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeleGSB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Accès aux données\motif.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Accès aux données\offrir.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Accès aux données\posseder.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Accès aux données\praticien.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Accès aux données\prescrire.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Accès aux données\presentation.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Accès aux données\rapport_visite.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Accès aux données\realiser.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Accès aux données\region.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Accès aux données\responsable.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Accès aux données\secteur.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Accès aux données\specialite.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Accès aux données\travailler.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Accès aux données\type_individu.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Accès aux données\type_praticien.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Accès aux données\visiteur.cs">
-      <DependentUpon>ModeleGSB.tt</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="UI\Form_Accueil.resx">
       <DependentUpon>Form_Accueil.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Form_Medecins_Ajouter.resx">
       <DependentUpon>Form_Medecins_Ajouter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Form_Medecins_Visiteur.resx">
+      <DependentUpon>Form_Medecins_Visiteur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Form_Medicaments.resx">
       <DependentUpon>Form_Medicaments.cs</DependentUpon>

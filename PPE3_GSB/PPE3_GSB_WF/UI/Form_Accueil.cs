@@ -1,4 +1,5 @@
 ﻿using PPE3_GSB_WF.Accès_aux_données;
+using PPE3_GSB_WF.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,6 @@ namespace PPE3_GSB_WF
             InitializeComponent();
             seConnecte = new Form_Connexion();
             monModele = new GSB_PPE3Entities1();
-
         }
 
 
@@ -33,7 +33,7 @@ namespace PPE3_GSB_WF
         {
             mnu_Visiteurs.Enabled = false;
             mnu_Medicaments.Enabled = false;
-            mnu_Medecins.Enabled = false;
+            //mnu_Medecins.Enabled = false;
         }
 
         /// <summary>
@@ -57,7 +57,9 @@ namespace PPE3_GSB_WF
                 if(util == "V") { // Si un visiteur est connecté
                     DesactiverMenu();
                     visualSecretaria.Visible = false;
-                    visualVisiteur.Visible = true;
+                    visualiserLesMedecintoolTip.Visible = false;
+                    visualpraticienVisiteur.Visible = true;
+                       
                     string leLogin = seConnecte.tb_Identifiant.Text;
 
                     var req1 = from v in monModele.visiteurs
@@ -73,7 +75,9 @@ namespace PPE3_GSB_WF
                 else if(util == "S"){ // Si un super utilisateur est connecté
                     //MessageBox.Show("Super utilisateur connecté !");
                     visualSecretaria.Visible = true;
-                    visualVisiteur.Visible = false;
+                    visualiserLesMedecintoolTip.Visible = true;
+                    visualpraticienVisiteur.Visible = false;
+                    visualRapportvisiteur.Visible = false;
                     labelPrenom.Text = "";
                     labelNom.Text = "";
                     label1.Text = "Bienvenue, compte réservé à l'administration";
@@ -93,6 +97,12 @@ namespace PPE3_GSB_WF
             fva.Show();
         }
 
+        /// <summary>
+        /// Permet d'ouvrir le formulaire de la visualisation
+        /// des visiteurs pour l'admin
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void visualiserLesVisiteursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FermerMDI();
@@ -100,6 +110,7 @@ namespace PPE3_GSB_WF
             fv.MdiParent = this;
             fv.Show();
         }
+
 
         private void ajouterUnRapportToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -115,13 +126,20 @@ namespace PPE3_GSB_WF
             f.Show();
         }
 
-        // Ici ouvrir la page de rapport du visiteur
+        
+        /// <summary>
+        /// Permet d'ouvrir le formulaire des rapports
+        /// pour les visiteurs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void visualVisiteur_Click(object sender, EventArgs e)
         {
             FermerMDI();
             Form_Rapports_Visiteur f = new Form_Rapports_Visiteur();
             f.MdiParent = this;
             // Récupération du nom et du prénom du visiteur sur les labels de l'accueil
+            // Pour pouvoir afficher les informations de ce visiteur en particulier
             f.labelNom.Text = labelNom.Text;
             f.labelPrenom.Text = labelPrenom.Text;
             f.Show();
@@ -129,10 +147,8 @@ namespace PPE3_GSB_WF
 
         private void ajouterUnMédicamentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             Form_Medicament_Ajouter fa = new Form_Medicament_Ajouter();
             fa.Show();
-
         }
 
         private void visualiserLesMédicamentsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -149,6 +165,29 @@ namespace PPE3_GSB_WF
             fva.Show();
         }
 
+        /// <summary>
+        /// Permet d'ouvrir le formulaire de la visualisation des praticiens
+        /// pour les visiteurs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void visualpraticienVisiteur_Click(object sender, EventArgs e)
+        {
+            FermerMDI();
+            Form_Medecins_Visiteur f = new Form_Medecins_Visiteur();
+            f.MdiParent = this;
+            f.labelNom.Text = labelNom.Text;
+            f.labelPrenom.Text = labelPrenom.Text;
+            f.Show();
+           
+        }
+
+        /// <summary>
+        /// Permet d'ouvrir le formulaire de la visualisation des praticiens
+        /// pour l'admin
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void visualiserLesMedecintoolTip_Click(object sender, EventArgs e)
         {
             FermerMDI();
@@ -156,8 +195,6 @@ namespace PPE3_GSB_WF
             fva.MdiParent = this;
             fva.Show();
         }
-
- 
 
         /// <summary>
         /// Permet de déclencher la déconnexion, faisant revenir à la fenêtre de connexion
@@ -169,8 +206,23 @@ namespace PPE3_GSB_WF
             //Ne fonctionne pas encore, ne ferme pas la fenêtre de l'accueil
             //this.Close();
             //seConnecte.ShowDialog();
-            
-            
+        }
+
+        /// <summary>
+        /// Permet d'ouvrir le formulaire des rapports des visiteurs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void visualRapportvisiteur_Click(object sender, EventArgs e)
+        {
+            FermerMDI();
+            Form_Rapports_Visiteur f = new Form_Rapports_Visiteur();
+            f.MdiParent = this;
+            // Récupération du nom et du prénom du visiteur sur les labels de l'accueil
+            // Pour pouvoir afficher les informations de ce visiteur en particulier
+            f.labelNom.Text = labelNom.Text;
+            f.labelPrenom.Text = labelPrenom.Text;
+            f.Show();
         }
     }
 }

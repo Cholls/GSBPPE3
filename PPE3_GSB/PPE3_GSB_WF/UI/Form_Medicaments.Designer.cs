@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btn_Quitter = new System.Windows.Forms.Button();
-           
             this.lbl_lstVisiteurs = new System.Windows.Forms.Label();
             this.bt_valid = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,7 +44,10 @@
             this.bt_ajouter = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.tb_famille = new System.Windows.Forms.TextBox();
-      
+            this.label3 = new System.Windows.Forms.Label();
+            this.cb_famille = new System.Windows.Forms.ComboBox();
+            this.btn_suppr = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Quitter
@@ -60,7 +61,6 @@
             this.btn_Quitter.Text = "Quitter";
             this.btn_Quitter.UseVisualStyleBackColor = true;
             this.btn_Quitter.Click += new System.EventHandler(this.btn_Quitter_Click);
-     
             // 
             // lbl_lstVisiteurs
             // 
@@ -76,7 +76,7 @@
             // bt_valid
             // 
             this.bt_valid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_valid.Location = new System.Drawing.Point(111, 189);
+            this.bt_valid.Location = new System.Drawing.Point(104, 255);
             this.bt_valid.Margin = new System.Windows.Forms.Padding(4);
             this.bt_valid.Name = "bt_valid";
             this.bt_valid.Size = new System.Drawing.Size(139, 47);
@@ -89,7 +89,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 103);
+            this.label1.Location = new System.Drawing.Point(35, 174);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(318, 24);
             this.label1.TabIndex = 43;
@@ -98,7 +98,7 @@
             // cb_select
             // 
             this.cb_select.FormattingEnabled = true;
-            this.cb_select.Location = new System.Drawing.Point(65, 147);
+            this.cb_select.Location = new System.Drawing.Point(59, 213);
             this.cb_select.Name = "cb_select";
             this.cb_select.Size = new System.Drawing.Size(237, 24);
             this.cb_select.TabIndex = 42;
@@ -107,7 +107,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(355, 244);
+            this.label6.Location = new System.Drawing.Point(354, 223);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(144, 23);
             this.label6.TabIndex = 69;
@@ -117,7 +117,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(708, 244);
+            this.label5.Location = new System.Drawing.Point(707, 223);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 23);
             this.label5.TabIndex = 68;
@@ -146,7 +146,7 @@
             // tb_contre
             // 
             this.tb_contre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_contre.Location = new System.Drawing.Point(356, 276);
+            this.tb_contre.Location = new System.Drawing.Point(355, 255);
             this.tb_contre.Multiline = true;
             this.tb_contre.Name = "tb_contre";
             this.tb_contre.ReadOnly = true;
@@ -156,7 +156,7 @@
             // tb_effet
             // 
             this.tb_effet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_effet.Location = new System.Drawing.Point(712, 276);
+            this.tb_effet.Location = new System.Drawing.Point(711, 255);
             this.tb_effet.Multiline = true;
             this.tb_effet.Name = "tb_effet";
             this.tb_effet.ReadOnly = true;
@@ -214,11 +214,58 @@
             this.tb_famille.Size = new System.Drawing.Size(137, 22);
             this.tb_famille.TabIndex = 71;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(46, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(167, 24);
+            this.label3.TabIndex = 73;
+            this.label3.Text = "Choisir une famille";
+            // 
+            // cb_famille
+            // 
+            this.cb_famille.FormattingEnabled = true;
+            this.cb_famille.Location = new System.Drawing.Point(12, 122);
+            this.cb_famille.Name = "cb_famille";
+            this.cb_famille.Size = new System.Drawing.Size(471, 24);
+            this.cb_famille.TabIndex = 74;
+            this.cb_famille.SelectedIndexChanged += new System.EventHandler(this.cb_famille_SelectedIndexChanged);
+            // 
+            // btn_suppr
+            // 
+            this.btn_suppr.Enabled = false;
+            this.btn_suppr.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_suppr.Location = new System.Drawing.Point(742, 462);
+            this.btn_suppr.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_suppr.Name = "btn_suppr";
+            this.btn_suppr.Size = new System.Drawing.Size(255, 48);
+            this.btn_suppr.TabIndex = 81;
+            this.btn_suppr.Text = "Supprimer le médicament";
+            this.btn_suppr.UseVisualStyleBackColor = true;
+            this.btn_suppr.Click += new System.EventHandler(this.btn_suppr_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(433, 463);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(255, 47);
+            this.button2.TabIndex = 80;
+            this.button2.Text = "Valider les modifications";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // Form_Medicaments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 523);
+            this.Controls.Add(this.btn_suppr);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.cb_famille);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tb_famille);
             this.Controls.Add(this.bt_ajouter);
@@ -241,7 +288,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Medicaments";
             this.Load += new System.EventHandler(this.Form_Medicaments_Load);
-          
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,5 +312,9 @@
         private System.Windows.Forms.Button bt_ajouter;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tb_famille;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cb_famille;
+        private System.Windows.Forms.Button btn_suppr;
+        private System.Windows.Forms.Button button2;
     }
 }

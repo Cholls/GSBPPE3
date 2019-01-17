@@ -87,7 +87,7 @@
             // 
             this.labelPrenom.AutoSize = true;
             this.labelPrenom.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrenom.Location = new System.Drawing.Point(437, 1);
+            this.labelPrenom.Location = new System.Drawing.Point(410, 1);
             this.labelPrenom.Name = "labelPrenom";
             this.labelPrenom.Size = new System.Drawing.Size(76, 24);
             this.labelPrenom.TabIndex = 3;

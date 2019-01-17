@@ -31,11 +31,10 @@
             this.mnu_Accueil = new System.Windows.Forms.MenuStrip();
             this.mnu_Visiteurs = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterUnVisiteurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visualiserLesVisiteursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualVisiteurAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_Rapports = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterUnRapportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualSecretaria = new System.Windows.Forms.ToolStripMenuItem();
-            this.visualVisiteur = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_Medicaments = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterUnMédicamentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualiserLesMédicamentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +45,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelNom = new System.Windows.Forms.Label();
             this.labelPrenom = new System.Windows.Forms.Label();
+            this.visualpraticienVisiteur = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualRapportvisiteur = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_Accueil.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +70,7 @@
             // 
             this.mnu_Visiteurs.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ajouterUnVisiteurToolStripMenuItem,
-            this.visualiserLesVisiteursToolStripMenuItem});
+            this.visualVisiteurAdmin});
             this.mnu_Visiteurs.Name = "mnu_Visiteurs";
             this.mnu_Visiteurs.Size = new System.Drawing.Size(76, 24);
             this.mnu_Visiteurs.Text = "Visiteurs";
@@ -81,19 +82,19 @@
             this.ajouterUnVisiteurToolStripMenuItem.Text = "Ajouter un visiteur";
             this.ajouterUnVisiteurToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnVisiteurToolStripMenuItem_Click);
             // 
-            // visualiserLesVisiteursToolStripMenuItem
+            // visualVisiteurAdmin
             // 
-            this.visualiserLesVisiteursToolStripMenuItem.Name = "visualiserLesVisiteursToolStripMenuItem";
-            this.visualiserLesVisiteursToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
-            this.visualiserLesVisiteursToolStripMenuItem.Text = "Visualiser les visiteurs";
-            this.visualiserLesVisiteursToolStripMenuItem.Click += new System.EventHandler(this.visualiserLesVisiteursToolStripMenuItem_Click);
+            this.visualVisiteurAdmin.Name = "visualVisiteurAdmin";
+            this.visualVisiteurAdmin.Size = new System.Drawing.Size(225, 26);
+            this.visualVisiteurAdmin.Text = "Visualiser les visiteurs";
+            this.visualVisiteurAdmin.Click += new System.EventHandler(this.visualiserLesVisiteursToolStripMenuItem_Click);
             // 
             // mnu_Rapports
             // 
             this.mnu_Rapports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ajouterUnRapportToolStripMenuItem,
             this.visualSecretaria,
-            this.visualVisiteur});
+            this.visualRapportvisiteur});
             this.mnu_Rapports.Name = "mnu_Rapports";
             this.mnu_Rapports.Size = new System.Drawing.Size(81, 24);
             this.mnu_Rapports.Text = "Rapports";
@@ -111,13 +112,6 @@
             this.visualSecretaria.Size = new System.Drawing.Size(291, 26);
             this.visualSecretaria.Text = "Visualiser les rapports";
             this.visualSecretaria.Click += new System.EventHandler(this.visualiserLesRapportsToolStripMenuItem_Click);
-            // 
-            // visualVisiteur
-            // 
-            this.visualVisiteur.Name = "visualVisiteur";
-            this.visualVisiteur.Size = new System.Drawing.Size(291, 26);
-            this.visualVisiteur.Text = "Visiteur - Visualiser les rapports";
-            this.visualVisiteur.Click += new System.EventHandler(this.visualVisiteur_Click);
             // 
             // mnu_Medicaments
             // 
@@ -146,23 +140,24 @@
             // 
             this.mnu_Medecins.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ajouterUnMédecinToolStripMenuItem,
-            this.visualiserLesMedecintoolTip});
+            this.visualiserLesMedecintoolTip,
+            this.visualpraticienVisiteur});
             this.mnu_Medecins.Name = "mnu_Medecins";
             this.mnu_Medecins.Size = new System.Drawing.Size(84, 24);
-            this.mnu_Medecins.Text = "Medecins";
+            this.mnu_Medecins.Text = "Praticiens";
             // 
             // ajouterUnMédecinToolStripMenuItem
             // 
             this.ajouterUnMédecinToolStripMenuItem.Name = "ajouterUnMédecinToolStripMenuItem";
-            this.ajouterUnMédecinToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.ajouterUnMédecinToolStripMenuItem.Size = new System.Drawing.Size(299, 26);
             this.ajouterUnMédecinToolStripMenuItem.Text = "Ajouter un médecin";
             this.ajouterUnMédecinToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnMédecinToolStripMenuItem_Click);
             // 
             // visualiserLesMedecintoolTip
             // 
             this.visualiserLesMedecintoolTip.Name = "visualiserLesMedecintoolTip";
-            this.visualiserLesMedecintoolTip.Size = new System.Drawing.Size(235, 26);
-            this.visualiserLesMedecintoolTip.Text = "Visualiser les médecins";
+            this.visualiserLesMedecintoolTip.Size = new System.Drawing.Size(299, 26);
+            this.visualiserLesMedecintoolTip.Text = "Visualiser les praticiens";
             this.visualiserLesMedecintoolTip.Click += new System.EventHandler(this.visualiserLesMedecintoolTip_Click);
             // 
             // seDéconnecterToolStripMenuItem
@@ -205,6 +200,20 @@
             this.labelPrenom.TabIndex = 5;
             this.labelPrenom.Text = "prénom";
             // 
+            // visualpraticienVisiteur
+            // 
+            this.visualpraticienVisiteur.Name = "visualpraticienVisiteur";
+            this.visualpraticienVisiteur.Size = new System.Drawing.Size(299, 26);
+            this.visualpraticienVisiteur.Text = "Visiteur - Visualiser les praticiens";
+            this.visualpraticienVisiteur.Click += new System.EventHandler(this.visualpraticienVisiteur_Click);
+            // 
+            // visualRapportvisiteur
+            // 
+            this.visualRapportvisiteur.Name = "visualRapportvisiteur";
+            this.visualRapportvisiteur.Size = new System.Drawing.Size(291, 26);
+            this.visualRapportvisiteur.Text = "Visiteur - Visualiser les rapports";
+            this.visualRapportvisiteur.Click += new System.EventHandler(this.visualRapportvisiteur_Click);
+            // 
             // Form_Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -239,7 +248,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnu_Medicaments;
         private System.Windows.Forms.ToolStripMenuItem mnu_Medecins;
         private System.Windows.Forms.ToolStripMenuItem ajouterUnVisiteurToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem visualiserLesVisiteursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualVisiteurAdmin;
         private System.Windows.Forms.ToolStripMenuItem ajouterUnRapportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualSecretaria;
         private System.Windows.Forms.ToolStripMenuItem ajouterUnMédicamentToolStripMenuItem;
@@ -247,9 +256,10 @@
         private System.Windows.Forms.ToolStripMenuItem ajouterUnMédecinToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualiserLesMedecintoolTip;
         private System.Windows.Forms.ToolStripMenuItem seDéconnecterToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem visualVisiteur;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label labelNom;
         public System.Windows.Forms.Label labelPrenom;
+        private System.Windows.Forms.ToolStripMenuItem visualpraticienVisiteur;
+        private System.Windows.Forms.ToolStripMenuItem visualRapportvisiteur;
     }
 }
