@@ -111,6 +111,7 @@ namespace PPE3_GSB_WF
         private void button3_Click(object sender, EventArgs e)
         {
             cb_CR.Items.Clear();
+            
             //string test = "";
             // Récupère la saisie du textbox
             string saisie = tb_recherche.Text;
@@ -227,6 +228,30 @@ namespace PPE3_GSB_WF
                     foreach (string trueDate in sansDoublons)
                     {
                         cb_annee.Items.Add(trueDate);
+                    }
+
+                    // Partie pour les échantillons de médicaments offerts
+                    // -----------------------------------------------------------
+                    // Afficher les informations dans la table offrir concernant 
+
+                    int numRapport = Convert.ToInt32(tb_num.Text);
+                    // Rechercher les lignes de la table offrir correspondant au numéro de dossier
+                    var req3 = from r in monModele.offrirs
+                               where r.RAP_NUM == numRapport
+                               select r;
+                    string depotLegal;
+                    foreach (var resultat1 in req3)
+                    {
+                        depotLegal = resultat1.MED_DEPOTLEGAL;
+                        //dgvMedicamentPremier.Rows.Add(resultat1.MED_DEPOTLEGAL, resultat1.OFF_QTE);
+                        // Affichage des données des médicaments offerts dans le datagridview des médicaments
+                        var retrouverMed = from r in monModele.medicaments
+                                           where r.MED_DEPOTLEGAL == depotLegal
+                                           select r;
+                        foreach (var med in retrouverMed)
+                        {
+                            dgvMedicamentPremier.Rows.Add(med.MED_NOMCOMMERCIAL, resultat1.OFF_QTE);
+                        }
                     }
                 }
                 catch (NullReferenceException)

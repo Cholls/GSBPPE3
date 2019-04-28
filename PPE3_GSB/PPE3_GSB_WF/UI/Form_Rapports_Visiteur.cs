@@ -51,9 +51,8 @@ namespace PPE3_GSB_WF
             var req4 = from p in monModele.rapport_visite
                       where p.visiteur.VIS_NOM == labelNom.Text
                       select p.RAP_DATE_SAISIE;
-            // Ajout des dates des rapports dans le comboBox
-            
 
+            // Ajout des dates des rapports dans le comboBox
             lesDates = new List<string>();
 
             // Ajout des dates des rapports dans le comboBox
