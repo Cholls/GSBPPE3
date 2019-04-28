@@ -38,7 +38,9 @@ namespace PPE3_GSB_WF
         private void Form_Medicaments_Load(object sender, EventArgs e)
         {
             RechargerDonneescb();
+            RechargerCompteur();
         }
+        
 
         private void bt_valid_Click(object sender, EventArgs e)
         {
@@ -46,7 +48,7 @@ namespace PPE3_GSB_WF
             // Bouton cliqué, donc on peut activer les champs
             // correspondant aux différents attributs
             btn_suppr.Enabled = true;
-            tb_nom.ReadOnly = false;
+            // tb_nom.ReadOnly = false;
             tb_compo.ReadOnly = false;
             tb_contre.ReadOnly = false;
             tb_effet.ReadOnly = false;
@@ -138,7 +140,7 @@ namespace PPE3_GSB_WF
         private void btn_suppr_Click(object sender, EventArgs e)
         {
             string selection = tb_nom.Text;
-            if (cb_select.Text == "")
+            if (selection == "")
             {
                 MessageBox.Show("Erreur, champ vide, suppression impossible. ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -192,6 +194,95 @@ namespace PPE3_GSB_WF
             {
                 cb_famille.Items.Add(resultat);
             }
+        }
+
+
+        private void RechargerCompteur()
+        {
+            // Faire le compteur médicaments
+            var reqNbMed = from v in monModele.medicaments
+                                select v;
+            int nbMed = reqNbMed.Count();
+            tb_nb.Text = Convert.ToString(nbMed);
+        }
+
+
+        /// <summary>
+        /// Sert à rechercher un médicament grâce à un nom tapé
+        /// // Va donc vérifier si le nom est dans la base de données
+        /// </summary>
+        private void but_valid_Click(object sender, EventArgs e)
+        {
+            // Bouton cliqué, donc on peut activer les champs
+            // correspondant aux différents attributs
+            btn_suppr.Enabled = true;
+            // tb_nom.ReadOnly = false;
+            tb_compo.ReadOnly = false;
+            tb_contre.ReadOnly = false;
+            tb_effet.ReadOnly = false;
+            //tb_famille.ReadOnly = false;
+            string test = "";
+            // Récupère la saisie du textbox
+            string saisie = tb_recherche.Text;
+
+
+            // Faire la requête pour savoir si le nom saisie correspond à un nom dans la bdd
+            var req = from m in monModele.medicaments
+                      where m.MED_NOMCOMMERCIAL == tb_recherche.Text
+                      select m;
+
+            // Parcours de la requête
+            foreach (var resultat in req)
+            {
+                // Vérification si le nom saisie correspond pour un nom dans la bdd
+                if (saisie == resultat.MED_NOMCOMMERCIAL)
+                {
+                    // Si oui, afficher les informations du visiteurs correspondant à ce nom
+                    tb_nom.Text = resultat.MED_NOMCOMMERCIAL;
+                    tb_compo.Text = resultat.MED_COMPOSITION;
+                    tb_effet.Text = resultat.MED_EFFETS;
+                    tb_contre.Text = resultat.MED_CONTREINDIC;
+                    tb_famille.Text = resultat.FAM_CODE;
+                    MessageBox.Show("Médicament trouvé", "Réussite", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    test = resultat.MED_NOMCOMMERCIAL;
+                }
+                else
+                {
+                    // Si non, afficher message d'erreur
+                    MessageBox.Show("Erreur, ce médocament n'existe pas dans la base de données.",
+                        "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+            if (test == "")
+            {
+                MessageBox.Show("Erreur, champ non valide ou visiteur introuvable.",
+                        "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Permet la modification des informations des médicaments
+            string selection = tb_nom.Text;
+            var med = from p in monModele.medicaments
+                      where p.MED_NOMCOMMERCIAL == selection
+                      select p;
+
+            foreach (var resultat in med)
+            {
+                resultat.MED_NOMCOMMERCIAL = tb_nom.Text;
+                resultat.MED_COMPOSITION = tb_compo.Text;
+                resultat.MED_CONTREINDIC = tb_contre.Text;
+                resultat.MED_EFFETS = tb_effet.Text;
+            }
+
+            // Faire une vérif si une modification a lieu 
+            MessageBox.Show("Les données ont bien été modifiées !");
+
+            // Reperer comment faire le SavesChanges
+            monModele.SaveChanges();
         }
     }
 }

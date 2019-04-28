@@ -32,6 +32,7 @@ namespace PPE3_GSB_WF.Accès_aux_données
         public Nullable<double> PRA_COEFNOTORIETE { get; set; }
         public Nullable<double> PRA_COEFCONFIANCE { get; set; }
         public string TYP_CODE { get; set; }
+        public string REG_CODE { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<inviter> inviters { get; set; }
@@ -42,5 +43,6 @@ namespace PPE3_GSB_WF.Accès_aux_données
         public virtual ICollection<rapport_visite> rapport_visite { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<rapport_visite> rapport_visite1 { get; set; }
+        public virtual region region { get; set; }
     }
 }

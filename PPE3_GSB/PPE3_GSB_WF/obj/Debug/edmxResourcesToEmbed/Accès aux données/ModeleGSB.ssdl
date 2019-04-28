@@ -125,6 +125,7 @@
     <Property Name="PRA_COEFNOTORIETE" Type="float" />
     <Property Name="PRA_COEFCONFIANCE" Type="float" />
     <Property Name="TYP_CODE" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="REG_CODE" Type="varchar" MaxLength="2" />
   </EntityType>
   <EntityType Name="prescrire">
     <Key>
@@ -263,18 +264,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="delegue_regional_ibfk_1">
-    <End Role="visiteurs" Type="Self.visiteurs" Multiplicity="1" />
-    <End Role="delegue_regional" Type="Self.delegue_regional" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="visiteurs">
-        <PropertyRef Name="VIS_MATRICULE" />
-      </Principal>
-      <Dependent Role="delegue_regional">
-        <PropertyRef Name="DEL_MATRICULE" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="delegue_regional_ibfk_2">
     <End Role="region" Type="Self.region" Multiplicity="1" />
     <End Role="delegue_regional" Type="Self.delegue_regional" Multiplicity="*" />
@@ -283,6 +272,18 @@
         <PropertyRef Name="REG_CODE" />
       </Principal>
       <Dependent Role="delegue_regional">
+        <PropertyRef Name="REG_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__praticien__REG_C__32AB8735">
+    <End Role="region" Type="Self.region" Multiplicity="0..1" />
+    <End Role="praticien" Type="Self.praticien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="region">
+        <PropertyRef Name="REG_CODE" />
+      </Principal>
+      <Dependent Role="praticien">
         <PropertyRef Name="REG_CODE" />
       </Dependent>
     </ReferentialConstraint>
@@ -591,18 +592,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="responsable_ibfk_1">
-    <End Role="visiteurs" Type="Self.visiteurs" Multiplicity="1" />
-    <End Role="responsable" Type="Self.responsable" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="visiteurs">
-        <PropertyRef Name="VIS_MATRICULE" />
-      </Principal>
-      <Dependent Role="responsable">
-        <PropertyRef Name="RES_MATRICULE" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="responsable_ibfk_2">
     <End Role="secteur" Type="Self.secteur" Multiplicity="0..1" />
     <End Role="responsable" Type="Self.responsable" Multiplicity="*" />
@@ -650,13 +639,13 @@
       <End Role="medicament" EntitySet="medicament" />
       <End Role="constituer" EntitySet="constituer" />
     </AssociationSet>
-    <AssociationSet Name="delegue_regional_ibfk_1" Association="Self.delegue_regional_ibfk_1">
-      <End Role="visiteurs" EntitySet="visiteurs" />
-      <End Role="delegue_regional" EntitySet="delegue_regional" />
-    </AssociationSet>
     <AssociationSet Name="delegue_regional_ibfk_2" Association="Self.delegue_regional_ibfk_2">
       <End Role="region" EntitySet="region" />
       <End Role="delegue_regional" EntitySet="delegue_regional" />
+    </AssociationSet>
+    <AssociationSet Name="FK__praticien__REG_C__32AB8735" Association="Self.FK__praticien__REG_C__32AB8735">
+      <End Role="region" EntitySet="region" />
+      <End Role="praticien" EntitySet="praticien" />
     </AssociationSet>
     <AssociationSet Name="formuler_ibfk_1" Association="Self.formuler_ibfk_1">
       <End Role="presentation" EntitySet="presentation" />
@@ -757,10 +746,6 @@
     <AssociationSet Name="region_ibfk_1" Association="Self.region_ibfk_1">
       <End Role="secteur" EntitySet="secteur" />
       <End Role="region" EntitySet="region" />
-    </AssociationSet>
-    <AssociationSet Name="responsable_ibfk_1" Association="Self.responsable_ibfk_1">
-      <End Role="visiteurs" EntitySet="visiteurs" />
-      <End Role="responsable" EntitySet="responsable" />
     </AssociationSet>
     <AssociationSet Name="responsable_ibfk_2" Association="Self.responsable_ibfk_2">
       <End Role="secteur" EntitySet="secteur" />

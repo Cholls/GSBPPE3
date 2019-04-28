@@ -59,6 +59,8 @@
             this.labelPrenom = new System.Windows.Forms.Label();
             this.btn_suppr = new System.Windows.Forms.Button();
             this.btn_modif = new System.Windows.Forms.Button();
+            this.txt_nb_praticien = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +71,7 @@
             this.panel1.Controls.Add(this.cb_select);
             this.panel1.Controls.Add(this.valid_selection);
             this.panel1.Location = new System.Drawing.Point(19, 126);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(341, 257);
             this.panel1.TabIndex = 53;
@@ -77,7 +80,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(6, 53);
+            this.label13.Location = new System.Drawing.Point(5, 53);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(323, 23);
             this.label13.TabIndex = 39;
@@ -87,7 +90,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 29);
+            this.label12.Location = new System.Drawing.Point(5, 30);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(174, 24);
             this.label12.TabIndex = 26;
@@ -95,8 +98,10 @@
             // 
             // cb_select
             // 
+            this.cb_select.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_select.FormattingEnabled = true;
             this.cb_select.Location = new System.Drawing.Point(48, 96);
+            this.cb_select.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cb_select.Name = "cb_select";
             this.cb_select.Size = new System.Drawing.Size(237, 24);
             this.cb_select.TabIndex = 25;
@@ -104,7 +109,7 @@
             // valid_selection
             // 
             this.valid_selection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valid_selection.Location = new System.Drawing.Point(94, 138);
+            this.valid_selection.Location = new System.Drawing.Point(93, 138);
             this.valid_selection.Margin = new System.Windows.Forms.Padding(4);
             this.valid_selection.Name = "valid_selection";
             this.valid_selection.Size = new System.Drawing.Size(139, 47);
@@ -117,7 +122,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(437, 60);
+            this.label10.Location = new System.Drawing.Point(472, 86);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(532, 20);
             this.label10.TabIndex = 71;
@@ -127,7 +132,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(390, 360);
+            this.label9.Location = new System.Drawing.Point(450, 419);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 23);
             this.label9.TabIndex = 70;
@@ -137,7 +142,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(704, 295);
+            this.label8.Location = new System.Drawing.Point(765, 355);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(192, 23);
             this.label8.TabIndex = 69;
@@ -147,7 +152,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(366, 295);
+            this.label7.Location = new System.Drawing.Point(426, 355);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(189, 23);
             this.label7.TabIndex = 68;
@@ -157,7 +162,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(819, 184);
+            this.label6.Location = new System.Drawing.Point(880, 245);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 23);
             this.label6.TabIndex = 67;
@@ -167,7 +172,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(706, 184);
+            this.label5.Location = new System.Drawing.Point(768, 245);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 23);
             this.label5.TabIndex = 66;
@@ -177,7 +182,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(411, 184);
+            this.label4.Location = new System.Drawing.Point(472, 245);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 23);
             this.label4.TabIndex = 65;
@@ -187,33 +192,35 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(773, 89);
+            this.label3.Location = new System.Drawing.Point(808, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 23);
+            this.label3.Size = new System.Drawing.Size(167, 23);
             this.label3.TabIndex = 64;
-            this.label3.Text = "Prénom du médecin";
+            this.label3.Text = "Prénom du praticien";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(589, 89);
+            this.label2.Location = new System.Drawing.Point(624, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 23);
+            this.label2.Size = new System.Drawing.Size(143, 23);
             this.label2.TabIndex = 63;
-            this.label2.Text = "Nom du médecin";
+            this.label2.Text = "Nom du praticien";
             // 
             // tb_type
             // 
-            this.tb_type.Location = new System.Drawing.Point(456, 360);
+            this.tb_type.Location = new System.Drawing.Point(517, 419);
+            this.tb_type.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_type.Name = "tb_type";
             this.tb_type.ReadOnly = true;
-            this.tb_type.Size = new System.Drawing.Size(50, 22);
+            this.tb_type.Size = new System.Drawing.Size(49, 22);
             this.tb_type.TabIndex = 61;
             // 
             // tb_coefConf
             // 
-            this.tb_coefConf.Location = new System.Drawing.Point(924, 295);
+            this.tb_coefConf.Location = new System.Drawing.Point(985, 355);
+            this.tb_coefConf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_coefConf.Name = "tb_coefConf";
             this.tb_coefConf.ReadOnly = true;
             this.tb_coefConf.Size = new System.Drawing.Size(64, 22);
@@ -221,7 +228,8 @@
             // 
             // tb_coefNot
             // 
-            this.tb_coefNot.Location = new System.Drawing.Point(583, 295);
+            this.tb_coefNot.Location = new System.Drawing.Point(644, 355);
+            this.tb_coefNot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_coefNot.Name = "tb_coefNot";
             this.tb_coefNot.ReadOnly = true;
             this.tb_coefNot.Size = new System.Drawing.Size(72, 22);
@@ -229,7 +237,8 @@
             // 
             // tb_ville
             // 
-            this.tb_ville.Location = new System.Drawing.Point(823, 210);
+            this.tb_ville.Location = new System.Drawing.Point(884, 270);
+            this.tb_ville.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_ville.Name = "tb_ville";
             this.tb_ville.ReadOnly = true;
             this.tb_ville.Size = new System.Drawing.Size(184, 22);
@@ -237,7 +246,8 @@
             // 
             // tb_cp
             // 
-            this.tb_cp.Location = new System.Drawing.Point(710, 210);
+            this.tb_cp.Location = new System.Drawing.Point(770, 270);
+            this.tb_cp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_cp.Name = "tb_cp";
             this.tb_cp.ReadOnly = true;
             this.tb_cp.Size = new System.Drawing.Size(76, 22);
@@ -245,7 +255,8 @@
             // 
             // tb_adresse
             // 
-            this.tb_adresse.Location = new System.Drawing.Point(415, 210);
+            this.tb_adresse.Location = new System.Drawing.Point(476, 270);
+            this.tb_adresse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_adresse.Name = "tb_adresse";
             this.tb_adresse.ReadOnly = true;
             this.tb_adresse.Size = new System.Drawing.Size(267, 22);
@@ -254,7 +265,8 @@
             // tb_prenom
             // 
             this.tb_prenom.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_prenom.Location = new System.Drawing.Point(777, 123);
+            this.tb_prenom.Location = new System.Drawing.Point(812, 149);
+            this.tb_prenom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_prenom.MaxLength = 35;
             this.tb_prenom.Multiline = true;
             this.tb_prenom.Name = "tb_prenom";
@@ -265,7 +277,8 @@
             // tb_nom
             // 
             this.tb_nom.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_nom.Location = new System.Drawing.Point(557, 123);
+            this.tb_nom.Location = new System.Drawing.Point(592, 149);
+            this.tb_nom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_nom.MaxLength = 35;
             this.tb_nom.Multiline = true;
             this.tb_nom.Name = "tb_nom";
@@ -277,7 +290,7 @@
             // btn_Ajouter
             // 
             this.btn_Ajouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Ajouter.Location = new System.Drawing.Point(19, 407);
+            this.btn_Ajouter.Location = new System.Drawing.Point(208, 530);
             this.btn_Ajouter.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Ajouter.Name = "btn_Ajouter";
             this.btn_Ajouter.Size = new System.Drawing.Size(139, 47);
@@ -289,7 +302,7 @@
             // btn_Quitter
             // 
             this.btn_Quitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Quitter.Location = new System.Drawing.Point(19, 462);
+            this.btn_Quitter.Location = new System.Drawing.Point(19, 529);
             this.btn_Quitter.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Quitter.Name = "btn_Quitter";
             this.btn_Quitter.Size = new System.Drawing.Size(139, 48);
@@ -313,7 +326,7 @@
             // 
             this.labelconnexion.AutoSize = true;
             this.labelconnexion.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelconnexion.Location = new System.Drawing.Point(12, 51);
+            this.labelconnexion.Location = new System.Drawing.Point(12, 50);
             this.labelconnexion.Name = "labelconnexion";
             this.labelconnexion.Size = new System.Drawing.Size(163, 23);
             this.labelconnexion.TabIndex = 74;
@@ -323,7 +336,7 @@
             // 
             this.labelpresentation.AutoSize = true;
             this.labelpresentation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelpresentation.Location = new System.Drawing.Point(186, 52);
+            this.labelpresentation.Location = new System.Drawing.Point(187, 52);
             this.labelpresentation.Name = "labelpresentation";
             this.labelpresentation.Size = new System.Drawing.Size(66, 20);
             this.labelpresentation.TabIndex = 75;
@@ -333,7 +346,7 @@
             // 
             this.labelNom.AutoSize = true;
             this.labelNom.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNom.Location = new System.Drawing.Point(26, 89);
+            this.labelNom.Location = new System.Drawing.Point(27, 89);
             this.labelNom.Name = "labelNom";
             this.labelNom.Size = new System.Drawing.Size(44, 21);
             this.labelNom.TabIndex = 76;
@@ -343,7 +356,7 @@
             // 
             this.labelPrenom.AutoSize = true;
             this.labelPrenom.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrenom.Location = new System.Drawing.Point(134, 89);
+            this.labelPrenom.Location = new System.Drawing.Point(133, 89);
             this.labelPrenom.Name = "labelPrenom";
             this.labelPrenom.Size = new System.Drawing.Size(65, 21);
             this.labelPrenom.TabIndex = 77;
@@ -352,7 +365,7 @@
             // btn_suppr
             // 
             this.btn_suppr.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_suppr.Location = new System.Drawing.Point(733, 445);
+            this.btn_suppr.Location = new System.Drawing.Point(812, 516);
             this.btn_suppr.Margin = new System.Windows.Forms.Padding(4);
             this.btn_suppr.Name = "btn_suppr";
             this.btn_suppr.Size = new System.Drawing.Size(255, 47);
@@ -364,7 +377,7 @@
             // btn_modif
             // 
             this.btn_modif.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_modif.Location = new System.Drawing.Point(437, 445);
+            this.btn_modif.Location = new System.Drawing.Point(516, 516);
             this.btn_modif.Margin = new System.Windows.Forms.Padding(4);
             this.btn_modif.Name = "btn_modif";
             this.btn_modif.Size = new System.Drawing.Size(255, 47);
@@ -372,11 +385,32 @@
             this.btn_modif.Text = "Valider les modifications";
             this.btn_modif.UseVisualStyleBackColor = true;
             // 
+            // txt_nb_praticien
+            // 
+            this.txt_nb_praticien.Location = new System.Drawing.Point(824, 18);
+            this.txt_nb_praticien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_nb_praticien.Name = "txt_nb_praticien";
+            this.txt_nb_praticien.ReadOnly = true;
+            this.txt_nb_praticien.Size = new System.Drawing.Size(53, 22);
+            this.txt_nb_praticien.TabIndex = 82;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(624, 18);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(179, 20);
+            this.label11.TabIndex = 81;
+            this.label11.Text = "Nombre de praticiens :";
+            // 
             // Form_Medecins_Visiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 523);
+            this.ClientSize = new System.Drawing.Size(1173, 590);
+            this.Controls.Add(this.txt_nb_praticien);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.btn_suppr);
             this.Controls.Add(this.btn_modif);
             this.Controls.Add(this.labelPrenom);
@@ -405,6 +439,7 @@
             this.Controls.Add(this.tb_nom);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form_Medecins_Visiteur";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultation des praticiens ";
@@ -449,5 +484,7 @@
         public System.Windows.Forms.Label labelPrenom;
         private System.Windows.Forms.Button btn_suppr;
         private System.Windows.Forms.Button btn_modif;
+        private System.Windows.Forms.TextBox txt_nb_praticien;
+        private System.Windows.Forms.Label label11;
     }
 }

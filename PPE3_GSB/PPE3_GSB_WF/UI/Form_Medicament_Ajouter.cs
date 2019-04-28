@@ -13,11 +13,31 @@ namespace PPE3_GSB_WF
 {
     public partial class Form_Medicament_Ajouter : Form
     {
+        private string codeFamille;
         private GSB_PPE3Entities1 monModele;
         public Form_Medicament_Ajouter()
         {
             InitializeComponent();
             monModele = new GSB_PPE3Entities1();
+        }
+
+        /// <summary>
+        /// S'active au chargement du formulaire
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form_Medicament_Ajouter_Load(object sender, EventArgs e)
+        {
+            // Fait afficher les données "familles des médicament"
+            // Ici on fait afficher les libelles des familles. A la validation, on récupère le code 
+            // correspondant au libelle à l'aide d'une requête
+            var req = from m in monModele.familles
+                      select m.FAM_LIBELLE;
+
+            foreach (var resultat in req)
+            {
+                cb_famille.Items.Add(resultat);
+            }
         }
 
 
@@ -60,6 +80,55 @@ namespace PPE3_GSB_WF
                     }
                     else
                     {
+                        try
+                        {
+                            // Récupération du contenu du combobox de la famille du médicament
+                            string selectionFamille = cb_famille.SelectedItem.ToString();
+                            // Dans le combobox du type, on récupère le libelle
+                            // Il faut le code de la famille
+
+                            var req1 = from p in monModele.familles
+                                       where p.FAM_LIBELLE== selectionFamille
+                                       select p.FAM_CODE;
+
+                            foreach (var res in req1)
+                            {
+                                codeFamille = res;
+                            }
+
+                            var unMedicament = new medicament()
+                            {
+                                MED_DEPOTLEGAL = tb_Matricule.Text,
+                                MED_NOMCOMMERCIAL = tb_Nom.Text,
+                                MED_COMPOSITION = tb_Compo.Text,
+                                MED_EFFETS = tb_effets.Text,
+                                MED_CONTREINDIC = tb_contreIndic.Text,
+                                FAM_CODE = codeFamille
+                            };
+                            // Ajout du médicament dans la liste gérees par le programme
+                            context.medicaments.Add(unMedicament);
+                            // Sauvegarde de l'ajout dans la BDD
+                            context.SaveChanges();
+
+                            MessageBox.Show("Le médicament " + tb_Nom.Text + "  à bien été ajouté", "Ajout confirmé", MessageBoxButtons.OK);
+                            tb_Matricule.Text = "";
+                            tb_Nom.Text = "";
+                            tb_effets.Text = "";
+                            tb_Compo.Text = "";
+                            tb_contreIndic.Text = "";
+
+                        }
+                        catch (NullReferenceException) // Si le médicament sélectionné n'est pas dans la famille sélectionnée
+                        {
+                            MessageBox.Show("Erreur, des champs ne sont pas renseignés, les champs sont tous obligatoires." +
+                                ". ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        catch (FormatException)
+                        {
+                            MessageBox.Show("Erreur, format de la chaine d'une saisie incorrecte, retentez.." +
+                                ". ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        /*
                         // Pour récupérer la valeur dans le comboBox
                         string selection = cb_famille.SelectedItem.ToString();
                         var unMedicament = new medicament()
@@ -81,7 +150,7 @@ namespace PPE3_GSB_WF
                         tb_Nom.Text = "";
                         tb_effets = null;
                         tb_Compo = null;
-                        tb_contreIndic = null;
+                        tb_contreIndic = null;*/
 
                     }
                 }
@@ -91,24 +160,6 @@ namespace PPE3_GSB_WF
         private void bt_Annuler_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        /// <summary>
-        /// S'active au chargement du formulaire
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Form_Medicament_Ajouter_Load(object sender, EventArgs e)
-        {
-            // Faitafficher les données "familles des médicament"
-            // dans le combobox sans utiliser un binding pointant sur la base de données
-            var req = from m in monModele.medicaments
-                      select m.FAM_CODE;
-
-            foreach (var resultat in req)
-            {
-                cb_famille.Items.Add(resultat);
-            }
         }
     }
 }

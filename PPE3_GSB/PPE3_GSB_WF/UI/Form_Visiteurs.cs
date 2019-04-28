@@ -66,7 +66,7 @@ namespace PPE3_GSB_WF
             // Bouton cliqué, donc on peut activer les champs 
             // correspondant aux différents attributs
             btn_suppr.Enabled = true;
-            tb_nom.ReadOnly = false;
+           // tb_nom.ReadOnly = false;
             tb_prenom.ReadOnly = false;
             tb_cp.ReadOnly = false;
             tb_ville.ReadOnly = false;
@@ -102,7 +102,10 @@ namespace PPE3_GSB_WF
                         tb_dateEmbauche.Text = Convert.ToString(resultat.VIS_DATEEMBAUCHE);
                     }
                     MessageBox.Show("Chargement d'un visiteur sélectionné : " + cb_select.Text);
-                }catch(NullReferenceException) // Si le visiteur sélectionné n'est pas dans la région sélectionnée
+                    btn_suppr.Enabled = true;
+                    
+                }
+                catch(NullReferenceException) // Si le visiteur sélectionné n'est pas dans la région sélectionnée
                 {
                     MessageBox.Show("Erreur, ce visiteur n'est pas dans cette région. Veuillez sélectionner un visiteur " +
                         "dans la région sélectionnée. ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -121,7 +124,7 @@ namespace PPE3_GSB_WF
         private void button2_Click(object sender, EventArgs e)
         {
             // Récupération du contenu du combobox 
-            string selection = cb_select.SelectedItem.ToString();
+            string selection = tb_nom.Text;
             var vis = from p in monModele.visiteurs
                       where p.VIS_NOM == selection
                       select p;
@@ -191,13 +194,13 @@ namespace PPE3_GSB_WF
         private void btn_suppr_Click(object sender, EventArgs e)
         {
             string selection = tb_nom.Text;
-            if (cb_select.Text == "")
+            if (selection == "")
             {
                 MessageBox.Show("Erreur, champ vide, suppression impossible. ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                if (MessageBox.Show("Voulez vous vraiment supprimer ce praticien ?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                if (MessageBox.Show("Voulez vous vraiment supprimer ce visiteur ?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                == DialogResult.Yes)
                 {
                     var deletevis = from vis in monModele.visiteurs
@@ -245,6 +248,74 @@ namespace PPE3_GSB_WF
             {
                 cb_region.Items.Add(resultat.REG_NOM);
             }
+        }
+
+        /// <summary>
+        /// Sert à rechercher une personne grâce à un nom tapé
+        /// // Va donc vérifier si le nom est dans la base de données
+        /// </summary>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Bouton cliqué, donc on peut activer les champs 
+            // correspondant aux différents attributs
+            btn_suppr.Enabled = true;
+           // tb_nom.ReadOnly = false;
+            tb_prenom.ReadOnly = false;
+            tb_cp.ReadOnly = false;
+            tb_ville.ReadOnly = false;
+            tb_adresse.ReadOnly = false;
+            tb_dateEmbauche.ReadOnly = false;
+            string test = "";
+            // Récupère la saisie du textbox
+            string saisie = tb_recherche.Text;
+
+
+            // Faire la requête pour savoir si le nom saisie correspond à un nom dans la bdd
+            var req = from v in monModele.visiteurs
+                      where v.VIS_NOM == saisie
+                      select v;
+
+            // Parcours de la requête
+            foreach (var res in req)
+            {
+                // Vérification si le nom saisie correspond pour un nom dans la bdd
+                if (saisie == res.VIS_NOM)
+                {
+                    // Si oui, afficher les informations du visiteurs correspondant à ce nom
+                    tb_nom.Text = res.VIS_NOM;
+                    tb_prenom.Text = res.VIS_PRENOM;
+                    tb_adresse.Text = res.VIS_ADRESSE;
+                    tb_cp.Text = res.VIS_CP;
+                    tb_ville.Text = res.VIS_VILLE;
+                    tb_dateEmbauche.Text = Convert.ToString(res.VIS_DATEEMBAUCHE.Value.ToString("yyyy-MM-dd"));
+                    MessageBox.Show("Visiteur trouvé", "Réussite", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    test = res.VIS_NOM;
+                   
+                    btn_suppr.Enabled = true;
+                }
+                else
+                {
+                    // Si non, afficher message d'erreur
+                    MessageBox.Show("Erreur, ce visiteur n'existe pas dans la base de données.",
+                        "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+            if(test == "")
+            {
+                MessageBox.Show("Erreur, champ non valide ou visiteur introuvable.",
+                        "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+      
+
+        private void FermerMDI()
+        {
+            Form c;
+            c = this.ActiveMdiChild;
+            if (c != null)
+                c.Close();
         }
     }
 }

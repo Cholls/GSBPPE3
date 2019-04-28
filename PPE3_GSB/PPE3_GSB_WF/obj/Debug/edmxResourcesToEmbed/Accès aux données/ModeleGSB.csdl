@@ -129,6 +129,8 @@
     <NavigationProperty Name="type_praticien" Relationship="Self.praticien_ibfk_1" FromRole="praticien" ToRole="type_praticien" />
     <NavigationProperty Name="rapport_visite" Relationship="Self.rapport_visite_ibfk_1" FromRole="praticien" ToRole="rapport_visite" />
     <NavigationProperty Name="rapport_visite1" Relationship="Self.rapport_visite_ibfk_2" FromRole="praticien" ToRole="rapport_visite" />
+    <Property Name="REG_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="region" Relationship="GSB_PPE3Model.FK__praticien__REG_C__32AB8735" FromRole="praticien" ToRole="region" />
   </EntityType>
   <EntityType Name="prescrire">
     <Key>
@@ -196,6 +198,7 @@
     <NavigationProperty Name="secteur" Relationship="Self.region_ibfk_1" FromRole="region" ToRole="secteur" />
     <NavigationProperty Name="visiteurs" Relationship="Self.delegue_regional" FromRole="region" ToRole="visiteurs" />
     <NavigationProperty Name="visiteurs1" Relationship="GSB_PPE3Model.REG_CODE" FromRole="region" ToRole="visiteur" />
+    <NavigationProperty Name="praticiens" Relationship="GSB_PPE3Model.FK__praticien__REG_C__32AB8735" FromRole="region" ToRole="praticien" />
   </EntityType>
   <EntityType Name="responsable">
     <Key>
@@ -673,6 +676,10 @@
       <End Role="region" EntitySet="regions" />
       <End Role="visiteur" EntitySet="visiteurs" />
     </AssociationSet>
+    <AssociationSet Name="FK__praticien__REG_C__32AB8735" Association="GSB_PPE3Model.FK__praticien__REG_C__32AB8735">
+      <End Role="region" EntitySet="regions" />
+      <End Role="praticien" EntitySet="praticiens" />
+    </AssociationSet>
   </EntityContainer>
   <Association Name="REG_CODE">
     <End Type="GSB_PPE3Model.region" Role="region" Multiplicity="0..1" />
@@ -682,6 +689,18 @@
         <PropertyRef Name="REG_CODE" />
       </Principal>
       <Dependent Role="visiteur">
+        <PropertyRef Name="REG_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__praticien__REG_C__32AB8735">
+    <End Type="GSB_PPE3Model.region" Role="region" Multiplicity="0..1" />
+    <End Type="GSB_PPE3Model.praticien" Role="praticien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="region">
+        <PropertyRef Name="REG_CODE" />
+      </Principal>
+      <Dependent Role="praticien">
         <PropertyRef Name="REG_CODE" />
       </Dependent>
     </ReferentialConstraint>

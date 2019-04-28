@@ -19,6 +19,7 @@ namespace PPE3_GSB_WF.Accès_aux_données
         {
             this.visiteurs = new HashSet<visiteur>();
             this.visiteurs1 = new HashSet<visiteur>();
+            this.praticiens = new HashSet<praticien>();
         }
     
         public string REG_CODE { get; set; }
@@ -30,5 +31,7 @@ namespace PPE3_GSB_WF.Accès_aux_données
         public virtual ICollection<visiteur> visiteurs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<visiteur> visiteurs1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<praticien> praticiens { get; set; }
     }
 }

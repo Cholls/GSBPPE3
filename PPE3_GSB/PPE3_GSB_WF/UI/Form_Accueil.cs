@@ -31,8 +31,8 @@ namespace PPE3_GSB_WF
         /// </summary>
         public void DesactiverMenu()
         {
-            mnu_Visiteurs.Enabled = false;
-            mnu_Medicaments.Enabled = false;
+            //mnu_Visiteurs.Enabled = false;
+            //mnu_Medicaments.Enabled = false;
             //mnu_Medecins.Enabled = false;
         }
 
@@ -50,16 +50,20 @@ namespace PPE3_GSB_WF
         private void Form_Accueil_Load(object sender, EventArgs e)
         {
             
-            // LE PROBLEME DU PASSAGE MEME DANS LE FALSE NE VIENT PAS DES LIGNES SUIVANTES
+            // Test de la connexion
             if (seConnecte.ShowDialog() == DialogResult.OK)
             {
                 string util = seConnecte.Input;
                 if(util == "V") { // Si un visiteur est connecté
                     DesactiverMenu();
+                    visualVisiteur.Visible = true;
+                    visualVisiteurAdmin.Visible = false;
                     visualSecretaria.Visible = false;
                     visualiserLesMedecintoolTip.Visible = false;
                     visualpraticienVisiteur.Visible = true;
-                       
+                    ajouterUnRapportToolStripMenuItem.Visible = true;
+                    ajouterUnVisiteurToolStripMenuItem.Visible = false;
+
                     string leLogin = seConnecte.tb_Identifiant.Text;
 
                     var req1 = from v in monModele.visiteurs
@@ -74,8 +78,10 @@ namespace PPE3_GSB_WF
                 }
                 else if(util == "S"){ // Si un super utilisateur est connecté
                     //MessageBox.Show("Super utilisateur connecté !");
+                    ajouterUnRapportToolStripMenuItem.Visible = false;
                     visualSecretaria.Visible = true;
                     visualiserLesMedecintoolTip.Visible = true;
+                    visualVisiteur.Visible = false;
                     visualpraticienVisiteur.Visible = false;
                     visualRapportvisiteur.Visible = false;
                     labelPrenom.Text = "";
@@ -86,7 +92,7 @@ namespace PPE3_GSB_WF
                 {
                     // Solution pour que l'application reprenne quand une identification est mauvaise
                     MessageBox.Show("Erreur connexion, mauvais identifiant et/ou mot de passe ou champ(s) vide(s). Reessayer.");
-                    seConnecte.ShowDialog();
+                    Form_Accueil_Load(sender, e);
                 }
             }
         }
@@ -114,7 +120,13 @@ namespace PPE3_GSB_WF
 
         private void ajouterUnRapportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Ici on ajoutera le code pour ouvrir la fenêtre permettant de créer un rapport
+            // Il faut donner le nom du visiteur au formulaire
+            // Pour savoir à quel visiteur ajouter le rapport
+            Form_Rapport_Ajouter f = new Form_Rapport_Ajouter();
+            // Passe le nom du visiteur 
+            f.tb_nomVis.Text = labelNom.Text;
+            f.Show();
+
         }
 
         // Ici ouvrir la page de rapport du secrétaria
@@ -206,6 +218,7 @@ namespace PPE3_GSB_WF
             //Ne fonctionne pas encore, ne ferme pas la fenêtre de l'accueil
             //this.Close();
             //seConnecte.ShowDialog();
+          
         }
 
         /// <summary>
@@ -217,6 +230,20 @@ namespace PPE3_GSB_WF
         {
             FermerMDI();
             Form_Rapports_Visiteur f = new Form_Rapports_Visiteur();
+            f.MdiParent = this;
+            // Récupération du nom et du prénom du visiteur sur les labels de l'accueil
+            // Pour pouvoir afficher les informations de ce visiteur en particulier
+            f.labelNom.Text = labelNom.Text;
+            f.labelPrenom.Text = labelPrenom.Text;
+            f.Show();
+        }
+
+        // Fonction uniquement accessible quand l'utilisateur est un visiteur médical 
+        // Permet d'ouvrir la fenêtre de consultation de sa propre fiche de visiteur médical
+        private void visualVisiteur_Click_1(object sender, EventArgs e)
+        {
+            FermerMDI();
+            Form_Visiteur_pour_visiteur f = new Form_Visiteur_pour_visiteur();
             f.MdiParent = this;
             // Récupération du nom et du prénom du visiteur sur les labels de l'accueil
             // Pour pouvoir afficher les informations de ce visiteur en particulier

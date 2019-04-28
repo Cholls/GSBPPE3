@@ -99,3 +99,72 @@ C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.F
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Rapports_Secretaria.resources
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.UI.Form_Rapport_Ajouter.resources
 C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.UI.Form_Medecins_Visiteur.resources
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\bin\Debug\PPE3_GSB_WF.exe.config
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\bin\Debug\PPE3_GSB_WF.exe
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\bin\Debug\PPE3_GSB_WF.pdb
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\bin\Debug\EntityFramework.dll
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\bin\Debug\Google.Protobuf.dll
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\bin\Debug\MySql.Data.dll
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\bin\Debug\MySql.Data.Entity.dll
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\bin\Debug\EntityFramework.xml
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\bin\Debug\Google.Protobuf.xml
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\bin\Debug\MySql.Data.xml
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.csprojResolveAssemblyReference.cache
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Accueil.resources
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Connexion.resources
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medecins.resources
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medecins_Ajouter.resources
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.UI.Form_Medecins_Visiteur.resources
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medicaments.resources
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medicament_Ajouter.resources
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Rapports_Secretaria.resources
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Rapports_Visiteur.resources
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.UI.Form_Rapport_Ajouter.resources
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Visiteurs.resources
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Visiteurs_Ajouter.resources
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Visiteurs_Modifier.resources
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Properties.Resources.resources
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.csproj.GenerateResource.cache
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.csproj.CoreCompileInputs.cache
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.csproj.CopyComplete
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.exe
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.pdb
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\bin\Debug\PPE3_GSB_WF.exe.config
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\bin\Debug\PPE3_GSB_WF.exe
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\bin\Debug\PPE3_GSB_WF.pdb
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\bin\Debug\EntityFramework.dll
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\bin\Debug\Google.Protobuf.dll
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\bin\Debug\MySql.Data.dll
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\bin\Debug\MySql.Data.Entity.dll
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\bin\Debug\EntityFramework.xml
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\bin\Debug\Google.Protobuf.xml
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\bin\Debug\MySql.Data.xml
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.csprojResolveAssemblyReference.cache
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Accueil.resources
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Connexion.resources
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medecins.resources
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medecins_Ajouter.resources
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.UI.Form_Medecins_Visiteur.resources
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medicaments.resources
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Medicament_Ajouter.resources
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Rapports_Secretaria.resources
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Rapports_Visiteur.resources
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.UI.Form_Rapport_Ajouter.resources
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Visiteurs.resources
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Visiteurs_Ajouter.resources
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Form_Visiteurs_Modifier.resources
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.Properties.Resources.resources
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.csproj.GenerateResource.Cache
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.csproj.CoreCompileInputs.cache
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.exe
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.pdb
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.UI.Form_Echantillon_Offrir.resources
+C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\obj\Debug\PPE3_GSB_WF.UI.Form_Visiteur_pour_visiteur.resources

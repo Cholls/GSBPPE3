@@ -98,6 +98,7 @@
     <EntitySetMapping Name="praticiens">
       <EntityTypeMapping TypeName="GSB_PPE3Model.praticien">
         <MappingFragment StoreEntitySet="praticien">
+          <ScalarProperty Name="REG_CODE" ColumnName="REG_CODE" />
           <ScalarProperty Name="PRA_NUM" ColumnName="PRA_NUM" />
           <ScalarProperty Name="PRA_NOM" ColumnName="PRA_NOM" />
           <ScalarProperty Name="PRA_PRENOM" ColumnName="PRA_PRENOM" />

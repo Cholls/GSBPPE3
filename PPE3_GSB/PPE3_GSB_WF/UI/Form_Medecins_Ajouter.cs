@@ -15,11 +15,42 @@ namespace PPE3_GSB_WF
 {
     public partial class Form_Medecins_Ajouter : Form
     {
+        private string codeRegion;
+        private string codeType;
         private GSB_PPE3Entities1 monModele;
+        private int matriculeAlea;
+
         public Form_Medecins_Ajouter()
         {
             InitializeComponent();
             monModele = new GSB_PPE3Entities1();
+        }
+
+
+        private void Form_Medecins_Ajouter_Load(object sender, EventArgs e)
+        {
+            // Lecture du type du praticien
+            // Récupère seulement le libelle
+            // Selon le libelle, retrouver avec une autre requête le code de ce libelle pour l'ajouter
+            // dans la création du nouveau praticien
+            var req = from p in monModele.type_praticien
+                      select p.TYP_LIBELLE;
+
+            foreach(var res in req)
+            {
+                cb_type.Items.Add(res);
+            }
+
+            // Idem pour la région, ce comboBox affiche le libelle
+            //Il faudra récupérer le code de la région pour le mettre dans la base de données
+            // Récupère les régions dans la base de données
+            var req1 = from v in monModele.regions
+                      select v.REG_NOM;
+
+            foreach (var resultat in req1)
+            {
+                cb_region.Items.Add(resultat);
+            }
         }
 
         /// <summary>
@@ -32,7 +63,7 @@ namespace PPE3_GSB_WF
             using (var context = new GSB_PPE3Entities1())
             {
                 // Vérification si les champs sont vides. S'ils sont vides, message d'erreur.
-                if (tb_Matricule.Text == "" && tb_Nom.Text == "" && tb_Prenom.Text == "" &&
+                if (tb_Nom.Text == "" && tb_Prenom.Text == "" &&
                     tb_Adresse.Text == "" && tb_CP.Text == "" && tb_Ville.Text == ""
                      && tb_coefNot.Text == "" && tb_coefConf.Text == "")
                 {
@@ -44,58 +75,88 @@ namespace PPE3_GSB_WF
                     var req = from p in monModele.praticiens
                               select p;
 
-                    //string num = req.First();
-                    bool identique = false;
-                    // Il faut parcourir la liste pour savoir si le num tapé correspond à un num dans la liste
-                    foreach (var resultat in req)
-                    {
-                        if (tb_Matricule.Text == Convert.ToString(resultat.PRA_NUM))
+                   
+                        try 
                         {
-                            identique = true;
-                        }
-                    }
-                    // Si dans la liste, on a trouvé un numéro similaire à celui saisi dans le textbox du matricules
-                    if (identique == true)
-                    {
-                        MessageBox.Show("Le numéro de visiteur existe déjà. En choisir un autre. ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    else
-                    {
+                            // Récupération du contenu du combobox du type du praticien
+                            string selectionType = cb_type.SelectedItem.ToString();
+                            // Dans le combobox du type, on récupère le libelle
+                            // Il faut le code du type du praticien
+
+                            var req1 = from p in monModele.type_praticien
+                                       where p.TYP_LIBELLE == selectionType
+                                       select p.TYP_CODE;
+                            foreach(var res in req1)
+                            {
+                                codeType = res;
+                            }
+
+                            // Maintenant, il faut récupérer le code de la région à l'aide du comboBox de la région
+                            string selectionRegion = cb_region.SelectedItem.ToString();
+
+                            var req2 = from p in monModele.regions
+                                       where p.REG_NOM == selectionRegion
+                                       select p.REG_CODE;
+                            foreach (var res in req2)
+                            {
+                                codeRegion = res;
+                            }
+
+                        // Tout d'abord, générer un numéro de dossier random
+                        // sans que ce numéro soit déjà dans la base
+                        Random aleatoire = new Random();
+                        matriculeAlea = aleatoire.Next(7, 100); //Génère un entier aléatoire positif
+
+                        // Permet de générer et d'attribuer un numéro de rapport, sans que celui-ci ne soit déjà dans la base
+                        do
+                        {
+                            matriculeAlea = aleatoire.Next(1, 300);
+                            
+                        } while (monModele.praticiens.Any(a => a.PRA_NUM == matriculeAlea));
+                        MessageBox.Show("Bravo, numéro de rapport généré : " + matriculeAlea + ".");
                         var unPraticien = new praticien()
                         {
-                            PRA_NUM = Convert.ToInt32(tb_Matricule.Text),
-                            PRA_NOM = tb_Nom.Text,
-                            PRA_PRENOM = tb_Prenom.Text,
-                            PRA_ADRESSE = tb_Adresse.Text,
-                            PRA_CP = tb_CP.Text,
-                            PRA_VILLE = tb_Ville.Text,
-                            PRA_COEFNOTORIETE = Convert.ToInt32(tb_coefNot.Text),
-                            PRA_COEFCONFIANCE = Convert.ToInt32(tb_coefConf.Text),
-                            TYP_CODE = cb_spe.SelectedValue.ToString()
-                        };
-                        // Ajout du visiteur dans la liste gérees par le programme
-                        context.praticiens.Add(unPraticien);
-                        // Sauvegarde de l'ajout dans la BDD
-                        context.SaveChanges();
+                                PRA_NUM = matriculeAlea,
+                                PRA_NOM = tb_Nom.Text,
+                                PRA_PRENOM = tb_Prenom.Text,
+                                PRA_ADRESSE = tb_Adresse.Text,
+                                PRA_CP = tb_CP.Text,
+                                PRA_VILLE = tb_Ville.Text,
+                                PRA_COEFNOTORIETE = Convert.ToInt32(tb_coefNot.Text),
+                                PRA_COEFCONFIANCE = Convert.ToInt32(tb_coefConf.Text),
+                                TYP_CODE = codeType,
+                                REG_CODE = codeRegion
+                            };
 
-                        MessageBox.Show("Le praticien " + tb_Nom.Text + " " + tb_Prenom.Text + " à bien été ajouté", "ok", MessageBoxButtons.OK);
-                        tb_Matricule.Text = "";
-                        tb_Nom.Text = "";
-                        tb_Prenom.Text = "";
-                        tb_Adresse.Text = "";
-                        tb_CP.Text = "";
-                        tb_Ville.Text = "";
-                        tb_coefNot.Text = "";
-                        tb_coefConf.Text = "";
-                    }
-                    
+                             // Ajout du visiteur dans la liste gérees par le programme
+                             context.praticiens.Add(unPraticien);
+                                // Sauvegarde de l'ajout dans la BDD
+                                context.SaveChanges();
+                                MessageBox.Show("Le praticien " + tb_Nom.Text + " " + tb_Prenom.Text + " à bien été ajouté", "Ajout confirmé", MessageBoxButtons.OK);
+
+                             tb_Nom.Text = "";
+                             tb_Prenom.Text = "";
+                             tb_Adresse.Text = "";
+                             tb_CP.Text = "";
+                            tb_Ville.Text = "";
+                            tb_coefNot.Text = "";
+                            tb_coefConf.Text = "";
+
+                        }
+                        catch (NullReferenceException) // Si le visiteur sélectionné n'est pas dans la région sélectionnée
+                        {
+                            MessageBox.Show("Erreur, des champs ne sont pas renseignés, les champs sont tous obligatoires." +
+                                ". ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        catch (FormatException)
+                        {
+                            MessageBox.Show("Erreur, format de la chaine d'une saisie incorrecte, retentez.." +
+                                ". ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+
+                       
                 }
             }
-        }
-
-        private void Form_Medecins_Ajouter_Load(object sender, EventArgs e)
-        {
-            // Peut-être ajouter de la lecture de données
         }
  
         /// <summary>
@@ -169,6 +230,9 @@ namespace PPE3_GSB_WF
             }
         }
 
-   
+        private void tb_coefNot_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

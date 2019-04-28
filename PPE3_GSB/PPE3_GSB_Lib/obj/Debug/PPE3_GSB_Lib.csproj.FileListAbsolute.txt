@@ -10,3 +10,9 @@ C:\Users\bforgeron\source\repos\PPE3\PPE3_GSB\PPE3_GSB_Lib\obj\Debug\PPE3_GSB_Li
 C:\Users\bforgeron\source\repos\PPE3\PPE3_GSB\PPE3_GSB_Lib\obj\Debug\PPE3_GSB_Lib.csproj.CoreCompileInputs.cache
 C:\Users\bforgeron\source\repos\PPE3\PPE3_GSB\PPE3_GSB_Lib\obj\Debug\PPE3_GSB_Lib.dll
 C:\Users\bforgeron\source\repos\PPE3\PPE3_GSB\PPE3_GSB_Lib\obj\Debug\PPE3_GSB_Lib.pdb
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_Lib\bin\Debug\PPE3_GSB_Lib.dll
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_Lib\bin\Debug\PPE3_GSB_Lib.pdb
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_Lib\obj\Debug\PPE3_GSB_Lib.csprojResolveAssemblyReference.cache
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_Lib\obj\Debug\PPE3_GSB_Lib.csproj.CoreCompileInputs.cache
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_Lib\obj\Debug\PPE3_GSB_Lib.dll
+C:\Users\bforgeron\Downloads\PPE3_GSBgroupeSBA\PPE3_GSB\PPE3_GSB_Lib\obj\Debug\PPE3_GSB_Lib.pdb

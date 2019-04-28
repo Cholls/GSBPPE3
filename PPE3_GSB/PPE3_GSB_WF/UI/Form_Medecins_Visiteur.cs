@@ -24,7 +24,7 @@ namespace PPE3_GSB_WF.UI
     public partial class Form_Medecins_Visiteur : Form
     {
         private GSB_PPE3Entities1 monModele;
-        private string cpVisiteur;
+        private string regionVisiteur;
 
         public Form_Medecins_Visiteur()
         {
@@ -39,20 +39,20 @@ namespace PPE3_GSB_WF.UI
         /// <param name="e"></param>
         private void Form_Medecins_Visiteur_Load(object sender, EventArgs e)
         {
-            // Recherche du département du visiteur connecté
+            // Recherche de la région du visiteur connecté
             var req = from p in monModele.visiteurs
                       where p.VIS_NOM == labelNom.Text
-                      select p.VIS_CP;
+                      select p.REG_CODE;
 
             foreach(var resultat in req)
             {
-                cpVisiteur = resultat;
+                regionVisiteur = resultat;
             }
 
             // Faire en sorte de n'afficher que les praticiens uniquement dans 
             // le même département que le visiteur 
             var req1 = from p in monModele.praticiens
-                       where p.PRA_CP == cpVisiteur
+                       where p.REG_CODE == regionVisiteur
                        select p;
 
             
@@ -144,7 +144,56 @@ namespace PPE3_GSB_WF.UI
         /// <param name="e"></param>
         private void btn_suppr_Click(object sender, EventArgs e)
         {
+            string selection = tb_nom.Text;
+            if (cb_select.Text == "")
+            {
+                MessageBox.Show("Erreur, champ vide, suppression impossible. ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (MessageBox.Show("Voulez vous vraiment supprimer ce praticien ?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+               == DialogResult.Yes)
+                {
+                    var deleteprat = from prat in monModele.praticiens
+                                     where prat.PRA_NOM == selection
+                                     select prat;
 
+                    foreach (var prat in deleteprat)
+                    {
+                        var deletePossession = from p in monModele.posseders
+                                               where p.PRA_NUM == prat.PRA_NUM
+                                               select p;
+                        foreach (var p in deletePossession)
+                        {
+                            MessageBox.Show("Le praticien " + prat.PRA_NOM + " a bien été supprimé.");
+                            monModele.posseders.Remove(p);
+                            monModele.praticiens.Remove(prat);
+                        }
+                    }
+                    monModele.SaveChanges();
+                    tb_type.Text = "";
+                    tb_coefConf.Text = "";
+                    tb_cp.Text = "";
+                    tb_nom.Text = "";
+                    tb_prenom.Text = "";
+                    tb_adresse.Text = "";
+                    tb_ville.Text = "";
+                    tb_coefNot.Text = "";
+                    cb_select.Items.Clear();
+                    //RechargerDonneescb(); // Recharge les données de la comboBox des praticiens
+                    RechargerCompteur(); // Recompte le nombres des praticiens
+                }
+            }
         }
+
+        private void RechargerCompteur()
+        {
+            // Faire le compteur des praticiens
+            var reqNbVisiteur = from v in monModele.praticiens
+                                select v;
+            int nbPraticien = reqNbVisiteur.Count();
+            txt_nb_praticien.Text = Convert.ToString(nbPraticien);
+        }
+    
     }
 }

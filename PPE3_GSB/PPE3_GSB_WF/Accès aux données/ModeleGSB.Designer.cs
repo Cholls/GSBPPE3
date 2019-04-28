@@ -1,4 +1,4 @@
-﻿// La génération de code T4 est activée pour le modèle 'C:\Users\Visu-\source\repos\GSBPPE3\PPE3_GSB\PPE3_GSB_WF\Accès aux données\ModeleGSB.edmx'. 
+﻿// La génération de code T4 est activée pour le modèle 'C:\Users\Visu-\OneDrive\Documents\PROG - important\PPE3_GSB\PPE3_GSB_WF\Accès aux données\ModeleGSB.edmx'. 
 // Pour activer la génération de code héritée, définissez la valeur de la propriété
 // du concepteur 'Stratégie de génération de code' sur 'ObjectContext hérité'. Cette propriété est disponible dans la fenêtre Propriétés lorsque le modèle
 //  est ouvert dans le concepteur.

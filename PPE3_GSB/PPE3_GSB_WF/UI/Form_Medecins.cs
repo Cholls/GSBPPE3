@@ -15,6 +15,8 @@ namespace PPE3_GSB_WF
     public partial class Form_Medecins : Form
     {
         private GSB_PPE3Entities1 monModele;
+        private string recupRegCode;
+
         public Form_Medecins()
         {
             InitializeComponent();
@@ -42,7 +44,6 @@ namespace PPE3_GSB_WF
 
         }
 
-   
         private void Btn_Ajouter_Click(object sender, EventArgs e)
         {
             Form_Medecins_Ajouter fva = new Form_Medecins_Ajouter();
@@ -60,7 +61,8 @@ namespace PPE3_GSB_WF
         {
             // Bouton cliqué, donc on peut activer les champs 
             // correspondant aux différents attributs
-            tb_nom.ReadOnly = false;
+            btn_suppr.Enabled = true;
+           // tb_nom.ReadOnly = false;
             tb_prenom.ReadOnly = false;
             tb_cp.ReadOnly = false;
             tb_ville.ReadOnly = false;
@@ -70,25 +72,46 @@ namespace PPE3_GSB_WF
             tb_coefNot.ReadOnly = false;
             tb_type.ReadOnly = false;
 
-            // Récupération du contenu du combobox 
-            string selection = cb_Select.SelectedItem.ToString();
-
-            var req = from p in monModele.praticiens
-                      where p.PRA_NOM == selection
-                      select p;
-
-            // Tout afficher dans les TextBox
-            foreach (var resultat in req)
+            // Détecte si aucune entrée dans les combobox est sélectionnée
+            if (cb_Select.Text == "")
             {
-                tb_nom.Text = resultat.PRA_NOM;
-                tb_prenom.Text = resultat.PRA_PRENOM;
-                tb_adresse.Text = resultat.PRA_ADRESSE;
-                tb_cp.Text = resultat.PRA_CP;
-                tb_ville.Text = resultat.PRA_VILLE;
-                tb_coefNot.Text = Convert.ToString(resultat.PRA_COEFNOTORIETE);
-                tb_coefConf.Text = Convert.ToString(resultat.PRA_COEFCONFIANCE);
-                tb_type.Text = resultat.TYP_CODE;
+                MessageBox.Show("Aucune sélection, attention !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else
+            {
+                try // Faire un bloc try catch au cas où une erreur pourrait survenir 
+                    // quand un visiteur n'est pas dans la région sélectionnée
+                {
+                    // Récupération du contenu du combobox 
+                    string selection = cb_Select.SelectedItem.ToString();
+
+                    // Récupère les données du visiteur sélectionné dans la combobox
+                    var req = from p in monModele.praticiens
+                              where p.PRA_NOM == selection
+                              select p;
+
+                    // Tout afficher dans les TextBox
+                    foreach (var resultat in req)
+                    {
+                        tb_nom.Text = resultat.PRA_NOM;
+                        tb_prenom.Text = resultat.PRA_PRENOM;
+                        tb_adresse.Text = resultat.PRA_ADRESSE;
+                        tb_cp.Text = resultat.PRA_CP;
+                        tb_ville.Text = resultat.PRA_VILLE;
+                        tb_coefNot.Text = Convert.ToString(resultat.PRA_COEFNOTORIETE);
+                        tb_coefConf.Text = Convert.ToString(resultat.PRA_COEFCONFIANCE);
+                        tb_type.Text = resultat.TYP_CODE;
+                    }
+                    MessageBox.Show("Chargement d'un visiteur sélectionné : " + cb_Select.Text);
+                }
+                catch (NullReferenceException) // Si le praticien sélectionné n'est pas dans la région sélectionnée
+                {
+                    MessageBox.Show("Erreur, ce visiteur n'est pas dans cette région. Veuillez sélectionner un praticien " +
+                        "dans la région sélectionnée. ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cb_Select.Items.Clear();
+                }
+            }
+           
         }
 
         /// <summary>
@@ -100,8 +123,8 @@ namespace PPE3_GSB_WF
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            string selection = cb_Select.SelectedValue.ToString();
+
+            string selection = tb_nom.Text;
             var med = from p in monModele.praticiens
                       where p.PRA_NOM == selection
                       select p;
@@ -127,10 +150,11 @@ namespace PPE3_GSB_WF
         private void btn_suppr_Click(object sender, EventArgs e)
         {
             string selection = tb_nom.Text;
-            if (cb_Select.Text == "")
+            if (selection == "")
             {
                 MessageBox.Show("Erreur, champ vide, suppression impossible. ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }else
+            }
+            else
             {
                 if (MessageBox.Show("Voulez vous vraiment supprimer ce praticien ?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                == DialogResult.Yes)
@@ -141,10 +165,10 @@ namespace PPE3_GSB_WF
 
                     foreach (var prat in deleteprat)
                     {
-                        var deletePossession= from p in monModele.posseders
-                                         where p.PRA_NUM == prat.PRA_NUM
-                                         select p;
-                        foreach(var p in deletePossession)
+                        var deletePossession = from p in monModele.posseders
+                                               where p.PRA_NUM == prat.PRA_NUM
+                                               select p;
+                        foreach (var p in deletePossession)
                         {
                             MessageBox.Show("Le praticien " + prat.PRA_NOM + " a bien été supprimé.");
                             monModele.posseders.Remove(p);
@@ -163,14 +187,14 @@ namespace PPE3_GSB_WF
                     cb_Select.Items.Clear();
                     RechargerDonneescb(); // Recharge les données de la comboBox des praticiens
                     RechargerCompteur(); // Recompte le nombres des praticiens
-                } 
+                }
             }
         }
 
         // Permet de charger ou de recharger le compteur de praticiens
         private void RechargerCompteur()
         {
-            // Faire le compteur des visiteurs
+            // Faire le compteur des praticiens
             var reqNbVisiteur = from v in monModele.praticiens
                                 select v;
             int nbPraticien = reqNbVisiteur.Count();
@@ -180,14 +204,116 @@ namespace PPE3_GSB_WF
         // Permet de charger ou de recharger les données dans le comboBox des praticiens
         private void RechargerDonneescb()
         {
-            // Charge les médecins dans le ComboBox
-            var req = from p in monModele.praticiens
-                      select p.PRA_NOM;
+            // Récupère les régions dans la base de données
+            var req = from v in monModele.regions
+                      select v;
 
             foreach (var resultat in req)
+            {
+                cb_region.Items.Add(resultat.REG_NOM);
+            }
+        }
+
+        /// <summary>
+        /// Permet de charger la liste des praticiens habitant dans la région sélectionnée
+        /// quand la selection du premier combobox change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cb_region_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Nettoie ce qui est déjà dans la comboBox
+            // Si une recherche a déjà été faite
+            cb_Select.Items.Clear();
+
+            // Récupère la sélection du premier comboBox (de la région)
+            string selection = cb_region.SelectedItem.ToString();
+
+            // Requête pour récupérer le code de la région
+            // de la région sélectionnée dans le premier combobox
+            var recupCode = from p in monModele.regions
+                            where p.REG_NOM == selection
+                            select p.REG_CODE;
+
+            // Récupération du code de la région
+            foreach (var resultat in recupCode)
+            {
+                recupRegCode = resultat;
+            }
+
+            // Récupération des praticiens étant dans la région sélectionnée dans le comboBox
+            var pra = from p in monModele.praticiens
+                      where p.REG_CODE == recupRegCode
+                      select p.PRA_NOM;
+
+            foreach (var resultat in pra)
             {
                 cb_Select.Items.Add(resultat);
             }
         }
+
+        /// <summary>
+        /// Sert à rechercher un praticien grâce à un nom tapé
+        /// // Va donc vérifier si le nom est dans la base de données
+        /// </summary>
+        private void but_valid_1_Click(object sender, EventArgs e)
+        {
+            // Bouton cliqué, donc on peut activer les champs 
+            // correspondant aux différents attributs
+            btn_suppr.Enabled = true;
+            // tb_nom.ReadOnly = false;
+            tb_prenom.ReadOnly = false;
+            tb_cp.ReadOnly = false;
+            tb_ville.ReadOnly = false;
+            tb_adresse.ReadOnly = false;
+            tb_coefConf.ReadOnly = false;
+            tb_coefNot.ReadOnly = false;
+            tb_coefNot.ReadOnly = false;
+            tb_type.ReadOnly = false;
+            btn_suppr.Enabled = true;
+            string test = "";
+            // Récupère la saisie du textbox
+            string saisie = tb_recherche.Text;
+
+
+            // Faire la requête pour savoir si le nom saisie correspond à un nom dans la bdd
+            var req = from v in monModele.praticiens
+                      where v.PRA_NOM == saisie
+                      select v;
+
+            // Parcours de la requête
+            foreach (var resultat in req)
+            {
+                // Vérification si le nom saisie correspond pour un nom dans la bdd
+                if (saisie == resultat.PRA_NOM)
+                {
+                    // Si oui, afficher les informations du praticien correspondant à ce nom
+                    tb_nom.Text = resultat.PRA_NOM;
+                    tb_prenom.Text = resultat.PRA_PRENOM;
+                    tb_adresse.Text = resultat.PRA_ADRESSE;
+                    tb_cp.Text = resultat.PRA_CP;
+                    tb_ville.Text = resultat.PRA_VILLE;
+                    tb_coefNot.Text = Convert.ToString(resultat.PRA_COEFNOTORIETE);
+                    tb_coefConf.Text = Convert.ToString(resultat.PRA_COEFCONFIANCE);
+                    tb_type.Text = resultat.TYP_CODE;
+                    MessageBox.Show("Praticien trouvé", "Réussite", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    test = resultat.PRA_NOM;
+                }
+                else
+                {
+                    // Si non, afficher message d'erreur
+                    MessageBox.Show("Erreur, ce praticien n'existe pas dans la base de données.",
+                        "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+            if (test == "")
+            {
+                MessageBox.Show("Erreur, champ non valide ou visiteur introuvable.",
+                        "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+    
     }
 }

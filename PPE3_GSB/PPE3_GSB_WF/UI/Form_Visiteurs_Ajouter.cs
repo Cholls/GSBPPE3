@@ -14,6 +14,8 @@ namespace PPE3_GSB_WF
     public partial class Form_Visiteurs_Ajouter : Form
     {
         private GSB_PPE3Entities1 monModele;
+        private string codeRegion;
+
         public Form_Visiteurs_Ajouter()
         {
             InitializeComponent();
@@ -23,7 +25,8 @@ namespace PPE3_GSB_WF
 
         private void Form_Visiteurs_Ajouter_Load(object sender, EventArgs e)
         {
-            
+            // Les régions doivent être chargés pour être affichées
+            RechargerDonneescb();
         }
 
         private void btn_Annuler_Click(object sender, EventArgs e)
@@ -47,7 +50,7 @@ namespace PPE3_GSB_WF
             {
                 if (tb_Matricule.Text == "" && tb_Nom.Text == "" && tb_Prenom.Text == "" &&
                 tb_Adresse.Text == "" && tb_CP.Text == "" && tb_Ville.Text == ""
-                && tb_DateEmbauche.Text == "" && tb_Login.Text == "" && tb_MotDePasse.Text == "")
+                && dtp_DateEmbauche.Text == "" && tb_Login.Text == "" && tb_MotDePasse.Text == "")
                 {
                     MessageBox.Show("Tous les champs ne sont pas renseignés ! ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -62,7 +65,8 @@ namespace PPE3_GSB_WF
                     // Il faut parcourir la liste pour savoir si le num tapé correspond à un num dans la liste
                     foreach (var resultat in req)
                     {
-                        if (tb_Matricule.Text == resultat.VIS_MATRICULE) {
+                        if (tb_Matricule.Text == resultat.VIS_MATRICULE)
+                        {
                             identique = true;
                         }
                     }
@@ -73,40 +77,63 @@ namespace PPE3_GSB_WF
                     }
                     else
                     {
-                        // Déclaration d'un nouveau visiteur
-                        var unVisiteur = new visiteur()
+                        try
                         {
+                            // Maintenant, il faut récupérer le code de la région à l'aide du comboBox de la région
+                            string selectionRegion = cb_region.SelectedItem.ToString();
 
-                            VIS_MATRICULE = tb_Matricule.Text,
-                            VIS_NOM = tb_Nom.Text,
-                            VIS_PRENOM = tb_Prenom.Text,
-                            VIS_ADRESSE = tb_Adresse.Text,
-                            VIS_CP = tb_CP.Text,
-                            VIS_VILLE = tb_Ville.Text,
-                            VIS_DATEEMBAUCHE = Convert.ToDateTime(tb_DateEmbauche.Text),
-                            VIS_LOGIN = tb_Login.Text,
-                            VIS_MDP = tb_MotDePasse.Text
-                        };
+                            var req2 = from p in monModele.regions
+                                       where p.REG_NOM == selectionRegion
+                                       select p.REG_CODE;
+                            foreach (var res in req2)
+                            {
+                                codeRegion = res;
+                            }
 
-                        // Ajout du visiteur dans la liste gérees par le programme
-                        context.visiteurs.Add(unVisiteur);
-                        // Sauvegarde de l'ajout dans la BDD
-                        context.SaveChanges();
-                        MessageBox.Show("Le visiteur " + tb_Nom.Text + " " + tb_Prenom.Text + " à bien été ajouté", "ok", MessageBoxButtons.OK);
-                        tb_Matricule.Text = "";
-                        tb_Nom.Text = "";
-                        tb_Prenom.Text = "";
-                        tb_Adresse.Text = "";
-                        tb_CP.Text = "";
-                        tb_Ville.Text = "";
-                        tb_DateEmbauche.Text = "";
-                        tb_Login.Text = "";
-                        tb_MotDePasse.Text = "";
-                        
+                            // Déclaration d'un nouveau visiteur
+                            var unVisiteur = new visiteur()
+                            {
+
+                                VIS_MATRICULE = tb_Matricule.Text,
+                                VIS_NOM = tb_Nom.Text,
+                                VIS_PRENOM = tb_Prenom.Text,
+                                VIS_ADRESSE = tb_Adresse.Text,
+                                VIS_CP = tb_CP.Text,
+                                VIS_VILLE = tb_Ville.Text,
+                                VIS_DATEEMBAUCHE = Convert.ToDateTime(dtp_DateEmbauche.Text),
+                                VIS_LOGIN = tb_Login.Text,
+                                VIS_MDP = tb_MotDePasse.Text
+                            };
+
+                            // Ajout du visiteur dans la liste gérees par le programme
+                            context.visiteurs.Add(unVisiteur);
+                            // Sauvegarde de l'ajout dans la BDD
+                            context.SaveChanges();
+                            MessageBox.Show("Le visiteur " + tb_Nom.Text + " " + tb_Prenom.Text + " à bien été ajouté", "ok", MessageBoxButtons.OK);
+                            tb_Matricule.Text = "";
+                            tb_Nom.Text = "";
+                            tb_Prenom.Text = "";
+                            tb_Adresse.Text = "";
+                            tb_CP.Text = "";
+                            tb_Ville.Text = "";
+                            dtp_DateEmbauche.Text = "";
+                            tb_Login.Text = "";
+                            tb_MotDePasse.Text = "";
+                        }
+                        catch (NullReferenceException) // Si le visiteur sélectionné n'est pas dans la région sélectionnée
+                        {
+                            MessageBox.Show("Erreur, des champs ne sont pas renseignés, les champs sont tous obligatoires." +
+                                ". ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        catch (FormatException)
+                        {
+                            MessageBox.Show("Erreur, format de la chaine d'une saisie incorrecte, retentez.." +
+                                ". ", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+
                     }
                 }
             }
-
         }
 
         // TOUS LES TESTS DE SAISIES SE TROUVENT ICI
@@ -180,5 +207,18 @@ namespace PPE3_GSB_WF
         {
             AutoriserNombre(e);
         }
+
+        private void RechargerDonneescb()
+        {
+            // Récupère les régions dans la base de données
+            var req = from v in monModele.regions
+                      select v;
+
+            foreach (var resultat in req)
+            {
+                cb_region.Items.Add(resultat.REG_NOM);
+            }
+        }
     }
+
 }

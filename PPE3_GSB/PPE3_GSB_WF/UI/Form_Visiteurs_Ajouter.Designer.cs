@@ -41,7 +41,6 @@
             this.lbl_Prenom = new System.Windows.Forms.Label();
             this.lbl_Nom = new System.Windows.Forms.Label();
             this.lbl_Matricule = new System.Windows.Forms.Label();
-            this.tb_DateEmbauche = new System.Windows.Forms.TextBox();
             this.btn_Valider = new System.Windows.Forms.Button();
             this.lbl_AjoutVisiteur = new System.Windows.Forms.Label();
             this.btn_Annuler = new System.Windows.Forms.Button();
@@ -51,6 +50,10 @@
             this.lbl_Login = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dtp_DateEmbauche = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cb_region = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tb_Nom
@@ -75,7 +78,7 @@
             // 
             // tb_Adresse
             // 
-            this.tb_Adresse.Location = new System.Drawing.Point(179, 200);
+            this.tb_Adresse.Location = new System.Drawing.Point(179, 199);
             this.tb_Adresse.Margin = new System.Windows.Forms.Padding(4);
             this.tb_Adresse.MaxLength = 40;
             this.tb_Adresse.Multiline = true;
@@ -105,18 +108,18 @@
             // 
             // tb_Matricule
             // 
-            this.tb_Matricule.Location = new System.Drawing.Point(179, 86);
+            this.tb_Matricule.Location = new System.Drawing.Point(299, 86);
             this.tb_Matricule.Margin = new System.Windows.Forms.Padding(4);
             this.tb_Matricule.MaxLength = 5;
             this.tb_Matricule.Name = "tb_Matricule";
-            this.tb_Matricule.Size = new System.Drawing.Size(66, 22);
+            this.tb_Matricule.Size = new System.Drawing.Size(70, 22);
             this.tb_Matricule.TabIndex = 1;
             // 
             // lbl_DateEmbauche
             // 
             this.lbl_DateEmbauche.AutoSize = true;
             this.lbl_DateEmbauche.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DateEmbauche.Location = new System.Drawing.Point(3, 307);
+            this.lbl_DateEmbauche.Location = new System.Drawing.Point(3, 306);
             this.lbl_DateEmbauche.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DateEmbauche.Name = "lbl_DateEmbauche";
             this.lbl_DateEmbauche.Size = new System.Drawing.Size(165, 25);
@@ -160,7 +163,7 @@
             // 
             this.lbl_Prenom.AutoSize = true;
             this.lbl_Prenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Prenom.Location = new System.Drawing.Point(3, 157);
+            this.lbl_Prenom.Location = new System.Drawing.Point(3, 158);
             this.lbl_Prenom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Prenom.Name = "lbl_Prenom";
             this.lbl_Prenom.Size = new System.Drawing.Size(80, 25);
@@ -189,20 +192,10 @@
             this.lbl_Matricule.TabIndex = 19;
             this.lbl_Matricule.Text = "Matricule";
             // 
-            // tb_DateEmbauche
-            // 
-            this.tb_DateEmbauche.Location = new System.Drawing.Point(193, 307);
-            this.tb_DateEmbauche.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_DateEmbauche.MaxLength = 8;
-            this.tb_DateEmbauche.Name = "tb_DateEmbauche";
-            this.tb_DateEmbauche.Size = new System.Drawing.Size(131, 22);
-            this.tb_DateEmbauche.TabIndex = 7;
-            this.tb_DateEmbauche.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_DateEmbauche_KeyPress);
-            // 
             // btn_Valider
             // 
             this.btn_Valider.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Valider.Location = new System.Drawing.Point(299, 431);
+            this.btn_Valider.Location = new System.Drawing.Point(298, 486);
             this.btn_Valider.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Valider.Name = "btn_Valider";
             this.btn_Valider.Size = new System.Drawing.Size(128, 47);
@@ -225,7 +218,7 @@
             // btn_Annuler
             // 
             this.btn_Annuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Annuler.Location = new System.Drawing.Point(79, 431);
+            this.btn_Annuler.Location = new System.Drawing.Point(75, 486);
             this.btn_Annuler.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Annuler.Name = "btn_Annuler";
             this.btn_Annuler.Size = new System.Drawing.Size(128, 47);
@@ -236,18 +229,19 @@
             // 
             // tb_MotDePasse
             // 
-            this.tb_MotDePasse.Location = new System.Drawing.Point(176, 384);
+            this.tb_MotDePasse.Location = new System.Drawing.Point(179, 441);
             this.tb_MotDePasse.Margin = new System.Windows.Forms.Padding(4);
             this.tb_MotDePasse.MaxLength = 10;
             this.tb_MotDePasse.Name = "tb_MotDePasse";
             this.tb_MotDePasse.Size = new System.Drawing.Size(183, 22);
             this.tb_MotDePasse.TabIndex = 9;
+            this.tb_MotDePasse.UseSystemPasswordChar = true;
             // 
             // lbl_MotDePasse
             // 
             this.lbl_MotDePasse.AutoSize = true;
             this.lbl_MotDePasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_MotDePasse.Location = new System.Drawing.Point(3, 381);
+            this.lbl_MotDePasse.Location = new System.Drawing.Point(6, 439);
             this.lbl_MotDePasse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_MotDePasse.Name = "lbl_MotDePasse";
             this.lbl_MotDePasse.Size = new System.Drawing.Size(130, 25);
@@ -256,7 +250,7 @@
             // 
             // tb_Login
             // 
-            this.tb_Login.Location = new System.Drawing.Point(176, 347);
+            this.tb_Login.Location = new System.Drawing.Point(179, 404);
             this.tb_Login.Margin = new System.Windows.Forms.Padding(4);
             this.tb_Login.MaxLength = 10;
             this.tb_Login.Name = "tb_Login";
@@ -267,7 +261,7 @@
             // 
             this.lbl_Login.AutoSize = true;
             this.lbl_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Login.Location = new System.Drawing.Point(7, 344);
+            this.lbl_Login.Location = new System.Drawing.Point(10, 402);
             this.lbl_Login.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Login.Name = "lbl_Login";
             this.lbl_Login.Size = new System.Drawing.Size(60, 25);
@@ -278,7 +272,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(376, 351);
+            this.label1.Location = new System.Drawing.Point(379, 408);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 17);
             this.label1.TabIndex = 60;
@@ -288,17 +282,63 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(376, 388);
+            this.label2.Location = new System.Drawing.Point(379, 445);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 17);
             this.label2.TabIndex = 61;
             this.label2.Text = "Caractères max : 10";
             // 
+            // dtp_DateEmbauche
+            // 
+            this.dtp_DateEmbauche.Location = new System.Drawing.Point(191, 306);
+            this.dtp_DateEmbauche.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp_DateEmbauche.Name = "dtp_DateEmbauche";
+            this.dtp_DateEmbauche.Size = new System.Drawing.Size(235, 22);
+            this.dtp_DateEmbauche.TabIndex = 62;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(117, 86);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(146, 20);
+            this.label5.TabIndex = 74;
+            this.label5.Text = "(Par exemple c54)";
+            // 
+            // cb_region
+            // 
+            this.cb_region.DisplayMember = "TYP_CODE";
+            this.cb_region.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_region.FormattingEnabled = true;
+            this.cb_region.Location = new System.Drawing.Point(179, 358);
+            this.cb_region.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cb_region.Name = "cb_region";
+            this.cb_region.Size = new System.Drawing.Size(270, 24);
+            this.cb_region.TabIndex = 75;
+            this.cb_region.ValueMember = "TYP_CODE";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(13, 354);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 25);
+            this.label4.TabIndex = 76;
+            this.label4.Text = "Région";
+            // 
             // Form_Visiteurs_Ajouter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 492);
+            this.ClientSize = new System.Drawing.Size(533, 544);
+            this.Controls.Add(this.cb_region);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dtp_DateEmbauche);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Annuler);
@@ -321,7 +361,6 @@
             this.Controls.Add(this.lbl_Prenom);
             this.Controls.Add(this.lbl_Nom);
             this.Controls.Add(this.lbl_Matricule);
-            this.Controls.Add(this.tb_DateEmbauche);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Visiteurs_Ajouter";
@@ -348,7 +387,6 @@
         private System.Windows.Forms.Label lbl_Prenom;
         private System.Windows.Forms.Label lbl_Nom;
         private System.Windows.Forms.Label lbl_Matricule;
-        private System.Windows.Forms.TextBox tb_DateEmbauche;
         private System.Windows.Forms.Button btn_Valider;
         private System.Windows.Forms.Label lbl_AjoutVisiteur;
         private System.Windows.Forms.Button btn_Annuler;
@@ -358,5 +396,9 @@
         private System.Windows.Forms.Label lbl_Login;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtp_DateEmbauche;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cb_region;
+        private System.Windows.Forms.Label label4;
     }
 }

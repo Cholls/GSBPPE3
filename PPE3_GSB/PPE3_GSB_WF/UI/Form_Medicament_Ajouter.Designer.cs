@@ -30,8 +30,6 @@
         {
             this.tb_Compo = new System.Windows.Forms.TextBox();
             this.lblComposition = new System.Windows.Forms.Label();
-            this.tb_contreIndic = new System.Windows.Forms.RichTextBox();
-            this.tb_effets = new System.Windows.Forms.RichTextBox();
             this.cb_famille = new System.Windows.Forms.ComboBox();
             this.lbl_Famille = new System.Windows.Forms.Label();
             this.bt_Annuler = new System.Windows.Forms.Button();
@@ -43,6 +41,9 @@
             this.lbl_Nom = new System.Windows.Forms.Label();
             this.lbl_Matricule = new System.Windows.Forms.Label();
             this.lbl_AjoutMedicament = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tb_effets = new System.Windows.Forms.TextBox();
+            this.tb_contreIndic = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tb_Compo
@@ -65,27 +66,10 @@
             this.lblComposition.TabIndex = 107;
             this.lblComposition.Text = "Composition";
             // 
-            // tb_contreIndic
-            // 
-            this.tb_contreIndic.Location = new System.Drawing.Point(204, 331);
-            this.tb_contreIndic.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_contreIndic.Name = "tb_contreIndic";
-            this.tb_contreIndic.Size = new System.Drawing.Size(287, 77);
-            this.tb_contreIndic.TabIndex = 6;
-            this.tb_contreIndic.Text = "";
-            // 
-            // tb_effets
-            // 
-            this.tb_effets.Location = new System.Drawing.Point(146, 234);
-            this.tb_effets.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_effets.Name = "tb_effets";
-            this.tb_effets.Size = new System.Drawing.Size(344, 68);
-            this.tb_effets.TabIndex = 5;
-            this.tb_effets.Text = "";
-            // 
             // cb_famille
             // 
             this.cb_famille.DisplayMember = "FAM_LIBELLE";
+            this.cb_famille.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_famille.FormattingEnabled = true;
             this.cb_famille.Location = new System.Drawing.Point(106, 149);
             this.cb_famille.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -140,18 +124,18 @@
             // 
             // tb_Matricule
             // 
-            this.tb_Matricule.Location = new System.Drawing.Point(313, 68);
+            this.tb_Matricule.Location = new System.Drawing.Point(346, 65);
             this.tb_Matricule.Margin = new System.Windows.Forms.Padding(4);
             this.tb_Matricule.MaxLength = 10;
             this.tb_Matricule.Name = "tb_Matricule";
-            this.tb_Matricule.Size = new System.Drawing.Size(97, 22);
+            this.tb_Matricule.Size = new System.Drawing.Size(161, 22);
             this.tb_Matricule.TabIndex = 1;
             // 
             // lbl_contreIndic
             // 
             this.lbl_contreIndic.AutoSize = true;
             this.lbl_contreIndic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_contreIndic.Location = new System.Drawing.Point(21, 331);
+            this.lbl_contreIndic.Location = new System.Drawing.Point(4, 331);
             this.lbl_contreIndic.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_contreIndic.Name = "lbl_contreIndic";
             this.lbl_contreIndic.Size = new System.Drawing.Size(159, 25);
@@ -162,7 +146,7 @@
             // 
             this.lbl_Effets.AutoSize = true;
             this.lbl_Effets.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Effets.Location = new System.Drawing.Point(25, 234);
+            this.lbl_Effets.Location = new System.Drawing.Point(13, 234);
             this.lbl_Effets.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Effets.Name = "lbl_Effets";
             this.lbl_Effets.Size = new System.Drawing.Size(61, 25);
@@ -184,12 +168,12 @@
             // 
             this.lbl_Matricule.AutoSize = true;
             this.lbl_Matricule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Matricule.Location = new System.Drawing.Point(21, 68);
+            this.lbl_Matricule.Location = new System.Drawing.Point(22, 63);
             this.lbl_Matricule.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Matricule.Name = "lbl_Matricule";
-            this.lbl_Matricule.Size = new System.Drawing.Size(192, 25);
+            this.lbl_Matricule.Size = new System.Drawing.Size(110, 25);
             this.lbl_Matricule.TabIndex = 99;
-            this.lbl_Matricule.Text = "Numéro médicament";
+            this.lbl_Matricule.Text = "Dépot légal";
             // 
             // lbl_AjoutMedicament
             // 
@@ -202,15 +186,45 @@
             this.lbl_AjoutMedicament.TabIndex = 98;
             this.lbl_AjoutMedicament.Text = "Ajouter un médicament";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(142, 67);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(176, 20);
+            this.label1.TabIndex = 108;
+            this.label1.Text = "(Par exemple EVILR7)";
+            // 
+            // tb_effets
+            // 
+            this.tb_effets.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_effets.Location = new System.Drawing.Point(114, 234);
+            this.tb_effets.Multiline = true;
+            this.tb_effets.Name = "tb_effets";
+            this.tb_effets.Size = new System.Drawing.Size(393, 81);
+            this.tb_effets.TabIndex = 5;
+            // 
+            // tb_contreIndic
+            // 
+            this.tb_contreIndic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_contreIndic.Location = new System.Drawing.Point(193, 331);
+            this.tb_contreIndic.Multiline = true;
+            this.tb_contreIndic.Name = "tb_contreIndic";
+            this.tb_contreIndic.Size = new System.Drawing.Size(339, 81);
+            this.tb_contreIndic.TabIndex = 6;
+            // 
             // Form_Medicament_Ajouter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 494);
-            this.Controls.Add(this.tb_Compo);
-            this.Controls.Add(this.lblComposition);
+            this.ClientSize = new System.Drawing.Size(544, 494);
             this.Controls.Add(this.tb_contreIndic);
             this.Controls.Add(this.tb_effets);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tb_Compo);
+            this.Controls.Add(this.lblComposition);
             this.Controls.Add(this.cb_famille);
             this.Controls.Add(this.lbl_Famille);
             this.Controls.Add(this.bt_Annuler);
@@ -235,8 +249,6 @@
 
         private System.Windows.Forms.TextBox tb_Compo;
         private System.Windows.Forms.Label lblComposition;
-        private System.Windows.Forms.RichTextBox tb_contreIndic;
-        private System.Windows.Forms.RichTextBox tb_effets;
         private System.Windows.Forms.ComboBox cb_famille;
         private System.Windows.Forms.Label lbl_Famille;
         private System.Windows.Forms.Button bt_Annuler;
@@ -248,5 +260,8 @@
         private System.Windows.Forms.Label lbl_Nom;
         private System.Windows.Forms.Label lbl_Matricule;
         private System.Windows.Forms.Label lbl_AjoutMedicament;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tb_effets;
+        private System.Windows.Forms.TextBox tb_contreIndic;
     }
 }

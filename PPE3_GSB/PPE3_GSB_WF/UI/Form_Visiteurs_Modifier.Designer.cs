@@ -47,8 +47,8 @@
             this.lbl_Prenom = new System.Windows.Forms.Label();
             this.lbl_Nom = new System.Windows.Forms.Label();
             this.lbl_Matricule = new System.Windows.Forms.Label();
-            this.tb_DateEmbauche = new System.Windows.Forms.TextBox();
             this.btn_Annuler = new System.Windows.Forms.Button();
+            this.dtp_DateEmbauche = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lbl_ModifierVisiteur
@@ -217,13 +217,6 @@
             this.lbl_Matricule.TabIndex = 39;
             this.lbl_Matricule.Text = "Matricule";
             // 
-            // tb_DateEmbauche
-            // 
-            this.tb_DateEmbauche.Location = new System.Drawing.Point(195, 252);
-            this.tb_DateEmbauche.Name = "tb_DateEmbauche";
-            this.tb_DateEmbauche.Size = new System.Drawing.Size(150, 20);
-            this.tb_DateEmbauche.TabIndex = 38;
-            // 
             // btn_Annuler
             // 
             this.btn_Annuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -235,11 +228,19 @@
             this.btn_Annuler.UseVisualStyleBackColor = true;
             this.btn_Annuler.Click += new System.EventHandler(this.btn_Annuler_Click);
             // 
+            // dtp_DateEmbauche
+            // 
+            this.dtp_DateEmbauche.Location = new System.Drawing.Point(195, 248);
+            this.dtp_DateEmbauche.Name = "dtp_DateEmbauche";
+            this.dtp_DateEmbauche.Size = new System.Drawing.Size(177, 20);
+            this.dtp_DateEmbauche.TabIndex = 63;
+            // 
             // Form_Visiteurs_Modifier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 400);
+            this.Controls.Add(this.dtp_DateEmbauche);
             this.Controls.Add(this.btn_Annuler);
             this.Controls.Add(this.lbl_ModifierVisiteur);
             this.Controls.Add(this.btn_Valider);
@@ -260,11 +261,11 @@
             this.Controls.Add(this.lbl_Prenom);
             this.Controls.Add(this.lbl_Nom);
             this.Controls.Add(this.lbl_Matricule);
-            this.Controls.Add(this.tb_DateEmbauche);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Visiteurs_Modifier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modification Visiteurs";
+            this.Load += new System.EventHandler(this.Form_Visiteurs_Modifier_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,7 +292,7 @@
         private System.Windows.Forms.Label lbl_Prenom;
         private System.Windows.Forms.Label lbl_Nom;
         private System.Windows.Forms.Label lbl_Matricule;
-        private System.Windows.Forms.TextBox tb_DateEmbauche;
         private System.Windows.Forms.Button btn_Annuler;
+        private System.Windows.Forms.DateTimePicker dtp_DateEmbauche;
     }
 }

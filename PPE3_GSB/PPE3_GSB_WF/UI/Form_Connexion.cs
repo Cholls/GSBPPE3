@@ -71,12 +71,37 @@ namespace PPE3_GSB_WF
             } 
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing && !verifierConnexion())
+            {
+                e.Cancel = true;  
+            }
+        }
+
+        private void btn_Connexion_Click(object sender, EventArgs e)
+        {
+            // Vérification de la correspondance
+            if (verifierConnexion() == true)
+            {
+                this.Close(); // Ferme ce formulaire et ouvre l'accueil
+                MessageBox.Show("Connexion réussie", "Réussite", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+            else
+            {
+                //MessageBox.Show("Echec de connexion, réessayer.");
+
+            }
+
+        }
+
         /// <summary>
         /// Tous les tests de connexion et le passage des variables de connexion
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_Connexion_Click(object sender, EventArgs e)
+        /// 
+        private bool verifierConnexion()
         {
             // Ici, vérifier qui se connecte :
             // Si c'est un visiteur, n'afficher que l'onglet des rapports
@@ -122,16 +147,7 @@ namespace PPE3_GSB_WF
                  estValide = false;
       
              }
-
-            // Vérification de la correspondance
-           if (estValide == true)  {
-                this.Close(); // Ferme ce formulaire et ouvre l'accueil
-                MessageBox.Show("Connexion réussie");
-            }
-            else {
-                //MessageBox.Show("Echec de connexion, réessayer.");
-
-            }
+            return estValide;
         }
 
         // Autoriser que les lettres
